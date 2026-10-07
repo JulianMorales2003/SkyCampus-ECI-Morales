@@ -32,3 +32,26 @@ Todas siguen el formato "Como [rol], quiero [qué], para [beneficio]".
 - Quien la cancela es el Operador, porque la heurística 3 de Nielsen (control del usuario) se refiere al operador del panel.
 - Cancelar una misión que ya está EN_VUELO queda fuera del MVP.
 - Esta historia introduce un requerimiento que no está en el reto 06 (cancelar una solicitud pendiente). Queda anotado como candidato a RF-04; el enum `estadoSolicitud` de SC-01 se actualiza con el valor CANCELADA.
+
+## 3. HU-2 — Asignar drone a misión: subtareas y criterios de aceptación
+
+### Subtareas
+
+Cada una es una acción técnica que hace una sola persona.
+
+| # | Subtarea | Responsable | Estado | Evidencia |
+|---|----------|-------------|--------|-----------|
+| 1 | Implementar `ValidadorBateria`, que rechaza un drone con batería menor al 30% (RN-01) | Julian | Done | Reto 03: clase `ValidadorBateria` |
+| 2 | Adaptar `ValidadorDestino` para comprobar el destino de la solicitud al elegirla, antes de pedir el drone (RN-02, paso 2 de SC-01) | Julian | In Progress | Reto 07: nota de la plantilla SC-01 |
+| 3 | Escribir las pruebas unitarias de `AsignadorMision` para drone no disponible y misión que no está pendiente | Julian | To Do | Reto 12 (TDD) |
+
+### Criterios de aceptación
+
+1. **Batería insuficiente (RN-01).** Dado un drone disponible con 18% de batería, cuando el Operador intenta asignarlo a una solicitud pendiente, entonces el sistema rechaza el registro, muestra "El drone D-04 tiene batería insuficiente (18%). Mínimo requerido: 30%." y no crea ninguna misión.
+2. **Destino inválido (RN-02).** Dada una solicitud pendiente cuyo destino ya no está en la lista de destinos válidos, cuando el Operador la elige, entonces el sistema la pasa a RECHAZADA con el motivo, no le pide ningún drone y la solicitud deja de aparecer como pendiente.
+
+## 4. Estados del tablero
+
+- **Done:** la subtarea 1, porque `ValidadorBateria` ya está implementado y publicado.
+- **In Progress:** la subtarea 2 y la historia HU-2, que ya tiene una subtarea terminada y otra en curso.
+- **To Do:** HU-1, HU-3 y la subtarea 3.
