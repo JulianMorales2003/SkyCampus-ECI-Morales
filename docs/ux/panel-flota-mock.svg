@@ -41,7 +41,8 @@
 <text x="596" y="318" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="16" fill="#F1F5F9">42%</text>
 <text x="800" y="318" font-size="17" fill="#F1F5F9">Biblioteca</text>
 <rect x="1040" y="293" width="170" height="38" rx="8" fill="#334155"/>
-<text x="1125" y="317" text-anchor="middle" font-size="15" font-weight="600" fill="#64748B">Asignar misión</text>
+<text x="1125" y="317" text-anchor="middle" font-size="15" font-weight="600" fill="#94A3B8">Asignar misión</text>
+<text x="60" y="346" font-size="13" fill="#94A3B8">No se puede asignar: el drone está en vuelo.</text>
 <rect x="32" y="364" width="1216" height="72" rx="8" fill="#1E293B"/>
 <text x="60" y="398" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="18" font-weight="700" fill="#F1F5F9">D-03</text>
 <rect x="190" y="378" width="124" height="28" rx="14" fill="#EF4444"/>
@@ -52,7 +53,8 @@
 <text x="596" y="398" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="16" fill="#F1F5F9">91%</text>
 <text x="800" y="398" font-size="17" fill="#F1F5F9">Bloque C</text>
 <rect x="1040" y="373" width="170" height="38" rx="8" fill="#334155"/>
-<text x="1125" y="397" text-anchor="middle" font-size="15" font-weight="600" fill="#64748B">Asignar misión</text>
+<text x="1125" y="397" text-anchor="middle" font-size="15" font-weight="600" fill="#94A3B8">Asignar misión</text>
+<text x="60" y="426" font-size="13" fill="#94A3B8">No se puede asignar: el drone reporta un fallo.</text>
 <rect x="32" y="444" width="1216" height="72" rx="8" fill="#1E293B"/>
 <text x="60" y="478" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="18" font-weight="700" fill="#F1F5F9">D-04</text>
 <rect x="190" y="458" width="124" height="28" rx="14" fill="#22C55E"/>
@@ -66,7 +68,7 @@
 <text x="680" y="477" font-size="13" font-weight="600" fill="#F1F5F9">Bajo mínimo</text>
 <text x="800" y="478" font-size="17" fill="#F1F5F9">Bloque B</text>
 <rect x="1040" y="453" width="170" height="38" rx="8" fill="#334155"/>
-<text x="1125" y="477" text-anchor="middle" font-size="15" font-weight="600" fill="#64748B">Asignar misión</text>
+<text x="1125" y="477" text-anchor="middle" font-size="15" font-weight="600" fill="#94A3B8">Asignar misión</text>
 <path d="M68 493 L76 507 L60 507 Z" fill="none" stroke="#F1F5F9" stroke-width="1.6" stroke-linejoin="round"/><line x1="68" y1="498" x2="68" y2="502" stroke="#F1F5F9" stroke-width="1.6"/><circle cx="68" cy="504.5" r="0.9" fill="#F1F5F9"/>
 <text x="84" y="506" font-size="13" fill="#F1F5F9">El drone D-04 tiene batería insuficiente (18%). Mínimo requerido: 30%.</text>
 <rect x="32" y="524" width="1216" height="72" rx="8" fill="#1E293B"/>
@@ -79,7 +81,8 @@
 <text x="596" y="558" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="16" fill="#F1F5F9">67%</text>
 <text x="800" y="558" font-size="17" fill="#F1F5F9">Bloque D</text>
 <rect x="1040" y="533" width="170" height="38" rx="8" fill="#334155"/>
-<text x="1125" y="557" text-anchor="middle" font-size="15" font-weight="600" fill="#64748B">Asignar misión</text>
+<text x="1125" y="557" text-anchor="middle" font-size="15" font-weight="600" fill="#94A3B8">Asignar misión</text>
+<text x="60" y="586" font-size="13" fill="#94A3B8">No se puede asignar: el drone está en carga.</text>
 <text x="32" y="656" font-size="13" fill="#94A3B8">La marca vertical de cada barra señala el 30% mínimo de batería para asignar una misión.</text>
 <text x="32" y="676" font-size="13" fill="#94A3B8">El triángulo con "Bajo mínimo" indica una batería por debajo de ese mínimo.</text>
 </svg>

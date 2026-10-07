@@ -13,7 +13,7 @@
 | Texto principal | `#F1F5F9` | Texto sobre fondos oscuros | Máxima legibilidad |
 | Texto secundario | `#94A3B8` | Etiquetas y ayudas | Baja el peso visual sin perder legibilidad |
 | Borde | `#334155` | Divisores y fondo de las barras | |
-| Deshabilitado | `#64748B` | Botones sin acción posible | |
+| Deshabilitado | `#334155` (fondo) y `#94A3B8` (texto) | Botones sin acción posible | Se distingue del botón activo por el fondo; el texto se mejoró de 2,18:1 a 4,04:1 porque es la pista visible del botón |
 
 Decisión clave: el azul de marca es muy oscuro y el azul del estado "En vuelo" (`#3B82F6`) es más claro y solo aparece en ese estado. Así cada color tiene un único significado.
 
@@ -41,6 +41,7 @@ Contrastes del resto de la paleta (calculados con la fórmula de WCAG; el mínim
 | Texto secundario sobre gris pizarra | 5,71:1 |
 | Blanco sobre morado técnico | 5,70:1 |
 | Blanco sobre azul noche | 17,14:1 |
+| Texto del botón deshabilitado sobre su fondo | 4,04:1 (WCAG exime a los controles deshabilitados; supera el 3:1 de los componentes) |
 
 ## 3. Tipografía
 
@@ -80,6 +81,7 @@ El botón se habilita solo si el drone está Disponible y tiene al menos 30% de 
 Notas:
 - **Los estados son ilustrativos** para mostrar los cuatro colores y el caso de la batería baja. La batería y la ubicación son las de las demos de los retos anteriores. D-04 es Disponible con 18%, igual que en las demos y que el caso de RN-01 en SC-01; D-03 y D-05 aparecen con Fallo y En carga, aunque en el código son disponibles.
 - **El modelo todavía no distingue los cuatro estados.** El record `Drone` del repo solo tiene `disponible` (verdadero o falso). Para implementar este panel hará falta un dato de estado (por ejemplo `EstadoDrone`) o derivarlo de las misiones.
+- **Cada botón deshabilitado explica su razón** en una línea bajo la fila (en vuelo, fallo, en carga, batería bajo el mínimo).
 - **"Asignar misión"** abre el caso de uso SC-01 del reto 07.
 - **Fuentes del render:** la imagen usa DejaVu Sans y DejaVu Sans Mono como sustitutas, porque Inter y JetBrains Mono no estaban instaladas. La aplicación usa las del manual.
 
@@ -90,7 +92,7 @@ Notas:
 | 1 | Visibilidad del estado | Los 5 drones muestran su estado con un chip de color y su nombre, y la batería con una barra y su porcentaje. Todo se ve de un vistazo, sin clics. |
 | 2 | Coincidencia con el mundo real | Los estados están en español (Disponible, En vuelo, En carga, Fallo), las ubicaciones son las del campus (Bloque A, Biblioteca) y el botón usa el verbo del operador: "Asignar misión". |
 | 4 | Consistencia y estándares | Todas las filas tienen la misma estructura y el mismo orden. Cada color tiene un solo significado y los IDs siempre van en fuente monoespaciada. |
-| 5 | Prevención de errores | "Asignar misión" está deshabilitado en los 4 drones que no se pueden asignar: D-02 (en vuelo), D-03 (fallo), D-05 (en carga) y D-04, que sigue Disponible pero tiene 18% de batería, bajo el mínimo del 30%. Ese es el caso de la heurística: el drone aparece en la lista, pero queda bloqueado por la batería, y se avisa con el triángulo "Bajo mínimo" y la marca del 30% en la barra, antes de que el operador intente asignarlo. |
+| 5 | Prevención de errores | "Asignar misión" está deshabilitado en los 4 drones que no se pueden asignar: D-02 (en vuelo), D-03 (fallo), D-05 (en carga) y D-04, que sigue Disponible pero tiene 18% de batería, bajo el mínimo del 30%. Ese es el caso de la heurística: el drone aparece en la lista, pero queda bloqueado por la batería, y se avisa con el triángulo "Bajo mínimo" y la marca del 30% en la barra, antes de que el operador intente asignarlo. Los otros 3 bloqueos también escriben su razón bajo la fila. |
 | 6 | Reconocimiento antes que memorización | La leyenda de estados está siempre visible, el estado va en texto y el significado de la marca del 30% se explica al pie. El operador no tiene que recordar qué significa cada color. |
 | 8 | Diseño minimalista | Solo hay lo que el operador necesita para decidir: ID, estado, batería, ubicación y la acción. |
 | 9 | Mensajes de error claros | El motivo del bloqueo de D-04 dice qué drone, qué valor y cuál es el mínimo: "El drone D-04 tiene batería insuficiente (18%). Mínimo requerido: 30%.", y no "Error de asignación". |

@@ -31,10 +31,10 @@
 <text x="656" y="314" font-size="17" font-weight="700" fill="#FFFFFF">Borde</text>
 <text x="656" y="338" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="14" fill="#FFFFFF">#334155</text>
 <text x="640" y="386" font-size="13" fill="#94A3B8">Divisores y fondo de barras</text>
-<rect x="940" y="280" width="270" height="84" rx="10" fill="#64748B" stroke="#334155" stroke-width="1"/>
-<text x="956" y="314" font-size="17" font-weight="700" fill="#0B1220">Deshabilitado</text>
-<text x="956" y="338" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="14" fill="#0B1220">#64748B</text>
-<text x="940" y="386" font-size="13" fill="#94A3B8">Botones sin acción posible</text>
+<rect x="940" y="280" width="270" height="84" rx="10" fill="#334155" stroke="#334155" stroke-width="1"/>
+<text x="956" y="314" font-size="17" font-weight="700" fill="#94A3B8">Deshabilitado</text>
+<text x="956" y="338" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="14" fill="#94A3B8">#334155 + #94A3B8</text>
+<text x="940" y="386" font-size="13" fill="#94A3B8">Fondo del botón y su texto</text>
 <text x="40" y="440" font-size="15" font-weight="700" letter-spacing="1" fill="#94A3B8">COLORES DE ESTADO DEL DRONE</text>
 <rect x="40" y="456" width="270" height="84" rx="10" fill="#22C55E" stroke="#334155" stroke-width="1"/>
 <text x="56" y="490" font-size="17" font-weight="700" fill="#0B1220">Disponible</text>
