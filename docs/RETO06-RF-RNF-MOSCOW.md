@@ -27,8 +27,8 @@ Cada uno lleva un número, una condición y una forma de verificarlo.
 | RF-02 | Registrar solicitud de reparto | Must Have | Sin solicitudes el Operador no tiene qué repartir, así que el flujo de reparto no tendría entrada. |
 | RF-03 | Registrar misión de reparto (SC-01) | Must Have | Es el núcleo del MVP: sin una misión registrada con un drone, nada sale a repartir y no hay entrega. |
 | RNF-01 | Consulta en menos de 2 segundos | Should Have | Importa para que el operador trabaje con fluidez, pero con 5 drones el MVP sigue funcionando aunque tarde un poco más. |
-| RNF-02 | Registro de misión en menos de 2 minutos sin ayuda | Could Have | Es deseable, pero medirla exige una prueba con usuarios y su incumplimiento no impide entregar el MVP. |
-| RNF-03 | 80 % de cobertura y 0 Blocker o Critical | Should Have | El curso lo evalúa y protege la calidad del código, pero un MVP puede mostrarse al operador sin que esa medición esté completa. |
+| RNF-02 | Registro de misión en menos de 2 minutos sin ayuda | Could Have | Si falta, el operador puede registrar misiones igual, pero con una pantalla menos clara tarda más y puede equivocarse de drone; la entrega del MVP no se detiene, por eso es deseable y no necesaria. |
+| RNF-03 | 80 % de cobertura y 0 Blocker o Critical | Should Have | Si falta, el MVP puede operar, pero queda más riesgo de que un error pase sin detectarse (por ejemplo, asignar un drone con batería baja) y el operador lo descubriría con el drone ya en el aire; no bloquea la primera entrega, pero conviene no dejarlo sin cubrir. |
 
 ## Decisiones cerradas y notas
 - **Solicitud y misión son cosas distintas.** RF-02 produce una solicitud con su propio código de seguimiento, no una `Mision`. La `Mision` solo existe cuando el Operador le asigna un drone (RF-03), como exige el modelo: el Builder pide drone y `Mision` rechaza un drone nulo. El modelo actual no tiene una clase para la solicitud; si el equipo la implementa, será una clase aparte (por ejemplo `SolicitudReparto`) y no se toca `Mision`.
