@@ -77,7 +77,7 @@ Datos de salida cuando ocurre A2:
 - **A1. Drone sin batería suficiente (en el paso 4, RN-01).**
   1. El sistema rechaza el registro y muestra el motivo: la batería del drone elegido y el mínimo exigido (30 %).
   2. No se crea ninguna misión y la solicitud sigue pendiente.
-  3. El flujo vuelve al paso 3 para que el Operador elija otro drone.
+  3. El Operador elige otro drone y el flujo vuelve al paso 3, o cancela el registro y SC-01 termina con la solicitud todavía pendiente (por ejemplo, cuando ningún drone disponible llega al 30 %).
 - **A2. Destino inválido (en el paso 2, RN-02).**
   1. El sistema rechaza la solicitud elegida y muestra al Operador el motivo: el destino no existe, junto con los destinos válidos.
   2. El sistema pasa la solicitud al estado RECHAZADA y guarda el motivo. La solicitud deja de aparecer en `solicitudesPendientes`, así que no bloquea la lista ni se puede volver a elegir.
