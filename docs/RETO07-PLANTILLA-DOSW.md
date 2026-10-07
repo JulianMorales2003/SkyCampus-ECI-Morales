@@ -49,12 +49,19 @@ Datos que el sistema muestra durante el flujo:
 | solicitudesPendientes | List<Solicitud(codigo:String, origen:String, destino:String, tipoCarga:Enum(SOBRE,CARPETA,LIBRO))> |
 | dronesDisponibles | List<Drone(id:String, bateria:int, ubicacion:String)> |
 
+Datos de salida cuando ocurre A2:
+
+| Campo | Tipo |
+|-------|------|
+| estadoSolicitud | Enum(PENDIENTE,RECHAZADA) |
+| motivoRechazo | String |
+
 ## Flujo básico
 
 1. El Operador pide registrar una misión y el sistema muestra la lista `solicitudesPendientes`.
-2. El Operador elige una solicitud y el sistema muestra la lista `dronesDisponibles`.
+2. El Operador elige una solicitud; el sistema comprueba RN-02 (destino) y, si es válido, muestra la lista `dronesDisponibles`.
 3. El Operador elige un drone y confirma el registro.
-4. El sistema comprueba las reglas de negocio RN-01 (batería) y RN-02 (destino), en ese orden.
+4. El sistema comprueba RN-01 (batería) sobre el drone elegido.
 5. El sistema crea la misión en estado EN_VUELO, marca el drone como no disponible, deja la solicitud como no pendiente y muestra al Operador el `codigoMision`.
 
 ## Flujos alternos
@@ -63,17 +70,18 @@ Datos que el sistema muestra durante el flujo:
   1. El sistema rechaza el registro y muestra el motivo: la batería del drone elegido y el mínimo exigido (30 %).
   2. No se crea ninguna misión y la solicitud sigue pendiente.
   3. El flujo vuelve al paso 3 para que el Operador elija otro drone.
-- **A2. Destino inválido (en el paso 4, RN-02).**
-  1. El sistema rechaza el registro y muestra el motivo: el destino de la solicitud no existe, junto con los destinos válidos.
-  2. No se crea ninguna misión y la solicitud sigue pendiente.
-  3. SC-01 termina, porque el destino pertenece a la solicitud y el Operador no lo puede corregir aquí.
+- **A2. Destino inválido (en el paso 2, RN-02).**
+  1. El sistema rechaza la solicitud elegida y muestra al Operador el motivo: el destino no existe, junto con los destinos válidos.
+  2. El sistema pasa la solicitud al estado RECHAZADA y guarda el motivo. La solicitud deja de aparecer en `solicitudesPendientes`, así que no bloquea la lista ni se puede volver a elegir.
+  3. No se pide ningún drone y no se crea ninguna misión. El Operador vuelve al paso 1 para elegir otra solicitud.
+  4. El Solicitante verá el estado RECHAZADA y el motivo cuando consulte su solicitud con el código de seguimiento, y podrá registrar una solicitud nueva con un destino válido.
 
-Si ambas reglas fallan a la vez, solo se informa A1, porque RN-01 se comprueba primero.
+Las dos reglas ya no se comprueban juntas: RN-02 se comprueba en el paso 2 y RN-01 en el paso 4. Así un destino inválido se detecta antes de pedirle un drone al Operador.
 
 ## Reglas de negocio (aplican DURANTE la ejecución)
 
 - **RN-01.** El drone elegido debe tener una batería de al menos 30 %. Se evalúa en el paso 4, sobre el drone que el Operador eligió.
-- **RN-02.** El destino de la solicitud debe ser uno de los destinos válidos configurados. Se evalúa en el paso 4, aunque la solicitud ya se registró con ese destino, porque el Admin puede cambiar la lista de destinos entre el RF-02 y SC-01.
+- **RN-02.** El destino de la solicitud debe ser uno de los destinos válidos configurados. Se evalúa en el paso 2, al elegir la solicitud y antes de pedir un drone, aunque la solicitud ya se registró con ese destino, porque el Admin puede cambiar la lista de destinos entre el RF-02 y SC-01.
 
 ## Cómo distinguí precondición de regla de negocio
 
@@ -85,5 +93,6 @@ Si ambas reglas fallan a la vez, solo se informa A1, porque RN-01 se comprueba p
 | Ejemplo aquí | P2: existe al menos un drone disponible | RN-01: el drone elegido tiene al menos 30 % de batería |
 
 ## Notas
-- RN-01 y RN-02 corresponden a `ValidadorBateria` y `ValidadorDestino` de la cadena del reto 03. Esa cadena también tiene `ValidadorCarga` (peso de la carga frente a la capacidad del drone); no se incluye aquí porque este reto pide dos reglas y las dos de los flujos alternos solicitados son estas.
+- RN-01 y RN-02 corresponden a `ValidadorBateria` y `ValidadorDestino` de la cadena del reto 03. Esa cadena valida la misión completa en un solo paso; esta plantilla comprueba el destino antes (paso 2), sobre la solicitud, para no pedirle un drone al Operador en vano. Al implementarlo, `ValidadorDestino` tendrá que poder usarse sobre una solicitud y no solo sobre una `Mision`. La cadena también tiene `ValidadorCarga` (peso de la carga frente a la capacidad del drone); no se incluye aquí porque este reto pide dos reglas.
+- Mostrarle al Solicitante el estado de su solicitud (A2, paso 4) requiere una consulta de la solicitud que no está entre los 3 RF del reto 06. Queda anotada como requerimiento pendiente (Could Have) y es el candidato a segundo caso de uso del Solicitante en el reto 10.
 - Con la decisión de los datos de entrada, en la flecha 1 del diagrama del reto 05 lo que viaja es el código de la solicitud y el drone, no un "id de misión": la misión todavía no existe antes de registrarla.
