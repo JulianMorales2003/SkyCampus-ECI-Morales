@@ -61,7 +61,7 @@ Técnico pero claro: el operador es un profesional. Cada mensaje dice qué pasó
 
 ![Mock del panel de monitoreo de la flota](ux/panel-flota-mock.png)
 
-Generado con IA (Claude) a partir de este manual, con la paleta, los colores de estado y la tipografía definidos arriba. Muestra los 5 drones:
+Generado con IA (Claude) a partir de este manual. El prompt completo, con la paleta, los colores de estado, la tipografía y el contenido escritos dentro, está en [`ux/PROMPT-MOCK-PANEL.md`](ux/PROMPT-MOCK-PANEL.md). La versión 1 del mock no salió de un prompt escrito: se generó a partir del enunciado del reto. La versión 2 (esta) se generó siguiendo ese prompt. Muestra los 5 drones:
 
 | ID | Estado | Batería | Ubicación | Acción |
 |----|--------|---------|-----------|--------|
