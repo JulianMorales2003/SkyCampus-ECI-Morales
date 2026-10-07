@@ -3,6 +3,7 @@ package asignacion;
 import java.util.List;
 import java.util.Optional;
 import model.Drone;
+import util.Validaciones;
 
 public class AsignadorDrones {
 
@@ -17,19 +18,13 @@ public class AsignadorDrones {
     }
 
     public Optional<Drone> asignar(List<Drone> flota, String origen) {
-        if (flota == null) {
-            throw new IllegalArgumentException("La flota de drones no puede ser nula.");
-        }
-        if (origen == null || origen.isBlank()) {
-            throw new IllegalArgumentException("El origen de la misión no puede ser nulo ni vacío.");
-        }
+        Validaciones.exigirPresente(flota, "flota");
+        Validaciones.exigirTexto(origen, "origen");
         return estrategia.seleccionar(flota, origen);
     }
 
     private static EstrategiaAsignacion validarEstrategia(EstrategiaAsignacion estrategia) {
-        if (estrategia == null) {
-            throw new IllegalArgumentException("La estrategia de asignación no puede ser nula.");
-        }
+        Validaciones.exigirPresente(estrategia, "estrategia");
         return estrategia;
     }
 }
