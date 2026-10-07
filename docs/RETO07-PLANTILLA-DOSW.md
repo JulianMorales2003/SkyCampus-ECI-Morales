@@ -49,6 +49,7 @@ Datos que el sistema lee del estado vigente del drone elegido (el Operador no lo
 |-------|------|-------------|
 | codigoMision | String | Código único de la misión generada |
 | estadoMision | Enum(PENDIENTE,EN_VUELO,ENTREGADA,FALLIDA) | Siempre EN_VUELO al terminar bien |
+| estadoSolicitud | Enum(PENDIENTE,ATENDIDA,RECHAZADA) | ATENDIDA al terminar bien: la solicitud ya tiene una misión |
 
 Datos que el sistema muestra durante el flujo:
 
@@ -59,10 +60,21 @@ Datos que el sistema muestra durante el flujo:
 
 Datos de salida cuando ocurre A2:
 
-| Campo | Tipo |
-|-------|------|
-| estadoSolicitud | Enum(PENDIENTE,RECHAZADA) |
-| motivoRechazo | String |
+| Campo | Tipo | Valor en A2 |
+|-------|------|-------------|
+| estadoSolicitud | Enum(PENDIENTE,ATENDIDA,RECHAZADA) | RECHAZADA |
+| motivoRechazo | String | Motivo de RN-02: el destino no existe |
+
+## Enlace entre la solicitud y su misión
+
+- **ATENDIDA** significa que la solicitud ya tiene una misión. El estado de la entrega lo da la misión (EN_VUELO, ENTREGADA o FALLIDA), no la solicitud.
+- **El enlace va del lado de la solicitud.** En el paso 5, SC-01 guarda en la solicitud el dato de abajo; `Mision` no guarda el código de la solicitud y no cambia.
+
+| Campo que SC-01 guarda en la solicitud | Tipo | Cuándo |
+|----------------------------------------|------|--------|
+| codigoMision | String | En el paso 5, cuando la solicitud pasa a ATENDIDA |
+
+- **Cómo lo usa el Solicitante.** Con su código de seguimiento, el sistema encuentra la solicitud. Si está PENDIENTE o RECHAZADA, muestra ese estado (y el motivo si fue rechazada). Si está ATENDIDA, usa su `codigoMision` para leer el estado de la misión y mostrarlo. Eso es lo que promete la flecha 4 del diagrama.
 
 ## Flujo básico
 
@@ -70,7 +82,7 @@ Datos de salida cuando ocurre A2:
 2. El Operador elige una solicitud; el sistema comprueba RN-02 (destino) y, si es válido, muestra la lista `dronesDisponibles`.
 3. El Operador elige un drone y confirma el registro.
 4. El sistema comprueba RN-01 (batería) sobre el drone elegido.
-5. El sistema crea la misión en estado EN_VUELO, marca el drone como no disponible, deja la solicitud como no pendiente y muestra al Operador el `codigoMision`.
+5. El sistema crea la misión en estado EN_VUELO, marca el drone como no disponible, pasa la solicitud al estado ATENDIDA guardando en ella el `codigoMision`, y muestra al Operador ese `codigoMision`.
 
 ## Flujos alternos
 
