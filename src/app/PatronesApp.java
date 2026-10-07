@@ -1,6 +1,7 @@
 package app;
 
 import asignacion.AsignadorDrones;
+import asignacion.EstrategiaDroneEnOrigen;
 import asignacion.EstrategiaMayorBateria;
 import builder.MisionBuilder;
 import java.time.LocalTime;
@@ -19,12 +20,13 @@ public class PatronesApp {
     private static final List<String> DESTINOS_VALIDOS =
             List.of("Bloque A", "Bloque B", "Bloque C", "Bloque D", "Biblioteca");
     private static final int CAPACIDAD_DRONE_GRAMOS = 500;
+    private static final String SIN_DRONE = "sin drone disponible";
 
     public static void main(String[] args) {
         List<Drone> flota = crearFlota();
-        demostrarBuilder(flota);
+        demostrarBuilder(flota.get(2));
         demostrarCadenaDeValidacion(flota);
-        demostrarEstrategia(flota);
+        demostrarEstrategias(flota);
     }
 
     private static List<Drone> crearFlota() {
@@ -36,30 +38,43 @@ public class PatronesApp {
                 new Drone("D-05", "DJI Mini 3", 67, true, "Bloque D"));
     }
 
-    private static void demostrarBuilder(List<Drone> flota) {
+    private static void demostrarBuilder(Drone drone) {
         System.out.println("=== Problema 1: Builder ===");
-        Mision minima = new MisionBuilder()
-                .drone(flota.get(2)).origen("Bloque C").destino("Biblioteca")
+        demostrarSoloObligatorios(drone);
+        demostrarConOpcionales(drone);
+        demostrarCampoFaltante(drone);
+    }
+
+    private static void demostrarSoloObligatorios(Drone drone) {
+        Mision mision = new MisionBuilder()
+                .drone(drone).origen("Bloque C").destino("Biblioteca")
                 .tipoCarga(TipoCarga.SOBRE)
                 .build();
-        System.out.println("Solo obligatorios -> prioridad " + minima.prioridad()
-                + ", notas \"" + minima.notas() + "\", hora límite " + minima.horaMaximaEntrega());
+        System.out.println("Solo obligatorios -> " + describirOpcionales(mision));
+    }
 
-        Mision completa = new MisionBuilder()
-                .drone(flota.get(2)).origen("Bloque C").destino("Biblioteca")
+    private static void demostrarConOpcionales(Drone drone) {
+        Mision mision = new MisionBuilder()
+                .drone(drone).origen("Bloque C").destino("Biblioteca")
                 .tipoCarga(TipoCarga.CARPETA)
                 .prioridad(1)
                 .notas("Urgente: examen mañana")
                 .horaMaximaEntrega(LocalTime.of(10, 30))
                 .build();
-        System.out.println("Con opcionales    -> prioridad " + completa.prioridad()
-                + ", notas \"" + completa.notas() + "\", hora límite " + completa.horaMaximaEntrega());
+        System.out.println("Con opcionales    -> " + describirOpcionales(mision));
+    }
 
+    private static void demostrarCampoFaltante(Drone drone) {
         try {
-            new MisionBuilder().drone(flota.get(2)).build();
-        } catch (IllegalStateException e) {
-            System.out.println("Faltan obligatorios -> " + e.getMessage());
+            new MisionBuilder().drone(drone).destino("Biblioteca").tipoCarga(TipoCarga.SOBRE).build();
+        } catch (IllegalStateException excepcionCampoFaltante) {
+            System.out.println("Falta un obligatorio -> " + excepcionCampoFaltante.getMessage());
         }
+    }
+
+    private static String describirOpcionales(Mision mision) {
+        return "prioridad " + mision.prioridad() + ", notas \"" + mision.notas()
+                + "\", hora límite " + mision.horaMaximaEntrega();
     }
 
     private static void demostrarCadenaDeValidacion(List<Drone> flota) {
@@ -86,20 +101,20 @@ public class PatronesApp {
         System.out.println(escenario + ": " + texto);
     }
 
-    private static void demostrarEstrategia(List<Drone> flota) {
+    private static void demostrarEstrategias(List<Drone> flota) {
         System.out.println("\n=== Problema 3: Strategy ===");
         AsignadorDrones asignador = new AsignadorDrones(new EstrategiaMayorBateria());
-        System.out.println("Mayor batería: "
-                + asignador.asignar(flota, "Bloque B").map(Drone::id).orElse("sin drone disponible"));
+        imprimirAsignacion("Mayor batería", asignador, flota, "Bloque B");
 
-        asignador.cambiarEstrategia((drones, origenSolicitud) -> drones.stream()
-                .filter(Drone::disponible)
-                .filter(drone -> origenSolicitud.equals(drone.ubicacion()))
-                .findFirst());
-        System.out.println("Más cercano al origen (estrategia futura): "
-                + asignador.asignar(flota, "Bloque B").map(Drone::id).orElse("sin drone disponible"));
+        asignador.cambiarEstrategia(new EstrategiaDroneEnOrigen());
+        imprimirAsignacion("Drone en el origen (Bloque B)", asignador, flota, "Bloque B");
+        imprimirAsignacion("Drone en el origen (Biblioteca)", asignador, flota, "Biblioteca");
+        imprimirAsignacion("Flota vacía", asignador, List.of(), "Bloque B");
+    }
 
-        System.out.println("Flota vacía: "
-                + asignador.asignar(List.of(), "Bloque B").map(Drone::id).orElse("sin drone disponible"));
+    private static void imprimirAsignacion(String etiqueta, AsignadorDrones asignador,
+                                           List<Drone> flota, String origen) {
+        String resultado = asignador.asignar(flota, origen).map(Drone::id).orElse(SIN_DRONE);
+        System.out.println(etiqueta + ": " + resultado);
     }
 }
