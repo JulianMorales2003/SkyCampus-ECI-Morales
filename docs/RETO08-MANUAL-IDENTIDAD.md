@@ -23,8 +23,12 @@ Decisión clave: el azul de marca es muy oscuro y el azul del estado "En vuelo" 
 |--------|-----|-------------|---------------------|-----------|
 | Disponible | `#22C55E` | Puede recibir una misión | `#0B1220` | 8,22:1 |
 | En vuelo | `#3B82F6` | Misión en curso | `#0B1220` | 5,09:1 |
-| En carga | `#EAB308` | Espera; también marca una batería bajo el mínimo (30%) | `#0B1220` | 9,76:1 |
+| En carga | `#EAB308` | Espera a que termine la carga | `#0B1220` | 9,76:1 |
 | Fallo | `#EF4444` | Requiere atención | `#0B1220` | 4,98:1 |
+
+### Batería bajo el mínimo
+
+La batería bajo el 30% **no usa ningún color de estado**. Se marca con un triángulo de advertencia y la etiqueta "Bajo mínimo", ambos en el color de texto principal (`#F1F5F9`), y con la marca del 30% en la barra. Así cada color de estado tiene un solo significado y el operador sabe cuál leer.
 
 Regla: el estado nunca se comunica solo con el color. El chip siempre lleva el nombre del estado en texto, para quien no distingue bien los colores.
 
