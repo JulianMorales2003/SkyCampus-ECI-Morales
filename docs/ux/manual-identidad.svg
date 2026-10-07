@@ -62,4 +62,5 @@
 <text x="40" y="762" font-size="22" font-weight="700" fill="#F1F5F9">Inter 600 — Panel de monitoreo de la flota</text>
 <text x="700" y="730" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="22" fill="#F1F5F9">D-04   18%   Bloque B</text>
 <text x="700" y="762" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="16" fill="#94A3B8">JetBrains Mono — IDs de drones y códigos de misión</text>
+<text x="40" y="876" font-size="13" fill="#94A3B8">Muestras renderizadas con fuentes sustitutas (DejaVu Sans y DejaVu Sans Mono) porque Inter y JetBrains Mono no estaban instaladas; la aplicación usa las del manual.</text>
 </svg>
