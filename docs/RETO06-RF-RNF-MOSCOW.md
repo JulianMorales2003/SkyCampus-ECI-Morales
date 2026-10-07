@@ -13,11 +13,11 @@
 
 Cada uno lleva un número, una condición y una forma de verificarlo.
 
-| Código | Atributo | Requerimiento | Número | Condición | Cómo se verifica |
-|--------|----------|---------------|--------|-----------|------------------|
-| RNF-01 | Rendimiento | La consulta de drones disponibles (RF-01) debe mostrar su resultado rápido | Menos de 2 segundos | Con una flota de 5 drones, en al menos 95 % de las consultas | Medir el tiempo de 20 consultas seguidas; al menos 19 deben cumplir |
-| RNF-02 | Usabilidad | Un operador sin capacitación previa debe poder asignar un drone a una misión pendiente (RF-03) sin ayuda | Menos de 2 minutos | Usando el panel del operador, con 3 personas que no conozcan el sistema | Prueba con cronómetro; las 3 personas deben terminar dentro del tiempo |
-| RNF-03 | Mantenibilidad | El código del dominio y de los servicios debe estar probado y limpio | Al menos 80 % de cobertura de líneas y 0 problemas Blocker o Critical | En el build del proyecto | Reportes de JaCoCo y SonarQube |
+| Código | Atributo | Requerimiento | Condición de medición | Cómo se verifica |
+|--------|----------|---------------|-----------------------|------------------|
+| RNF-01 | Rendimiento | La consulta de drones disponibles (RF-01) debe mostrar su resultado en menos de 2 segundos. | Con una flota de 5 drones, en al menos 95 % de las consultas | Medir el tiempo de 20 consultas seguidas; al menos 19 deben cumplir |
+| RNF-02 | Usabilidad | Un operador sin capacitación previa debe poder registrar una misión de reparto (RF-03) en menos de 2 minutos, sin ayuda. | Usando el panel del operador, con 3 personas que no conozcan el sistema | Prueba con cronómetro; las 3 personas deben terminar dentro del tiempo |
+| RNF-03 | Mantenibilidad | El código del dominio y de los servicios debe tener al menos 80 % de cobertura de líneas y 0 problemas de severidad Blocker o Critical. | En el build del proyecto | Reportes de JaCoCo y SonarQube |
 
 ## Priorización MoSCoW
 
@@ -27,7 +27,7 @@ Cada uno lleva un número, una condición y una forma de verificarlo.
 | RF-02 | Registrar solicitud de reparto | Must Have | Sin solicitudes el Operador no tiene qué repartir, así que el flujo de reparto no tendría entrada. |
 | RF-03 | Registrar misión de reparto (SC-01) | Must Have | Es el núcleo del MVP: sin una misión registrada con un drone, nada sale a repartir y no hay entrega. |
 | RNF-01 | Consulta en menos de 2 segundos | Should Have | Importa para que el operador trabaje con fluidez, pero con 5 drones el MVP sigue funcionando aunque tarde un poco más. |
-| RNF-02 | Asignación en menos de 2 minutos sin ayuda | Could Have | Es deseable, pero medirla exige una prueba con usuarios y su incumplimiento no impide entregar el MVP. |
+| RNF-02 | Registro de misión en menos de 2 minutos sin ayuda | Could Have | Es deseable, pero medirla exige una prueba con usuarios y su incumplimiento no impide entregar el MVP. |
 | RNF-03 | 80 % de cobertura y 0 Blocker o Critical | Should Have | El curso lo evalúa y protege la calidad del código, pero un MVP puede mostrarse al operador sin que esa medición esté completa. |
 
 ## Decisiones cerradas y notas
