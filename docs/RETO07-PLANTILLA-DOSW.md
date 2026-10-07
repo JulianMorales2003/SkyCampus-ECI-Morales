@@ -93,7 +93,7 @@ Datos de salida cuando ocurre A2:
 - **A2. Destino inválido (en el paso 2, RN-02).**
   1. El sistema rechaza la solicitud elegida y muestra al Operador el motivo: el destino no existe, junto con los destinos válidos.
   2. El sistema pasa la solicitud al estado RECHAZADA y guarda el motivo. La solicitud deja de aparecer en `solicitudesPendientes`, así que no bloquea la lista ni se puede volver a elegir.
-  3. No se pide ningún drone y no se crea ninguna misión. El Operador vuelve al paso 1 para elegir otra solicitud.
+  3. No se pide ningún drone y no se crea ninguna misión. El Operador vuelve al paso 1 para elegir otra solicitud. Si la rechazada era la única pendiente, P1 deja de cumplirse: el sistema muestra al Operador el mensaje "No hay solicitudes pendientes" y SC-01 termina.
   4. El Solicitante verá el estado RECHAZADA y el motivo cuando consulte su solicitud con el código de seguimiento, y podrá registrar una solicitud nueva con un destino válido.
 
 Las dos reglas ya no se comprueban juntas: RN-02 se comprueba en el paso 2 y RN-01 en el paso 4. Así un destino inválido se detecta antes de pedirle un drone al Operador.
