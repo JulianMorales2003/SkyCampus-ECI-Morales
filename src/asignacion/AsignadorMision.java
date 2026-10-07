@@ -3,16 +3,13 @@ package asignacion;
 import model.Drone;
 import model.EstadoMision;
 import model.Mision;
+import util.Validaciones;
 
 public class AsignadorMision {
 
     public Asignacion asignar(Mision mision, Drone droneActual) {
-        if (mision == null) {
-            throw new IllegalArgumentException("La misión a asignar no puede ser nula.");
-        }
-        if (droneActual == null) {
-            throw new IllegalArgumentException("El drone a asignar no puede ser nulo.");
-        }
+        Validaciones.exigirPresente(mision, "mision");
+        Validaciones.exigirPresente(droneActual, "droneActual");
         if (!mision.drone().id().equals(droneActual.id())) {
             throw new IllegalArgumentException("La misión es del drone " + mision.drone().id()
                     + " y no puede asignarse al drone " + droneActual.id() + ".");

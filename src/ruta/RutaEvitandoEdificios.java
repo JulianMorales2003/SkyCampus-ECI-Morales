@@ -1,6 +1,7 @@
 package ruta;
 
 import java.util.List;
+import util.Validaciones;
 
 public class RutaEvitandoEdificios implements EstrategiaRuta {
 
@@ -8,9 +9,8 @@ public class RutaEvitandoEdificios implements EstrategiaRuta {
 
     @Override
     public List<String> calcular(String origen, String destino) {
-        if (origen == null || origen.isBlank() || destino == null || destino.isBlank()) {
-            throw new IllegalArgumentException("El origen y el destino de la ruta no pueden ser nulos ni vacíos.");
-        }
+        Validaciones.exigirTexto(origen, "origen");
+        Validaciones.exigirTexto(destino, "destino");
         return List.of(origen, PUNTO_DE_DESVIO, destino);
     }
 }
