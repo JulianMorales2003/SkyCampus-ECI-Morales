@@ -12,7 +12,7 @@
 Si alguna falta, SC-01 no puede iniciar.
 
 - **P1.** Existe al menos una solicitud de reparto pendiente, registrada por un Solicitante en el RF-02, con su código de seguimiento.
-- **P2.** Existe al menos un drone con `disponible = true`.
+- **P2.** Existe al menos un drone disponible (los que muestra la consulta del RF-01).
 - **P3.** Existe la lista de destinos válidos configurada por el Admin (Bloque A, Bloque B, Bloque C, Bloque D y Biblioteca).
 
 ## Datos de entrada
