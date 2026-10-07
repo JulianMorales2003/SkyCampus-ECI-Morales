@@ -56,3 +56,23 @@ Técnico pero claro: el operador es un profesional. Cada mensaje dice qué pasó
 | El drone D-04 tiene batería insuficiente (18%). Mínimo requerido: 30%. | Error de asignación |
 | El destino "Bloque Z" no existe. Destinos válidos: Bloque A, Bloque B, Bloque C, Bloque D, Biblioteca. | Destino inválido |
 | No hay solicitudes pendientes. | ¡Todo al día! |
+
+## 5. Mock del panel de monitoreo de la flota
+
+![Mock del panel de monitoreo de la flota](ux/panel-flota-mock.png)
+
+Generado con IA (Claude) a partir de este manual, con la paleta, los colores de estado y la tipografía definidos arriba. Muestra los 5 drones:
+
+| ID | Estado | Batería | Ubicación | Acción |
+|----|--------|---------|-----------|--------|
+| D-01 | Disponible | 85% | Bloque A | Asignar misión (habilitada) |
+| D-02 | En vuelo | 42% | Biblioteca | Deshabilitada |
+| D-03 | Disponible | 91% | Bloque C | Asignar misión (habilitada) |
+| D-04 | En carga | 18% | Bloque B | Deshabilitada, con el motivo visible |
+| D-05 | Fallo | 67% | Bloque D | Deshabilitada |
+
+Notas:
+- **Los estados son ilustrativos** para mostrar los cuatro colores. La batería y la ubicación son las de las demos de los retos anteriores, pero en el código D-04 y D-05 aparecen como disponibles.
+- **El modelo todavía no distingue los cuatro estados.** El record `Drone` del repo solo tiene `disponible` (verdadero o falso). Para implementar este panel hará falta un dato de estado (por ejemplo `EstadoDrone`) o derivarlo de las misiones.
+- **"Asignar misión"** abre el caso de uso SC-01 del reto 07.
+- **Fuentes del render:** la imagen usa DejaVu Sans y DejaVu Sans Mono como sustitutas, porque Inter y JetBrains Mono no estaban instaladas. La aplicación usa las del manual.
