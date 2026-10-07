@@ -21,10 +21,14 @@ Decisión clave: el azul de marca es muy oscuro y el azul del estado "En vuelo" 
 
 | Estado | Hex | Significado | Texto sobre el chip | Contraste |
 |--------|-----|-------------|---------------------|-----------|
-| Disponible | `#22C55E` | Puede recibir una misión | `#0B1220` | 8,22:1 |
+| Disponible | `#22C55E` | Libre, sin misión asignada | `#0B1220` | 8,22:1 |
 | En vuelo | `#3B82F6` | Misión en curso | `#0B1220` | 5,09:1 |
 | En carga | `#EAB308` | Espera a que termine la carga | `#0B1220` | 9,76:1 |
 | Fallo | `#EF4444` | Requiere atención | `#0B1220` | 4,98:1 |
+
+### Disponible no significa asignable
+
+"Disponible" dice solo que el drone está libre, sin misión asignada. Quién se puede asignar lo dicen la regla del 30% de batería (RN-01 de SC-01) y el botón "Asignar misión": un drone Disponible con batería bajo el mínimo aparece con el botón deshabilitado y el triángulo "Bajo mínimo", como D-04 en el mock.
 
 ### Batería bajo el mínimo
 

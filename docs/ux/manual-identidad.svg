@@ -39,7 +39,7 @@
 <rect x="40" y="456" width="270" height="84" rx="10" fill="#22C55E" stroke="#334155" stroke-width="1"/>
 <text x="56" y="490" font-size="17" font-weight="700" fill="#0B1220">Disponible</text>
 <text x="56" y="514" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="14" fill="#0B1220">#22C55E</text>
-<text x="40" y="562" font-size="13" fill="#94A3B8">Puede recibir una misión</text>
+<text x="40" y="562" font-size="13" fill="#94A3B8">Libre, sin misión asignada</text>
 <rect x="340" y="456" width="270" height="84" rx="10" fill="#3B82F6" stroke="#334155" stroke-width="1"/>
 <text x="356" y="490" font-size="17" font-weight="700" fill="#0B1220">En vuelo</text>
 <text x="356" y="514" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="14" fill="#0B1220">#3B82F6</text>
