@@ -10,6 +10,9 @@ public abstract class ValidadorMision {
         if (siguiente == null) {
             throw new IllegalArgumentException("El siguiente validador de la cadena no puede ser nulo.");
         }
+        if (siguiente == this) {
+            throw new IllegalArgumentException("Un validador no puede ser su propio siguiente: la cadena sería circular.");
+        }
         this.siguiente = siguiente;
         return siguiente;
     }
