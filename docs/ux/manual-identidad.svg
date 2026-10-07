@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" font-family="DejaVu Sans, Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1280" height="760" fill="#0B1220"/>
+<text x="40" y="56" font-size="26" font-weight="700" fill="#F1F5F9">Manual de identidad — SkyCampus</text>
+<text x="40" y="82" font-size="14" fill="#94A3B8">Paleta, colores de estado y tipografía del panel del operador</text>
+<text x="40" y="128" font-size="15" font-weight="700" letter-spacing="1" fill="#94A3B8">PALETA DE MARCA E INTERFAZ</text>
+<rect x="40" y="144" width="270" height="84" rx="10" fill="#0F1B33" stroke="#334155" stroke-width="1"/>
+<text x="56" y="178" font-size="17" font-weight="700" fill="#FFFFFF">Azul noche</text>
+<text x="56" y="202" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#FFFFFF">#0F1B33</text>
+<text x="40" y="250" font-size="13" fill="#94A3B8">Cabecera y marca</text>
+<rect x="340" y="144" width="270" height="84" rx="10" fill="#0B1220" stroke="#334155" stroke-width="1"/>
+<text x="356" y="178" font-size="17" font-weight="700" fill="#FFFFFF">Fondo</text>
+<text x="356" y="202" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#FFFFFF">#0B1220</text>
+<text x="340" y="250" font-size="13" fill="#94A3B8">Fondo de la aplicación</text>
+<rect x="640" y="144" width="270" height="84" rx="10" fill="#1E293B" stroke="#334155" stroke-width="1"/>
+<text x="656" y="178" font-size="17" font-weight="700" fill="#FFFFFF">Gris pizarra</text>
+<text x="656" y="202" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#FFFFFF">#1E293B</text>
+<text x="640" y="250" font-size="13" fill="#94A3B8">Filas y tarjetas</text>
+<rect x="940" y="144" width="270" height="84" rx="10" fill="#7C3AED" stroke="#334155" stroke-width="1"/>
+<text x="956" y="178" font-size="17" font-weight="700" fill="#FFFFFF">Morado técnico</text>
+<text x="956" y="202" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#FFFFFF">#7C3AED</text>
+<text x="940" y="250" font-size="13" fill="#94A3B8">Acción principal</text>
+<rect x="40" y="280" width="270" height="84" rx="10" fill="#F1F5F9" stroke="#334155" stroke-width="1"/>
+<text x="56" y="314" font-size="17" font-weight="700" fill="#0B1220">Texto principal</text>
+<text x="56" y="338" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#0B1220">#F1F5F9</text>
+<text x="40" y="386" font-size="13" fill="#94A3B8">Texto sobre fondos oscuros</text>
+<rect x="340" y="280" width="270" height="84" rx="10" fill="#94A3B8" stroke="#334155" stroke-width="1"/>
+<text x="356" y="314" font-size="17" font-weight="700" fill="#0B1220">Texto secundario</text>
+<text x="356" y="338" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#0B1220">#94A3B8</text>
+<text x="340" y="386" font-size="13" fill="#94A3B8">Etiquetas y ayudas</text>
+<rect x="640" y="280" width="270" height="84" rx="10" fill="#334155" stroke="#334155" stroke-width="1"/>
+<text x="656" y="314" font-size="17" font-weight="700" fill="#FFFFFF">Borde</text>
+<text x="656" y="338" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#FFFFFF">#334155</text>
+<text x="640" y="386" font-size="13" fill="#94A3B8">Divisores y fondo de barras</text>
+<rect x="940" y="280" width="270" height="84" rx="10" fill="#64748B" stroke="#334155" stroke-width="1"/>
+<text x="956" y="314" font-size="17" font-weight="700" fill="#0B1220">Deshabilitado</text>
+<text x="956" y="338" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#0B1220">#64748B</text>
+<text x="940" y="386" font-size="13" fill="#94A3B8">Botones sin acción posible</text>
+<text x="40" y="440" font-size="15" font-weight="700" letter-spacing="1" fill="#94A3B8">COLORES DE ESTADO DEL DRONE</text>
+<rect x="40" y="456" width="270" height="84" rx="10" fill="#22C55E" stroke="#334155" stroke-width="1"/>
+<text x="56" y="490" font-size="17" font-weight="700" fill="#0B1220">Disponible</text>
+<text x="56" y="514" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#0B1220">#22C55E</text>
+<text x="40" y="562" font-size="13" fill="#94A3B8">Puede recibir una misión</text>
+<rect x="340" y="456" width="270" height="84" rx="10" fill="#3B82F6" stroke="#334155" stroke-width="1"/>
+<text x="356" y="490" font-size="17" font-weight="700" fill="#0B1220">En vuelo</text>
+<text x="356" y="514" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#0B1220">#3B82F6</text>
+<text x="340" y="562" font-size="13" fill="#94A3B8">Misión en curso</text>
+<rect x="640" y="456" width="270" height="84" rx="10" fill="#EAB308" stroke="#334155" stroke-width="1"/>
+<text x="656" y="490" font-size="17" font-weight="700" fill="#0B1220">En carga</text>
+<text x="656" y="514" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#0B1220">#EAB308</text>
+<text x="640" y="562" font-size="13" fill="#94A3B8">Espera; también batería baja</text>
+<rect x="940" y="456" width="270" height="84" rx="10" fill="#EF4444" stroke="#334155" stroke-width="1"/>
+<text x="956" y="490" font-size="17" font-weight="700" fill="#0B1220">Fallo</text>
+<text x="956" y="514" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="15" fill="#0B1220">#EF4444</text>
+<text x="940" y="562" font-size="13" fill="#94A3B8">Requiere atención</text>
+<text x="40" y="618" font-size="15" font-weight="700" letter-spacing="1" fill="#94A3B8">TIPOGRAFÍA</text>
+<text x="40" y="654" font-size="22" font-weight="400" fill="#F1F5F9">Inter 400 — Registrar solicitud de reparto</text>
+<text x="40" y="686" font-size="22" font-weight="700" fill="#F1F5F9">Inter 600 — Panel de monitoreo de la flota</text>
+<text x="700" y="654" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="22" fill="#F1F5F9">D-04   18%   Bloque B</text>
+<text x="700" y="686" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="16" fill="#94A3B8">JetBrains Mono — IDs de drones y códigos de misión</text>
+</svg>
