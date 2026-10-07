@@ -69,3 +69,21 @@ Datos que el sistema muestra durante el flujo:
   3. SC-01 termina, porque el destino pertenece a la solicitud y el Operador no lo puede corregir aquí.
 
 Si ambas reglas fallan a la vez, solo se informa A1, porque RN-01 se comprueba primero.
+
+## Reglas de negocio (aplican DURANTE la ejecución)
+
+- **RN-01.** El drone elegido debe tener una batería de al menos 30 %. Se evalúa en el paso 4, sobre el drone que el Operador eligió.
+- **RN-02.** El destino de la solicitud debe ser uno de los destinos válidos configurados. Se evalúa en el paso 4, aunque la solicitud ya se registró con ese destino, porque el Admin puede cambiar la lista de destinos entre el RF-02 y SC-01.
+
+## Cómo distinguí precondición de regla de negocio
+
+| | Precondición | Regla de negocio |
+|---|--------------|------------------|
+| Cuándo se mira | Antes de empezar | Durante la ejecución, sobre lo que el Operador eligió |
+| Qué describe | Algo que debe existir | Una restricción del dominio sobre un dato concreto |
+| Si no se cumple | SC-01 no puede iniciar | SC-01 inicia y rechaza el registro con un motivo |
+| Ejemplo aquí | P2: existe al menos un drone disponible | RN-01: el drone elegido tiene al menos 30 % de batería |
+
+## Notas
+- RN-01 y RN-02 corresponden a `ValidadorBateria` y `ValidadorDestino` de la cadena del reto 03. Esa cadena también tiene `ValidadorCarga` (peso de la carga frente a la capacidad del drone); no se incluye aquí porque este reto pide dos reglas y las dos de los flujos alternos solicitados son estas.
+- Con la decisión de los datos de entrada, en la flecha 1 del diagrama del reto 05 lo que viaja es el código de la solicitud y el drone, no un "id de misión": la misión todavía no existe antes de registrarla.
