@@ -18,10 +18,11 @@
 <text x="150.0" y="225" text-anchor="middle" font-size="14" fill="#ffffff">la flota</text>
 <line x1="270" y1="162" x2="860" y2="162" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
 <line x1="860" y1="208" x2="270" y2="208" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
-<text x="565.0" y="137" text-anchor="middle" font-size="14" fill="#111827">1. Elige el drone y asigna la misión; confirma la entrega (id de</text>
-<text x="565.0" y="154" text-anchor="middle" font-size="14" fill="#111827">misión + id de drone)</text>
-<text x="565.0" y="228" text-anchor="middle" font-size="14" fill="#111827">2. Drones disponibles con batería y ubicación; misiones con su</text>
-<text x="565.0" y="245" text-anchor="middle" font-size="14" fill="#111827">estado (PENDIENTE, EN_VUELO, ENTREGADA, FALLIDA)</text>
+<text x="565.0" y="137" text-anchor="middle" font-size="14" fill="#111827">1. Registra la misión: código de la solicitud + id del drone</text>
+<text x="565.0" y="154" text-anchor="middle" font-size="14" fill="#111827">elegido; confirma la entrega con el código de la misión</text>
+<text x="565.0" y="228" text-anchor="middle" font-size="14" fill="#111827">2. Solicitudes pendientes (código, origen, destino, tipo de</text>
+<text x="565.0" y="245" text-anchor="middle" font-size="14" fill="#111827">carga); drones disponibles con batería y ubicación; misiones con</text>
+<text x="565.0" y="262" text-anchor="middle" font-size="14" fill="#111827">su estado</text>
 <rect x="30" y="360" width="240" height="110" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
 <text x="150.0" y="394" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Solicitante</text>
 <text x="150.0" y="414" text-anchor="middle" font-size="13" fill="#BFDBFE">[Persona]</text>
@@ -31,7 +32,8 @@
 <line x1="860" y1="438" x2="270" y2="438" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
 <text x="565.0" y="367" text-anchor="middle" font-size="14" fill="#111827">3. Registra la solicitud de reparto: origen, destino y tipo de</text>
 <text x="565.0" y="384" text-anchor="middle" font-size="14" fill="#111827">carga (SOBRE, CARPETA, LIBRO)</text>
-<text x="565.0" y="458" text-anchor="middle" font-size="14" fill="#111827">4. Código de la misión y su estado de entrega</text>
+<text x="565.0" y="458" text-anchor="middle" font-size="14" fill="#111827">4. Código de seguimiento de la solicitud y su estado (pendiente,</text>
+<text x="565.0" y="475" text-anchor="middle" font-size="14" fill="#111827">rechazada con su motivo, o el estado de la misión)</text>
 <rect x="30" y="590" width="240" height="110" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
 <text x="150.0" y="624" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Admin</text>
 <text x="150.0" y="644" text-anchor="middle" font-size="13" fill="#BFDBFE">[Persona]</text>
