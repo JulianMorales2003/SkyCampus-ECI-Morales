@@ -9,15 +9,11 @@ import model.TipoCarga;
 
 public class MisionBuilder {
 
-    private static final int PRIORIDAD_MINIMA = 1;
-    private static final int PRIORIDAD_MAXIMA = 5;
-    private static final int PRIORIDAD_POR_DEFECTO = 3;
-
     private Drone drone;
     private String origen;
     private String destino;
     private TipoCarga tipoCarga;
-    private int prioridad = PRIORIDAD_POR_DEFECTO;
+    private int prioridad = Mision.PRIORIDAD_POR_DEFECTO;
     private String notas = "";
     private LocalTime horaMaximaEntrega = Mision.SIN_HORA_LIMITE;
 
@@ -42,9 +38,9 @@ public class MisionBuilder {
     }
 
     public MisionBuilder prioridad(int prioridad) {
-        if (prioridad < PRIORIDAD_MINIMA || prioridad > PRIORIDAD_MAXIMA) {
+        if (!Mision.esPrioridadValida(prioridad)) {
             throw new IllegalArgumentException("La prioridad debe estar entre "
-                    + PRIORIDAD_MINIMA + " y " + PRIORIDAD_MAXIMA + ".");
+                    + Mision.PRIORIDAD_MINIMA + " y " + Mision.PRIORIDAD_MAXIMA + ".");
         }
         this.prioridad = prioridad;
         return this;
@@ -67,11 +63,27 @@ public class MisionBuilder {
     }
 
     public Mision build() {
-        if (drone == null || origen == null || origen.isBlank()
-                || destino == null || destino.isBlank() || tipoCarga == null) {
-            throw new IllegalStateException("drone, origen, destino y tipoCarga son obligatorios.");
-        }
+        validarCamposObligatorios();
         return new Mision(UUID.randomUUID().toString(), drone, origen, destino, tipoCarga,
                 EstadoMision.PENDIENTE, prioridad, notas, horaMaximaEntrega);
+    }
+
+    private void validarCamposObligatorios() {
+        exigirDefinido(drone, "drone");
+        exigirTextoDefinido(origen, "origen");
+        exigirTextoDefinido(destino, "destino");
+        exigirDefinido(tipoCarga, "tipoCarga");
+    }
+
+    private static void exigirDefinido(Object valor, String campo) {
+        if (valor == null) {
+            throw new IllegalStateException("El campo obligatorio '" + campo + "' no fue definido.");
+        }
+    }
+
+    private static void exigirTextoDefinido(String valor, String campo) {
+        if (valor == null || valor.isBlank()) {
+            throw new IllegalStateException("El campo obligatorio '" + campo + "' no fue definido o está vacío.");
+        }
     }
 }
