@@ -17,15 +17,16 @@ Si alguna falta, SC-01 no puede iniciar.
 
 ## Datos de entrada
 
-**Decisión: origen, destino y tipo de carga NO son datos de entrada de SC-01.** Los datos de entrada son solo el código de la solicitud y el drone elegido. El sistema lee origen, destino y tipo de carga de la solicitud, donde ya quedaron guardados en el RF-02. Razones:
+**Decisión: origen, destino y tipo de carga NO son datos de entrada de SC-01.** Los datos de entrada son solo el código de la solicitud y el id del drone elegido. El sistema lee origen, destino y tipo de carga de la solicitud, donde ya quedaron guardados en el RF-02, y la batería y la ubicación del drone de su estado vigente. Razones:
 - Hay una sola fuente de esos datos. Si el Operador los digitara otra vez, podrían diferir de lo que pidió el Solicitante.
 - Se evitan errores de digitación del Operador.
+- La batería y la ubicación del drone no las trae el Operador: si viajaran con el dato de entrada podrían llegar desactualizadas.
 - Es coherente con el RF-03, que registra la misión "a partir de una solicitud pendiente".
 
 | Campo | Tipo | Descripción |
 |-------|------|-------------|
 | codigoSolicitud | String | Código de seguimiento de la solicitud pendiente que el Operador elige |
-| droneAsignado | Drone(id:String, bateria:int, ubicacion:String) | Drone que el Operador elige de la lista de drones disponibles |
+| idDrone | String | Id del drone que el Operador elige de la lista de drones disponibles (por ejemplo "D-03") |
 
 Datos que el sistema recupera de la solicitud (el Operador no los digita, solo los ve para confirmar):
 
@@ -34,6 +35,13 @@ Datos que el sistema recupera de la solicitud (el Operador no los digita, solo l
 | origen | String |
 | destino | String |
 | tipoCarga | Enum(SOBRE,CARPETA,LIBRO) |
+
+Datos que el sistema lee del estado vigente del drone elegido (el Operador no los digita):
+
+| Campo | Tipo |
+|-------|------|
+| bateria | int |
+| ubicacion | String |
 
 ## Datos de salida
 
