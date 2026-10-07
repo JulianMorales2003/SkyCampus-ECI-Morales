@@ -28,3 +28,9 @@ Observación extra: el usuario y la contraseña (`root` / `1234`) están escrito
 - `EstadoMision` no tiene un estado "ASIGNADA", así que asignar deja la misión en `EN_VUELO`.
 - `RutaEvitandoEdificios` pasa por un punto de desvío fijo ("Corredor aéreo libre") porque el MVP no tiene mapa ni coordenadas.
 - `AsignadorMision` ata una misión a un drone ya elegido; `AsignadorDrones` (reto 03) es el que elige el drone.
+
+## Qué significa "asignar" (decisión de diseño)
+- **Quién refleja que el drone dejó de estar disponible.** `Drone` es un record inmutable, así que `AsignadorMision.asignar` no lo modifica: devuelve una `Asignacion(mision, drone)` con la misión en `EN_VUELO` y el drone reservado (`disponible = false`). Quien tiene la flota (hoy `SolidApp`) debe reemplazar el drone viejo por el que trae la `Asignacion`. Después de eso `EstrategiaMayorBateria` ya no ofrece ese drone y una segunda asignación del mismo drone se rechaza.
+- **Qué pasa si el drone recibido es distinto al de la misión.** Se rechaza con `IllegalArgumentException` (se compara por id). Las misiones son inmutables y el Builder exige drone, así que cambiar el drone de una misión significa crear otra misión; reasignar queda fuera del MVP.
+- **Por qué recibe el drone aparte si la misión ya lo trae.** El drone que llega por parámetro es el estado vigente de la flota; el que viaja dentro de la misión puede estar desactualizado.
+- **Límite.** `AsignadorMision` no es dueño de la flota: si quien lo usa le pasa un drone desactualizado o no reemplaza el drone después de asignar, el problema reaparece. Cerrarlo del todo requiere un repositorio de drones y una clase que orqueste asignar, guardar y alertar con inyección por constructor; queda para los niveles Monferno e Infernape.
