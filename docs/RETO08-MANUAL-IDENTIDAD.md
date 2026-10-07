@@ -85,7 +85,7 @@ Notas:
 - **"Asignar misión"** abre el caso de uso SC-01 del reto 07.
 - **Fuentes del render:** la imagen usa DejaVu Sans y DejaVu Sans Mono como sustitutas, porque Inter y JetBrains Mono no estaban instaladas. La aplicación usa las del manual.
 
-## 6. Verificación con las heurísticas de Nielsen (cumple 7 de 10)
+## 6. Verificación con las heurísticas de Nielsen (cumple 6 de 10; el mínimo del reto es 5)
 
 | # | Heurística | Cómo se ve en el mock |
 |---|------------|-----------------------|
@@ -95,6 +95,8 @@ Notas:
 | 5 | Prevención de errores | "Asignar misión" está deshabilitado en los 4 drones que no se pueden asignar: D-02 (en vuelo), D-03 (fallo), D-05 (en carga) y D-04, que sigue Disponible pero tiene 18% de batería, bajo el mínimo del 30%. Ese es el caso de la heurística: el drone aparece en la lista, pero queda bloqueado por la batería, y se avisa con el triángulo "Bajo mínimo" y la marca del 30% en la barra, antes de que el operador intente asignarlo. Los otros 3 bloqueos también escriben su razón bajo la fila. |
 | 6 | Reconocimiento antes que memorización | La leyenda de estados está siempre visible, el estado va en texto y el significado de la marca del 30% se explica al pie. El operador no tiene que recordar qué significa cada color. |
 | 8 | Diseño minimalista | Solo hay lo que el operador necesita para decidir: ID, estado, batería, ubicación y la acción. |
-| 9 | Mensajes de error claros | El motivo del bloqueo de D-04 dice qué drone, qué valor y cuál es el mínimo: "El drone D-04 tiene batería insuficiente (18%). Mínimo requerido: 30%.", y no "Error de asignación". |
 
-No evaluadas en este mock: la 3 (control y libertad), porque el panel no muestra misiones pendientes que se puedan cancelar; la 7 (flexibilidad y eficiencia) y la 10 (ayuda y documentación), porque esta pantalla no incluye atajos ni ayuda.
+No evaluadas en este mock:
+- **3 (control y libertad):** el panel no muestra misiones pendientes que se puedan cancelar.
+- **7 (flexibilidad y eficiencia) y 10 (ayuda y documentación):** esta pantalla no incluye atajos ni ayuda.
+- **9 (mensajes de error claros):** el texto de D-04 es una explicación preventiva (heurísticas 1 y 5), no un mensaje tras una acción fallida. La 9 aplica al flujo alterno A1 de SC-01, no a este panel.
