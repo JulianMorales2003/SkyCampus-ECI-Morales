@@ -15,6 +15,12 @@ Dos paneles de sistemas reales de monitoreo de flotas de drones. Lo que dice la 
 
 La ficha del distribuidor es una página de venta y sirve solo como descripción general; la fuente que muestra el panel es la guía de usuario oficial de DJI.
 
+Capturas de la pantalla de monitoreo de cada referencia:
+
+![Captura de la pantalla de monitoreo de FlytBase Fleet View 2.0](ux/referencias/flytbase-fleet-view.png)
+
+![Captura de la pantalla de monitoreo de DJI FlightHub 2](ux/referencias/dji-flighthub2.png)
+
 ### Paso 2 — Estilo
 
 El de mi manual de identidad (reto 08, `docs/RETO08-MANUAL-IDENTIDAD.md`): fondo oscuro tipo dashboard técnico `#0B1220`, cabecera `#0F1B33`, filas `#1E293B`, acción principal en morado `#7C3AED`, texto `#F1F5F9` y `#94A3B8`, y los colores de estado Disponible `#22C55E`, En vuelo `#3B82F6`, En carga `#EAB308` y Fallo `#EF4444`. Tipografía Inter, y JetBrains Mono para IDs y porcentajes.
