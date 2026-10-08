@@ -6,11 +6,14 @@
 <text x="256" y="96" font-size="16" font-weight="700" fill="#334155">SkyCampus MVP</text>
 <line x1="132" y1="310" x2="366.1" y2="173.0" stroke="#374151" stroke-width="1.6"/>
 <line x1="132" y1="310" x2="539.1" y2="409.5" stroke="#374151" stroke-width="1.6"/>
-<line x1="132" y1="310" x2="317.0" y2="283.3" stroke="#374151" stroke-width="1.6"/>
+<line x1="132" y1="310" x2="285.0" y2="330.0" stroke="#374151" stroke-width="1.6"/>
 <line x1="132" y1="840" x2="293.1" y2="842.3" stroke="#374151" stroke-width="1.6"/>
 <line x1="132" y1="840" x2="317.0" y2="906.7" stroke="#374151" stroke-width="1.6"/>
 <line x1="1368" y1="850" x2="1164.1" y2="844.2" stroke="#374151" stroke-width="1.6"/>
 <line x1="1368" y1="850" x2="1153.6" y2="910.5" stroke="#374151" stroke-width="1.6"/>
+<line x1="622.1" y1="394.8" x2="447.9" y2="175.2" stroke="#374151" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#abierta)"/>
+<rect x="487.0" y="273.0" width="96" height="20" fill="#F8FAFC"/>
+<text x="535.0" y="288.0" text-anchor="middle" font-size="13" font-style="italic" fill="#111827">&lt;&lt;include&gt;&gt;</text>
 <line x1="752.1" y1="406.4" x2="937.9" y2="363.6" stroke="#374151" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#abierta)"/>
 <rect x="797.0" y="373.0" width="96" height="20" fill="#F8FAFC"/>
 <text x="845.0" y="388.0" text-anchor="middle" font-size="13" font-style="italic" fill="#111827">&lt;&lt;include&gt;&gt;</text>
@@ -18,22 +21,26 @@
 <rect x="797.0" y="438.0" width="96" height="20" fill="#F8FAFC"/>
 <text x="845.0" y="453.0" text-anchor="middle" font-size="13" font-style="italic" fill="#111827">&lt;&lt;include&gt;&gt;</text>
 <line x1="524.1" y1="614.6" x2="625.9" y2="465.4" stroke="#374151" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#abierta)"/>
-<rect x="527.0" y="528.0" width="96" height="20" fill="#F8FAFC"/>
-<text x="575.0" y="543.0" text-anchor="middle" font-size="13" font-style="italic" fill="#111827">&lt;&lt;extend&gt;&gt;</text>
-<rect x="340" y="700" width="320" height="56" rx="4" fill="#FFFBEB" stroke="#B45309" stroke-width="1"/>
-<text x="500" y="720" text-anchor="middle" font-size="12" fill="#92400E">condición: solo si la batería del drone</text>
-<text x="500" y="736" text-anchor="middle" font-size="12" fill="#92400E">elegido es menor al 30%</text>
+<rect x="549.4" y="495.2" width="96" height="20" fill="#F8FAFC"/>
+<text x="597.4" y="510.2" text-anchor="middle" font-size="13" font-style="italic" fill="#111827">&lt;&lt;extend&gt;&gt;</text>
+<line x1="534.8" y1="554.9" x2="564.8" y2="554.9" stroke="#B45309" stroke-width="1.4" stroke-dasharray="3 3"/>
+<circle cx="564.8" cy="554.9" r="3" fill="#B45309"/>
+<rect x="244.8" y="528.9" width="290" height="52" rx="4" fill="#FFFBEB" stroke="#B45309" stroke-width="1"/>
+<text x="389.8" y="550.9" text-anchor="middle" font-size="12" fill="#92400E">condición: solo si la batería del drone</text>
+<text x="389.8" y="566.9" text-anchor="middle" font-size="12" fill="#92400E">elegido es menor al 30%</text>
 <line x1="826.7" y1="615.1" x2="683.3" y2="464.9" stroke="#374151" stroke-width="1.6" stroke-dasharray="7 5" marker-end="url(#abierta)"/>
-<rect x="707.0" y="528.0" width="96" height="20" fill="#F8FAFC"/>
-<text x="755.0" y="543.0" text-anchor="middle" font-size="13" font-style="italic" fill="#111827">&lt;&lt;extend&gt;&gt;</text>
-<rect x="700" y="700" width="320" height="56" rx="4" fill="#FFFBEB" stroke="#B45309" stroke-width="1"/>
-<text x="860" y="720" text-anchor="middle" font-size="12" fill="#92400E">condición: solo si el destino de la solicitud</text>
-<text x="860" y="736" text-anchor="middle" font-size="12" fill="#92400E">no está en los destinos válidos</text>
+<rect x="675.5" y="495.0" width="96" height="20" fill="#F8FAFC"/>
+<text x="723.5" y="510.0" text-anchor="middle" font-size="13" font-style="italic" fill="#111827">&lt;&lt;extend&gt;&gt;</text>
+<line x1="799.3" y1="555.0" x2="769.3" y2="555.0" stroke="#B45309" stroke-width="1.4" stroke-dasharray="3 3"/>
+<circle cx="769.3" cy="555.0" r="3" fill="#B45309"/>
+<rect x="799.3" y="529.0" width="290" height="52" rx="4" fill="#FFFBEB" stroke="#B45309" stroke-width="1"/>
+<text x="944.3" y="551.0" text-anchor="middle" font-size="12" fill="#92400E">condición: solo si el destino de la</text>
+<text x="944.3" y="567.0" text-anchor="middle" font-size="12" fill="#92400E">solicitud no está en los destinos válidos</text>
 <ellipse cx="420" cy="140" rx="135" ry="36" fill="#ffffff" stroke="#1D4ED8" stroke-width="2"/>
 <text x="420" y="145" text-anchor="middle" font-size="15" fill="#111827">Ver flota de drones</text>
-<ellipse cx="420" cy="260" rx="135" ry="36" fill="#ffffff" stroke="#1D4ED8" stroke-width="2"/>
-<text x="420" y="256" text-anchor="middle" font-size="15" fill="#111827">Cancelar solicitud</text>
-<text x="420" y="274" text-anchor="middle" font-size="15" fill="#111827">pendiente</text>
+<ellipse cx="420" cy="330" rx="135" ry="36" fill="#ffffff" stroke="#1D4ED8" stroke-width="2"/>
+<text x="420" y="326" text-anchor="middle" font-size="15" fill="#111827">Cancelar solicitud</text>
+<text x="420" y="344" text-anchor="middle" font-size="15" fill="#111827">pendiente</text>
 <ellipse cx="650" cy="430" rx="135" ry="36" fill="#ffffff" stroke="#1D4ED8" stroke-width="2"/>
 <text x="650" y="426" text-anchor="middle" font-size="15" fill="#111827">Registrar misión de</text>
 <text x="650" y="444" text-anchor="middle" font-size="15" fill="#111827">reparto</text>
