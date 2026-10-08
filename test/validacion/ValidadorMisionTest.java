@@ -24,7 +24,7 @@ class ValidadorMisionTest {
 
     @BeforeEach
     void crearValidador() {
-        validador = new ValidadorMision(DESTINOS_VALIDOS);
+        validador = new ValidadorMision(new ValidadorDestino(DESTINOS_VALIDOS));
     }
 
     private static Drone crearDrone(int bateria, boolean disponible) {

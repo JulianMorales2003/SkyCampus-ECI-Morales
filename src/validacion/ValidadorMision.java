@@ -1,6 +1,5 @@
 package validacion;
 
-import java.util.List;
 import model.Drone;
 import util.Validaciones;
 
@@ -8,8 +7,8 @@ public class ValidadorMision {
 
     private final ValidadorDestino validadorDestino;
 
-    public ValidadorMision(List<String> destinosValidos) {
-        this.validadorDestino = new ValidadorDestino(destinosValidos);
+    public ValidadorMision(ValidadorDestino validadorDestino) {
+        this.validadorDestino = validadorDestino;
     }
 
     public boolean tieneBateriaSuficiente(Drone drone) {
