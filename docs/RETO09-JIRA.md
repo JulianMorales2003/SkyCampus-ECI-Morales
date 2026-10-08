@@ -17,7 +17,7 @@ El Jira estándar tiene una jerarquía fija: Épica, luego Historia o Tarea, lue
 
 Lo que hay en mi tablero:
 - **La Feature (JM-13) es un ticket de un tipo de trabajo distinto al de las historias y al de la épica.** En el Backlog cada tipo tiene su propio icono: la Feature, el marcador verde de las historias y el rayo morado de la épica. Así la Feature se distingue por su tipo y no solo por el título "FEAT-01".
-- **Cada historia queda atada a su Feature de dos formas:** el enlace "relates to" hacia JM-13, que se ve en la ficha de la historia, y la etiqueta `gestion-flota`, que se ve en el Backlog y la llevan los cuatro tickets (la Feature y las tres historias).
+- **Cada historia se ata a su Feature con la etiqueta `gestion-flota` y con el enlace "relates to" hacia JM-13.** Lo que está comprobado en las capturas del tablero es la etiqueta `gestion-flota` en HU-1 (JM-14) y en HU-2 (JM-15). Falta confirmar en Jira la etiqueta en JM-13 y en HU-3 (JM-19), y el enlace "relates to" de las tres historias con JM-13; se registrarán aquí cuando se confirmen.
 - **Los cuatro tickets cuelgan de la épica (JM-5)**, y las subtareas cuelgan directamente de HU-2.
 
 ## 2. Historias de usuario
