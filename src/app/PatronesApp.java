@@ -13,7 +13,7 @@ import validacion.ResultadoValidacion;
 import validacion.ValidadorBateria;
 import validacion.ValidadorCarga;
 import validacion.ValidadorDestino;
-import validacion.ValidadorMision;
+import validacion.ValidadorEnCadena;
 
 public class PatronesApp {
 
@@ -79,7 +79,7 @@ public class PatronesApp {
 
     private static void demostrarCadenaDeValidacion(List<Drone> flota) {
         System.out.println("\n=== Problema 2: Chain of Responsibility ===");
-        ValidadorMision cadena = new ValidadorBateria();
+        ValidadorEnCadena cadena = new ValidadorBateria();
         cadena.setSiguiente(new ValidadorDestino(DESTINOS_VALIDOS))
                 .setSiguiente(new ValidadorCarga(CAPACIDAD_DRONE_GRAMOS));
 

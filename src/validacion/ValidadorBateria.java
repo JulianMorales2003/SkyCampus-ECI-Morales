@@ -2,7 +2,7 @@ package validacion;
 
 import model.Mision;
 
-public class ValidadorBateria extends ValidadorMision {
+public class ValidadorBateria extends ValidadorEnCadena {
 
     private static final int BATERIA_MINIMA = 30;
 

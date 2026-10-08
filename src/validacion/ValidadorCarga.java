@@ -2,7 +2,7 @@ package validacion;
 
 import model.Mision;
 
-public class ValidadorCarga extends ValidadorMision {
+public class ValidadorCarga extends ValidadorEnCadena {
 
     private final int capacidadMaximaGramos;
 

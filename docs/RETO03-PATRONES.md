@@ -3,7 +3,7 @@
 | Problema | (a) Patrón | (b) Por qué este y no otro | (c) Clases |
 |----------|-----------|----------------------------|------------|
 | 1. Misión con campos obligatorios y opcionales | Builder | Se construye paso a paso solo con los campos necesarios, en vez de un constructor por cada combinación de opcionales. | `MisionBuilder`, `Mision` |
-| 2. Validaciones en orden donde cada una pasa o rechaza | Chain of Responsibility | Cada validador decide si rechaza o entrega la misión al siguiente, y se pueden agregar o reordenar sin tocar a los demás. | `ValidadorMision`, `ValidadorBateria`, `ValidadorDestino`, `ValidadorCarga`, `ResultadoValidacion` |
+| 2. Validaciones en orden donde cada una pasa o rechaza | Chain of Responsibility | Cada validador decide si rechaza o entrega la misión al siguiente, y se pueden agregar o reordenar sin tocar a los demás. | `ValidadorEnCadena`, `ValidadorBateria`, `ValidadorDestino`, `ValidadorCarga`, `ResultadoValidacion` |
 | 3. Algoritmo de asignación intercambiable | Strategy | Cada criterio (mayor batería, más cercano, más rápido) vive en su propia clase detrás de una interfaz, y se cambia sin modificar el asignador. | `EstrategiaAsignacion`, `EstrategiaMayorBateria`, `EstrategiaDroneEnOrigen`, `AsignadorDrones` |
 
 ## Supuestos que tomé

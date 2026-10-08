@@ -2,11 +2,11 @@ package validacion;
 
 import model.Mision;
 
-public abstract class ValidadorMision {
+public abstract class ValidadorEnCadena {
 
-    private ValidadorMision siguiente;
+    private ValidadorEnCadena siguiente;
 
-    public ValidadorMision setSiguiente(ValidadorMision siguiente) {
+    public ValidadorEnCadena setSiguiente(ValidadorEnCadena siguiente) {
         if (siguiente == null) {
             throw new IllegalArgumentException("El siguiente validador de la cadena no puede ser nulo.");
         }

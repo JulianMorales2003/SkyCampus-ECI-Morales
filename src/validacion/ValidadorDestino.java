@@ -3,7 +3,7 @@ package validacion;
 import java.util.List;
 import model.Mision;
 
-public class ValidadorDestino extends ValidadorMision {
+public class ValidadorDestino extends ValidadorEnCadena {
 
     private final List<String> destinosValidos;
 
