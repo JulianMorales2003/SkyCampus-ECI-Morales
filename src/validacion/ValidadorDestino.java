@@ -14,11 +14,18 @@ public class ValidadorDestino extends ValidadorEnCadena {
         this.destinosValidos = List.copyOf(destinosValidos);
     }
 
+    public boolean esValido(String destino) {
+        return destinosValidos.contains(destino);
+    }
+
+    public String mensajeDeRechazo(String destino) {
+        return "El destino \"" + destino + "\" no existe. Destinos válidos: " + destinosValidos + ".";
+    }
+
     @Override
     protected ResultadoValidacion evaluar(Mision mision) {
-        if (!destinosValidos.contains(mision.destino())) {
-            return ResultadoValidacion.rechazada("El destino \"" + mision.destino()
-                    + "\" no existe. Destinos válidos: " + destinosValidos + ".");
+        if (!esValido(mision.destino())) {
+            return ResultadoValidacion.rechazada(mensajeDeRechazo(mision.destino()));
         }
         return ResultadoValidacion.aprobada();
     }

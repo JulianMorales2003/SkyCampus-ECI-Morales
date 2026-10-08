@@ -6,22 +6,21 @@ import util.Validaciones;
 
 public class ValidadorMision {
 
-    private final List<String> destinosValidos;
+    private final ValidadorDestino validadorDestino;
 
     public ValidadorMision(List<String> destinosValidos) {
-        this.destinosValidos = List.copyOf(destinosValidos);
+        this.validadorDestino = new ValidadorDestino(destinosValidos);
     }
 
     public boolean tieneBateriaSuficiente(Drone drone) {
         Validaciones.exigirPresente(drone, "drone");
-        return drone.bateria() >= 30;
+        return ValidadorBateria.esSuficiente(drone.bateria());
     }
 
     public void validarDestino(String destino) {
         Validaciones.exigirPresente(destino, "destino");
-        if (!destinosValidos.contains(destino)) {
-            throw new DestinoInvalidoException("El destino \"" + destino
-                    + "\" no existe. Destinos válidos: " + destinosValidos + ".");
+        if (!validadorDestino.esValido(destino)) {
+            throw new DestinoInvalidoException(validadorDestino.mensajeDeRechazo(destino));
         }
     }
 
