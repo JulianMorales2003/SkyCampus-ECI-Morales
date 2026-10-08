@@ -73,6 +73,6 @@ Además de que pasen, comprobé que fallan cuando el código se rompe. Con 6 cam
 
 ## 7. Notas
 
-- **Cómo ejecutarlas:** `mvn test` con el `pom.xml` del repo, o desde IntelliJ. No pude ejecutar Maven en mi entorno (no tiene acceso a Maven Central), así que verifiqué las pruebas con JUnit 5.10.1 y su consola de la distribución Ubuntu, y el `pom.xml` usa JUnit 5.10.2. Si Maven da algún error, ajusta la versión.
+- **Cómo ejecutarlas y resultado:** `mvn test` con el `pom.xml` del repo, o desde IntelliJ. Ejecuté `mvn test` en mi computador y dio `Tests run: 13, Failures: 0, Errors: 0, Skipped: 0` y `BUILD SUCCESS` (JUnit 5.10.2). Antes de eso, las pruebas se habían verificado paso a paso con JUnit 5.10.1 y su consola, porque el entorno donde se prepararon no tenía acceso a Maven Central.
 - **Cobertura:** medirla con JaCoCo queda para el reto 13.
 - **Datos repetidos:** la lista de destinos válidos sigue escrita en las demos (`PatronesApp`) y en las pruebas, porque se pasa por constructor. No es una regla duplicada en el dominio, pero habría que centralizarla en un solo lugar cuando exista una fuente de destinos.
