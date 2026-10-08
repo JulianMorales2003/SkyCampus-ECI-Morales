@@ -85,8 +85,8 @@ class ValidadorMisionTest {
 
     @ParameterizedTest(name = "destino \"{0}\" -> DestinoInvalidoException")
     @ValueSource(strings = {"Bloque Z", "Bloque C ", "bloque c"})
-    @DisplayName("validarDestino: un destino fuera de la lista o con coincidencia inexacta lanza DestinoInvalidoException")
-    void validarDestino_destinoFueraDeLaListaOCoincidenciaInexacta_lanzaDestinoInvalidoException(
+    @DisplayName("validarDestino: un destino que no coincide exactamente con ninguno de la lista lanza DestinoInvalidoException")
+    void validarDestino_destinoSinCoincidenciaExacta_lanzaDestinoInvalidoException(
             String destino) {
         // Arrange (el destino llega por parámetro)
 
