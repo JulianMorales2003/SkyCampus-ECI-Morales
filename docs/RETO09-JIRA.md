@@ -11,11 +11,21 @@
 | Historia de usuario | HU-3 | Cancelar una solicitud de reparto pendiente |
 | Subtarea | 3 subtareas | Cuelgan de HU-2 (sección 3) |
 
+Claves en el tablero de Jira:
+
+| Clave | Ticket |
+|-------|--------|
+| SCRUM-6 | FEAT-01, usado como Feature: Gestión de la flota de drones del campus |
+| SCRUM-7 | HU-1 Ver la flota de drones disponibles |
+| SCRUM-8 | HU-2 Asignar un drone a una solicitud de reparto |
+| SCRUM-12 | HU-3 Cancelar una solicitud de reparto pendiente |
+| SCRUM-9, SCRUM-10, SCRUM-11 | Las 3 subtareas de HU-2, en el orden de la sección 3 |
+
 ### Limitación de Jira con el nivel "Feature"
 
 El Jira estándar tiene una jerarquía fija: Épica, luego Historia o Tarea, luego Subtarea. Un nivel "Feature" entre la épica y la historia solo se puede crear con un plan Premium, y aun ahí los niveles nuevos se agregan por encima de la épica. En una cuenta gratuita, la Feature queda como un tipo de ticket propio (del mismo nivel que las historias) que cuelga de la épica y se enlaza con las historias, en vez de contenerlas.
 
-Cómo quedó en el tablero: la Épica es el padre de la Feature y de las 3 historias, y cada historia está enlazada a la Feature "Gestión de flota" y lleva la etiqueta `gestion-flota`. Las subtareas sí cuelgan directamente de HU-2.
+Cómo quedó en mi tablero: **uso el ticket SCRUM-6 como Feature.** Se llama "FEAT-01 Gestión de la flota de drones del campus"; no creé un tipo de trabajo "Feature" propio, así que lo identifico con el prefijo `FEAT-01` en el título. Lo uso como Feature y no como una historia más, porque agrupa las 3 historias. La Feature y las 3 historias cuelgan de la épica "Digitalizar el reparto interno de la ECI...", que se ve en el Backlog como la etiqueta amarilla de cada ticket. Las subtareas sí cuelgan directamente de HU-2.
 
 ## 2. Historias de usuario
 
@@ -52,6 +62,8 @@ Cada una es una acción técnica que hace una sola persona.
 
 ## 4. Estados del tablero
 
-- **Done:** la subtarea 1, porque `ValidadorBateria` ya está implementado y publicado.
-- **In Progress:** la subtarea 2 y la historia HU-2, que ya tiene una subtarea terminada y otra en curso.
-- **To Do:** HU-1, HU-3 y la subtarea 3.
+Mi Jira usa estos nombres de estado: **Por hacer** equivale a To Do, **En Diseño** a In Progress y **Aprobado** a Done.
+
+- **Aprobado (Done):** la subtarea 1 (SCRUM-9), porque `ValidadorBateria` ya está implementado y publicado.
+- **En Diseño (In Progress):** la subtarea 2 (SCRUM-10) y la historia HU-2 (SCRUM-8), que ya tiene una subtarea terminada y otra en curso.
+- **Por hacer (To Do):** HU-1, HU-3, la Feature y la subtarea 3 (SCRUM-11).
