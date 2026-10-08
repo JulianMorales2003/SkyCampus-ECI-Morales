@@ -26,6 +26,7 @@ public class ValidadorMision {
     }
 
     public boolean droneEstaDisponible(Drone drone) {
-        throw new UnsupportedOperationException("pendiente");
+        Validaciones.exigirPresente(drone, "drone");
+        return drone.disponible();
     }
 }
