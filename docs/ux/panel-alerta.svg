@@ -14,17 +14,18 @@
 <text x="956" y="115" font-size="15" fill="#F1F5F9">En carga</text>
 <circle cx="1090" cy="110" r="7" fill="#EF4444"/>
 <text x="1106" y="115" font-size="15" fill="#F1F5F9">Fallo</text>
-<rect x="32" y="134" width="1216" height="52" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="2"/>
-<rect x="32" y="134" width="8" height="52" rx="3" fill="#EF4444"/>
-<path d="M68 153 L76 167 L60 167 Z" fill="none" stroke="#F1F5F9" stroke-width="1.6" stroke-linejoin="round"/><line x1="68" y1="158" x2="68" y2="162" stroke="#F1F5F9" stroke-width="1.6"/><circle cx="68" cy="164.5" r="0.9" fill="#F1F5F9"/>
-<text x="86" y="165" font-size="16" font-weight="600" fill="#F1F5F9">Alerta: el drone D-03 reporta un fallo. Requiere atención antes de volver a usarlo.</text>
+<rect x="32" y="134" width="1216" height="64" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="2"/>
+<rect x="32" y="134" width="8" height="64" rx="3" fill="#EF4444"/>
+<path d="M68 150 L76 164 L60 164 Z" fill="none" stroke="#F1F5F9" stroke-width="1.6" stroke-linejoin="round"/><line x1="68" y1="155" x2="68" y2="159" stroke="#F1F5F9" stroke-width="1.6"/><circle cx="68" cy="161.5" r="0.9" fill="#F1F5F9"/>
+<text x="86" y="162" font-size="16" font-weight="600" fill="#F1F5F9">Alerta: el drone D-03 reporta un fallo. Requiere atención antes de volver a usarlo.</text>
+<text x="86" y="184" font-size="14" fill="#94A3B8">Flota: 2 disponibles, 1 en vuelo, 1 en carga, 1 en fallo. Asignables ahora: 1.</text>
 <rect x="32" y="206" width="1216" height="40" rx="8" fill="#1E293B"/>
 <text x="60" y="231" font-size="12" font-weight="600" letter-spacing="1.2" fill="#94A3B8">ID</text>
 <text x="190" y="231" font-size="12" font-weight="600" letter-spacing="1.2" fill="#94A3B8">ESTADO</text>
 <text x="360" y="231" font-size="12" font-weight="600" letter-spacing="1.2" fill="#94A3B8">BATERÍA</text>
 <text x="800" y="231" font-size="12" font-weight="600" letter-spacing="1.2" fill="#94A3B8">UBICACIÓN</text>
 <text x="925" y="231" font-size="12" font-weight="600" letter-spacing="1.2" fill="#94A3B8">ACCIONES</text>
-<rect x="32" y="260" width="1216" height="72" rx="8" fill="#1E293B"/>
+<rect x="32" y="260" width="1216" height="72" rx="8" fill="#1E293B" stroke="#7C3AED" stroke-width="2.5"/>
 <text x="60" y="294" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace" font-size="18" font-weight="700" fill="#F1F5F9">D-01</text>
 <rect x="190" y="274" width="124" height="28" rx="14" fill="#22C55E"/>
 <text x="252" y="293" text-anchor="middle" font-size="14" font-weight="600" fill="#0B1220">Disponible</text>
@@ -98,5 +99,5 @@
 <text x="1125" y="613" text-anchor="middle" font-size="15" font-weight="600" fill="#94A3B8">Asignar misión</text>
 <text x="60" y="642" font-size="13" fill="#94A3B8">No se puede asignar: el drone está en carga.</text>
 <text x="32" y="716" font-size="13" fill="#94A3B8">La marca vertical de cada barra señala el 30% mínimo de batería para asignar una misión.</text>
-<text x="32" y="736" font-size="13" fill="#94A3B8">El triángulo con "Bajo mínimo" indica una batería por debajo de ese mínimo.</text>
+<text x="32" y="736" font-size="13" fill="#94A3B8">El borde morado marca el drone seleccionado; el triángulo con "Bajo mínimo" indica una batería por debajo de ese mínimo.</text>
 </svg>
