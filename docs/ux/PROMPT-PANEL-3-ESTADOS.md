@@ -24,9 +24,9 @@ ESTILO (obligatorio, no inventes otros colores ni fuentes). Fondo oscuro tipo da
 DATOS A MOSTRAR POR DRONE: ID (formato D-XX), batería en % (barra con marca vertical en el 30%, que es el mínimo para asignar una misión), estado (Disponible / En vuelo / En carga / Fallo), ubicación actual. No muestres nada más.
 ACCIONES DEL OPERADOR: Seleccionar drone (la fila seleccionada lleva un borde morado), Asignar misión (solo habilitado si el drone está Disponible y tiene al menos 30% de batería) y Ver detalle.
 LEYENDA: los 4 estados con punto de color y nombre, siempre visible.
-FRANJA DE ESTADO: debajo del título hay una franja con un mensaje que resume la situación de la flota.
+FRANJA DE ESTADO: debajo del título hay una franja, siempre de la misma altura, con un mensaje principal y, si hace falta, una segunda línea más pequeña.
 BATERÍA BAJO EL MÍNIMO: no usa ningún color de estado; se marca con un triángulo de advertencia y la etiqueta "Bajo mínimo" en #F1F5F9.
-RAZÓN DEL BLOQUEO: debajo de cada fila con "Asignar misión" deshabilitado, una línea con la razón.
+RAZÓN DEL BLOQUEO: debajo de cada fila con "Asignar misión" deshabilitado, una línea con la razón. Excepción: en el estado Vacío todas las filas comparten la misma razón y la explica la franja, así que no se repite por fila.
 
 ESTADOS DE LA PANTALLA:
 1. NORMAL. Flota con drones en distintos estados y ninguno en fallo:
@@ -36,14 +36,14 @@ ESTADOS DE LA PANTALLA:
    D-04 | Disponible | 18% | Bloque B (bloqueado por batería: "El drone D-04 tiene batería insuficiente (18%). Mínimo requerido: 30%.")
    D-05 | En carga   | 67% | Bloque D
    Franja: "Flota: 3 disponibles, 1 en vuelo, 1 en carga. Asignables ahora: 2." (neutra)
-2. ALERTA. Igual que Normal, pero D-03 está en FALLO y se destaca visualmente: chip rojo, borde rojo de la fila, "Asignar misión" deshabilitado con la razón y "Ver detalle" resaltado como acción útil. La franja pasa a una alerta con borde rojo: "Alerta: el drone D-03 reporta un fallo. Requiere atención antes de volver a usarlo."
+2. ALERTA. Igual que Normal (D-01 sigue seleccionado), pero D-03 está en FALLO y se destaca visualmente: chip rojo, borde rojo de la fila, "Asignar misión" deshabilitado con la razón y "Ver detalle" resaltado como acción útil. La franja pasa a una alerta con borde rojo y conserva el resumen de la flota: línea 1 "Alerta: el drone D-03 reporta un fallo. Requiere atención antes de volver a usarlo."; línea 2 "Flota: 2 disponibles, 1 en vuelo, 1 en carga, 1 en fallo. Asignables ahora: 1."
 3. VACÍO. Todos los drones están en misión a la vez, sin ninguno disponible:
    D-01 | En vuelo | 61% | Bloque A
    D-02 | En vuelo | 42% | Biblioteca
    D-03 | En vuelo | 77% | Bloque C
    D-04 | En vuelo | 54% | Bloque B
    D-05 | En vuelo | 38% | Bloque D
-   Todos los botones "Asignar misión" deshabilitados. Franja neutra: "No hay drones disponibles para asignar: los 5 drones están en misión."
+   Todos los botones "Asignar misión" deshabilitados. Franja neutra: línea 1 "No hay drones disponibles para asignar: los 5 drones están en misión."; línea 2 "Usa Ver detalle para revisar cada misión en curso."
 
 NIELSEN que debe cumplir cada estado: visibilidad del estado (#1), minimalismo (#8), prevención de errores (#5).
 
