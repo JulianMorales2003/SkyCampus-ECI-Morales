@@ -18,7 +18,7 @@ La clase `ValidadorMision` (`src/validacion/ValidadorMision.java`) con 3 método
 | `tieneBateriaSuficiente` | Límite | `tieneBateriaSuficiente_bateriaAlrededorDelLimite_respetaElMinimoDel30PorCiento` (30 alcanza, 29 no) |
 | `tieneBateriaSuficiente` | Nulo | `tieneBateriaSuficiente_droneNulo_lanzaIllegalArgumentException` |
 | `validarDestino` | Normal | `validarDestino_destinoExistente_noLanzaExcepcion` |
-| `validarDestino` | Límite y negativo | `validarDestino_destinoFueraDeLaListaOCoincidenciaInexacta_lanzaDestinoInvalidoException` ("Bloque Z", "Bloque C " con un espacio y "bloque c" en minúscula) |
+| `validarDestino` | Límite y negativo | `validarDestino_destinoSinCoincidenciaExacta_lanzaDestinoInvalidoException` ("Bloque Z", "Bloque C " con un espacio y "bloque c" en minúscula: el mismo comportamiento, no coincide exactamente con ningún destino) |
 | `validarDestino` | Nulo | `validarDestino_destinoNulo_lanzaIllegalArgumentException` (y no `DestinoInvalidoException`) |
 | `droneEstaDisponible` | Normal | `droneEstaDisponible_droneDisponible_retornaTrue` |
 | `droneEstaDisponible` | Límite y negativo | `droneEstaDisponible_disponibilidadIndependienteDeLaBateria_retornaElValorDelDrone` (disponible con 0% de batería es true; no disponible con 100% es false) |
@@ -40,6 +40,8 @@ Cada fase es un commit, y las pruebas van primero. Resultados medidos ejecutando
 | **Green** | `validarDestino` | Pasan 9 de 13 (6 de 9 métodos) |
 | **Green** | `droneEstaDisponible` | Pasan 13 de 13 (9 de 9 métodos) |
 | **Refactor** | Reutilizar `ValidadorBateria` y `ValidadorDestino` | Siguen pasando 13 de 13 |
+| **Refactor** (tras la revisión) | Renombrar la prueba del destino para que diga un solo comportamiento | Siguen pasando 13 de 13 |
+| **Refactor** (tras la revisión) | `ValidadorMision` recibe el `ValidadorDestino` ya construido (DIP) | Siguen pasando 13 de 13 |
 
 En la fase Green el código es el mínimo, y por eso repite el número 30 y la lista de destinos. Esa duplicación se elimina en el Refactor, no antes.
 
@@ -47,7 +49,7 @@ En la fase Green el código es el mínimo, y por eso repite el número 30 y la l
 
 - **El nombre chocaba.** La clase base abstracta de la cadena del reto 03 ya se llamaba `ValidadorMision`. La renombré a `ValidadorEnCadena` (es el eslabón de la cadena de responsabilidad), en un commit aparte antes de las pruebas, y así `ValidadorMision` queda libre con el significado que pide el reto 12. Actualicé `ValidadorBateria`, `ValidadorDestino`, `ValidadorCarga`, `PatronesApp` y el documento del reto 03. La salida de `PatronesApp` es idéntica antes y después.
 - **No se duplica la regla del 30%.** El mínimo vive en `ValidadorBateria.BATERIA_MINIMA`, y `ValidadorBateria.esSuficiente(int)` lo aplica. La cadena y `ValidadorMision` llaman a ese mismo método.
-- **No se duplica la regla de destino.** La coincidencia exacta y el mensaje de rechazo viven en `ValidadorDestino` (`esValido` y `mensajeDeRechazo`). `ValidadorMision` crea un `ValidadorDestino` con la lista que recibe por constructor, así que la lista tampoco queda escrita dentro de la clase.
+- **No se duplica la regla de destino.** La coincidencia exacta y el mensaje de rechazo viven en `ValidadorDestino` (`esValido` y `mensajeDeRechazo`). `ValidadorMision` recibe por constructor un `ValidadorDestino` ya construido (no lo crea adentro), así que depende de esa clase y no de cómo se arma, y la lista de destinos tampoco queda escrita dentro de la clase.
 - **Propósito distinto.** La cadena valida una `Mision` completa y devuelve un `ResultadoValidacion`. `ValidadorMision` responde preguntas sueltas sobre un drone o un destino, con `boolean` o con una excepción.
 
 ## 5. `DestinoInvalidoException`
@@ -60,7 +62,7 @@ Es **no comprobada** (hereda de `IllegalArgumentException`).
 
 ## 6. ¿Las pruebas detectan errores?
 
-Además de que pasen, comprobé que fallan cuando el código se rompe. Con 6 cambios deliberados al código final, las pruebas fallaron en todos:
+Además de que pasen, comprobé que fallan cuando el código se rompe. Con 7 cambios deliberados al código final, las pruebas fallaron en todos:
 
 | Cambio al código | ¿Lo detectan las pruebas? |
 |------------------|---------------------------|
@@ -70,6 +72,7 @@ Además de que pasen, comprobé que fallan cuando el código se rompe. Con 6 cam
 | Recortar espacios del destino antes de comparar | Sí |
 | Hacer que la disponibilidad exija 30% de batería | Sí |
 | Quitar la comprobación de drone nulo | Sí |
+| Hacer que un destino nulo lance `DestinoInvalidoException` (la subclase) en vez de `IllegalArgumentException` | Sí: la prueba del destino nulo comprueba, además de que se lance `IllegalArgumentException`, que no sea una `DestinoInvalidoException` |
 
 ## 7. Notas
 
