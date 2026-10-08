@@ -1,32 +1,30 @@
 package validacion;
 
-import model.Mision;
+import model.Drone;
+import util.Validaciones;
 
-public abstract class ValidadorMision {
+public class ValidadorMision {
 
-    private ValidadorMision siguiente;
+    private final ValidadorDestino validadorDestino;
 
-    public ValidadorMision setSiguiente(ValidadorMision siguiente) {
-        if (siguiente == null) {
-            throw new IllegalArgumentException("El siguiente validador de la cadena no puede ser nulo.");
-        }
-        if (siguiente == this) {
-            throw new IllegalArgumentException("Un validador no puede ser su propio siguiente: la cadena sería circular.");
-        }
-        this.siguiente = siguiente;
-        return siguiente;
+    public ValidadorMision(ValidadorDestino validadorDestino) {
+        this.validadorDestino = validadorDestino;
     }
 
-    public final ResultadoValidacion validar(Mision mision) {
-        if (mision == null) {
-            throw new IllegalArgumentException("La misión a validar no puede ser nula.");
-        }
-        ResultadoValidacion resultado = evaluar(mision);
-        if (!resultado.valido() || siguiente == null) {
-            return resultado;
-        }
-        return siguiente.validar(mision);
+    public boolean tieneBateriaSuficiente(Drone drone) {
+        Validaciones.exigirPresente(drone, "drone");
+        return ValidadorBateria.esSuficiente(drone.bateria());
     }
 
-    protected abstract ResultadoValidacion evaluar(Mision mision);
+    public void validarDestino(String destino) {
+        Validaciones.exigirPresente(destino, "destino");
+        if (!validadorDestino.esValido(destino)) {
+            throw new DestinoInvalidoException(validadorDestino.mensajeDeRechazo(destino));
+        }
+    }
+
+    public boolean droneEstaDisponible(Drone drone) {
+        Validaciones.exigirPresente(drone, "drone");
+        return drone.disponible();
+    }
 }
