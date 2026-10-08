@@ -6,7 +6,10 @@ import util.Validaciones;
 
 public class ValidadorMision {
 
+    private final List<String> destinosValidos;
+
     public ValidadorMision(List<String> destinosValidos) {
+        this.destinosValidos = List.copyOf(destinosValidos);
     }
 
     public boolean tieneBateriaSuficiente(Drone drone) {
@@ -15,7 +18,11 @@ public class ValidadorMision {
     }
 
     public void validarDestino(String destino) {
-        throw new UnsupportedOperationException("pendiente");
+        Validaciones.exigirPresente(destino, "destino");
+        if (!destinosValidos.contains(destino)) {
+            throw new DestinoInvalidoException("El destino \"" + destino
+                    + "\" no existe. Destinos válidos: " + destinosValidos + ".");
+        }
     }
 
     public boolean droneEstaDisponible(Drone drone) {
