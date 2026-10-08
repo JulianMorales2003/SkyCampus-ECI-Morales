@@ -38,29 +38,29 @@ La misma pantalla, con el mismo tamaño y la misma estructura, en tres situacion
 
 ![Estado Normal del panel](ux/panel-normal.png)
 
-Flota con drones en distintos estados y ninguno en fallo. D-01 está seleccionado (borde morado). D-04 está Disponible pero con 18% de batería: su botón queda deshabilitado, con el triángulo "Bajo mínimo" y el mensaje.
+Flota con drones en distintos estados y ninguno en fallo. D-01 está seleccionado (borde morado). D-04 está Disponible pero con 18% de batería: su botón queda deshabilitado, con el triángulo "Bajo mínimo" y el mensaje. La franja resume la flota.
 
 ### Alerta
 
 ![Estado Alerta del panel](ux/panel-alerta.png)
 
-D-03 pasa a Fallo y se destaca de tres formas: el chip rojo, el borde rojo de su fila y una franja de alerta arriba. Su botón "Asignar misión" queda deshabilitado con la razón, y "Ver detalle" se resalta como la acción útil.
+D-03 pasa a Fallo y se destaca de tres formas: el chip rojo, el borde rojo de su fila y una franja de alerta arriba. Su botón "Asignar misión" queda deshabilitado con la razón, y "Ver detalle" se resalta como la acción útil. D-01 sigue seleccionado, igual que en Normal, y la franja conserva el resumen de la flota en su segunda línea, para que el Operador no pierda cuántos drones puede asignar.
 
 ### Vacío
 
 ![Estado Vacío del panel](ux/panel-vacio.png)
 
-Los 5 drones están en misión a la vez. Una franja neutra explica por qué no hay nada que asignar, y todos los botones "Asignar misión" están deshabilitados con su razón.
+Los 5 drones están en misión a la vez. Una franja neutra explica por qué no hay nada que asignar y qué puede hacer el Operador ahora ("Usa Ver detalle para revisar cada misión en curso"). Todos los botones "Asignar misión" están deshabilitados; como la razón es la misma para las 5 filas, la explica la franja y no se repite en cada fila.
 
 ## 3. Un color, un significado
 
 | Estado | Dónde aparece cada color de estado |
 |--------|------------------------------------|
 | Normal | Rojo: solo en el punto de la leyenda. Amarillo: leyenda y chip de D-05 (En carga). Azul: leyenda y chip de D-02 (En vuelo). Verde: leyenda y los chips Disponible. |
-| Alerta | Rojo: leyenda y todo lo que habla del fallo de D-03 (chip, borde de la fila, borde y barra de la franja). Los demás colores, igual que en Normal. |
+| Alerta | Rojo: leyenda y todo lo que habla del fallo de D-03 (chip, borde de la fila, borde y barra de la franja). Los demás colores, igual que en Normal, incluido el borde morado de D-01. |
 | Vacío | Azul: leyenda y los 5 chips En vuelo. Rojo, amarillo y verde: solo en la leyenda. La franja usa colores neutros porque informa y no marca ningún estado. |
 
-El morado queda para las acciones (el botón habilitado y el drone seleccionado) y nunca marca un estado. La batería bajo el mínimo no usa ningún color de estado.
+El morado queda para las acciones (el botón habilitado y el drone seleccionado) y nunca marca un estado. En Vacío no hay botón habilitado ni drone seleccionado, así que el morado solo está en la marca de la cabecera. La batería bajo el mínimo no usa ningún color de estado.
 
 ## 4. Heurísticas de Nielsen que cumple cada estado
 
@@ -69,15 +69,16 @@ El morado queda para las acciones (el botón habilitado y el drone seleccionado)
 | Normal | #1 Visibilidad del estado | Cada drone muestra su estado con un chip (color y nombre), su batería con barra y porcentaje, y una franja resume la flota: 3 disponibles, 1 en vuelo, 1 en carga, 2 asignables |
 | Normal | #5 Prevención de errores | "Asignar misión" está deshabilitado en los 3 drones que no se pueden asignar (D-02, D-04 y D-05), cada uno con su razón escrita; D-04, aunque Disponible, queda bloqueado por la batería |
 | Normal | #8 Minimalismo | Solo están los datos que pide el RF (ID, batería, estado, ubicación) y las 3 acciones |
-| Alerta | #1 Visibilidad del estado | El fallo de D-03 se ve sin buscarlo: franja de alerta arriba, borde rojo en la fila y chip rojo |
+| Alerta | #1 Visibilidad del estado | El fallo de D-03 se ve sin buscarlo: franja de alerta arriba, borde rojo en la fila y chip rojo; y la franja conserva el resumen de la flota (2 disponibles, 1 en vuelo, 1 en carga, 1 en fallo, 1 asignable) |
 | Alerta | #5 Prevención de errores | D-03 no se puede asignar: el botón está deshabilitado con la razón, y "Ver detalle" queda resaltado como la acción útil |
-| Alerta | #8 Minimalismo | Solo cambian la franja y la fila del drone en fallo; el resto de la pantalla es igual que en Normal |
-| Vacío | #1 Visibilidad del estado | Una franja explica por qué no hay nada que asignar y los 5 chips dicen En vuelo, así que el operador no se queda ante una pantalla que parece rota |
-| Vacío | #5 Prevención de errores | Ningún "Asignar misión" está habilitado y cada uno dice por qué, así que no se puede asignar por error |
-| Vacío | #8 Minimalismo | Un solo mensaje y los datos mínimos, sin decoración ni elementos vacíos |
+| Alerta | #8 Minimalismo | Respecto a Normal solo cambian la franja (el aviso y el resumen) y la fila del drone en fallo; D-01 sigue seleccionado y el resto de la pantalla es igual |
+| Vacío | #1 Visibilidad del estado | Una franja explica por qué no hay nada que asignar y propone un siguiente paso; los 5 chips dicen En vuelo, así que el operador no se queda ante una pantalla que parece rota |
+| Vacío | #5 Prevención de errores | Ningún "Asignar misión" está habilitado, así que no se puede asignar por error; la razón es común a los 5 drones y la dice la franja |
+| Vacío | #8 Minimalismo | Un mensaje principal en la franja (con una línea de siguiente paso) y los datos mínimos; la razón común no se repite en las 5 filas |
 
 ## 5. Notas
 - **Fuentes del render:** las imágenes usan DejaVu Sans y DejaVu Sans Mono como sustitutas, porque Inter y JetBrains Mono no estaban instaladas.
 - **Datos ilustrativos:** los estados y las baterías se inventaron para mostrar cada situación. D-03 aparece Disponible en Normal y en Fallo en Alerta, y en Vacío las baterías son distintas porque pasó el tiempo.
 - **El modelo todavía no distingue los cuatro estados:** el record `Drone` solo tiene `disponible`. Implementar este panel pedirá un dato de estado, como se anotó en el reto 08.
+- **El ajuste menor del reto 10** (el commit `a3150dc`) se aplicó en esta rama porque la del reto 10 ya estaba integrada en `develop`.
 - **"Ver detalle" no tiene caso de uso propio:** viene de la plantilla del material y no está en SC-01 ni en el diagrama del reto 10. Queda como pendiente.
