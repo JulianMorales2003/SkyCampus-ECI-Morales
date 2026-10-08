@@ -2,6 +2,7 @@ package validacion;
 
 import java.util.List;
 import model.Drone;
+import util.Validaciones;
 
 public class ValidadorMision {
 
@@ -9,7 +10,8 @@ public class ValidadorMision {
     }
 
     public boolean tieneBateriaSuficiente(Drone drone) {
-        throw new UnsupportedOperationException("pendiente");
+        Validaciones.exigirPresente(drone, "drone");
+        return drone.bateria() >= 30;
     }
 
     public void validarDestino(String destino) {
