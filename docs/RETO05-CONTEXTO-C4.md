@@ -19,7 +19,7 @@ Archivos: [`contexto-skycampus.drawio`](c4/contexto-skycampus.drawio) (editable 
 | 1 | Operador → SkyCampus | Al registrar la misión: código de la solicitud elegida + id del drone elegido; al confirmar la entrega: código de la misión |
 | 2 | SkyCampus → Operador | Solicitudes pendientes (código, origen, destino, tipo de carga); drones disponibles con batería y ubicación; misiones con su estado (PENDIENTE, EN_VUELO, ENTREGADA, FALLIDA) |
 | 3 | Solicitante → SkyCampus | Solicitud de reparto: origen, destino y tipo de carga (SOBRE, CARPETA, LIBRO) |
-| 4 | SkyCampus → Solicitante | Código de seguimiento de la solicitud y su estado (pendiente, rechazada con su motivo, o el estado de la misión) |
+| 4 | SkyCampus → Solicitante | Código de seguimiento de la solicitud y su estado (pendiente, rechazada con su motivo, cancelada, o el estado de la misión) |
 | 5 | Admin → SkyCampus | Destinos válidos (Bloque A-D, Biblioteca) y flota de drones (id, modelo) |
 | 6 | SkyCampus → Admin | Confirmación de la configuración y listado vigente de destinos y drones |
 

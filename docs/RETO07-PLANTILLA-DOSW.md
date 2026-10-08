@@ -49,7 +49,7 @@ Datos que el sistema lee del estado vigente del drone elegido (el Operador no lo
 |-------|------|-------------|
 | codigoMision | String | Código único de la misión generada |
 | estadoMision | Enum(PENDIENTE,EN_VUELO,ENTREGADA,FALLIDA) | Siempre EN_VUELO al terminar bien |
-| estadoSolicitud | Enum(PENDIENTE,ATENDIDA,RECHAZADA) | ATENDIDA al terminar bien: la solicitud ya tiene una misión |
+| estadoSolicitud | Enum(PENDIENTE,ATENDIDA,RECHAZADA,CANCELADA) | ATENDIDA al terminar bien: la solicitud ya tiene una misión |
 
 Datos que el sistema muestra durante el flujo:
 
@@ -62,11 +62,12 @@ Datos de salida cuando ocurre A2:
 
 | Campo | Tipo | Valor en A2 |
 |-------|------|-------------|
-| estadoSolicitud | Enum(PENDIENTE,ATENDIDA,RECHAZADA) | RECHAZADA |
+| estadoSolicitud | Enum(PENDIENTE,ATENDIDA,RECHAZADA,CANCELADA) | RECHAZADA |
 | motivoRechazo | String | Motivo de RN-02: el destino no existe |
 
 ## Enlace entre la solicitud y su misión
 
+- **CANCELADA** significa que el Operador canceló la solicitud mientras estaba pendiente (historia HU-3 del reto 09); no genera misión.
 - **ATENDIDA** significa que la solicitud ya tiene una misión. El estado de la entrega lo da la misión (EN_VUELO, ENTREGADA o FALLIDA), no la solicitud.
 - **El enlace va del lado de la solicitud.** En el paso 5, SC-01 guarda en la solicitud el dato de abajo; `Mision` no guarda el código de la solicitud y no cambia.
 
