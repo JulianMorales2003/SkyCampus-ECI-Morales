@@ -6,12 +6,14 @@ El proceso va en 4 pasos y en este orden: referencias, estilo, datos del RF y, a
 
 ### Paso 1 — Referencias
 
-Dos paneles de sistemas reales de monitoreo de flotas de drones, vistos en su pantalla de monitoreo. Lo que dice la documentación de cada producto:
+Dos paneles de sistemas reales de monitoreo de flotas de drones. Lo que dice la documentación de cada producto:
 
 | Referencia | Qué muestra | Lo que tomé | Lo que no tomé |
 |------------|-------------|-------------|----------------|
-| FlytBase Fleet View 2.0 ([documentación](https://docs.flytbase.com/in-flight-modules/how-to-manage-your-flight-operations/multi-view-dashboard)) | Una tabla de la flota con indicadores de estado por color, batería, estado de la misión y la opción de fijar un drone para destacarlo | El estado visible y codificado por color en cada fila, y destacar un drone concreto: en el estado Alerta destaco la fila y el botón "Ver detalle" del drone en fallo | El video en vivo y el mapa 3D: el MVP de SkyCampus no los tiene |
-| DJI FlightHub 2 ([página del producto](https://www.dronefly.com/products/dji-flighthub2)) | Un panel centralizado que sigue el estado, la ubicación y la telemetría de cada aeronave | La lista de la flota con estado, batería y ubicación como núcleo de la pantalla | La telemetría detallada (altitud, velocidad, señal): no está en los datos de SC-01 |
+| FlytBase Fleet View 2.0 ([notas de la versión](https://releases.flytbase.com/introducing-fleet-view-2.0) y [documentación](https://docs.flytbase.com/in-flight-modules/how-to-manage-your-flight-operations/multi-view-dashboard)) | Una interfaz de tres paneles (datos en tabla, video y mapa) con indicadores de estado por color, la batería de cada drone, el seguimiento de la misión y la función de fijar un drone para destacarlo | El estado visible y codificado por color en cada fila, la batería como dato de la fila y destacar un drone concreto: en el estado Alerta destaco la fila y el botón "Ver detalle" del drone en fallo | El video en vivo y el mapa 3D: el MVP de SkyCampus no los tiene |
+| DJI FlightHub 2 ([guía de usuario oficial](https://enterprise.dji.com/flighthub-2/downloads) y [ficha de un distribuidor](https://www.dronefly.com/products/dji-flighthub-2)) | Una plataforma en la nube que permite seguir la telemetría, la ubicación y el estado operativo de cada aeronave desde una vista central | La idea de una vista central de la flota con el estado y la ubicación de cada aeronave como núcleo de la pantalla | La telemetría detallada y el video: no están en los datos de SC-01 |
+
+La ficha del distribuidor es una página de venta y sirve solo como descripción general; la fuente que muestra el panel es la guía de usuario oficial de DJI.
 
 ### Paso 2 — Estilo
 
