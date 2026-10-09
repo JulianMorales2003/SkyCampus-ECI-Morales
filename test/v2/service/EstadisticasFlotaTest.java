@@ -2,10 +2,14 @@ package v2.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static v2.testutil.DatosV2.AHORA;
 import static v2.testutil.DatosV2.drone;
 import static v2.testutil.DatosV2.mision;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -14,6 +18,7 @@ import org.junit.jupiter.api.Test;
 import v2.model.Drone;
 import v2.model.EstadoMision;
 import v2.model.Mision;
+import v2.model.Prioridad;
 import v2.model.TipoDrone;
 
 @DisplayName("EstadisticasFlota")
@@ -110,5 +115,56 @@ class EstadisticasFlotaTest {
     @DisplayName("porcentajeFallidas_listaNula_lanzaIllegalArgumentException")
     void porcentajeFallidas_listaNula_lanzaIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> EstadisticasFlota.porcentajeFallidas(null));
+    }
+
+    private static boolean hayUrgenteHaceMinutos(Prioridad prioridad, EstadoMision estado, long minutos) {
+        Instant creada = AHORA.minus(Duration.ofMinutes(minutos));
+        Drone drone = drone("D-09", TipoDrone.EXPRESS);
+        return EstadisticasFlota.hayUrgentePendienteMasDeDiezMinutos(
+                List.of(mision("M-1", drone, estado, prioridad, creada)), AHORA);
+    }
+
+    @Test
+    @DisplayName("hayUrgentePendiente_urgentePendienteHaceOnceMinutos_devuelveTrue")
+    void hayUrgentePendiente_urgentePendienteHaceOnceMinutos_devuelveTrue() {
+        assertTrue(hayUrgenteHaceMinutos(Prioridad.URGENTE, EstadoMision.PENDIENTE, 11));
+    }
+
+    @Test
+    @DisplayName("hayUrgentePendiente_urgentePendienteHaceExactamenteDiezMinutos_devuelveFalse")
+    void hayUrgentePendiente_urgentePendienteHaceExactamenteDiezMinutos_devuelveFalse() {
+        assertFalse(hayUrgenteHaceMinutos(Prioridad.URGENTE, EstadoMision.PENDIENTE, 10));
+    }
+
+    @Test
+    @DisplayName("hayUrgentePendiente_pendienteNormalHaceMuchoTiempo_devuelveFalse")
+    void hayUrgentePendiente_pendienteNormalHaceMuchoTiempo_devuelveFalse() {
+        assertFalse(hayUrgenteHaceMinutos(Prioridad.NORMAL, EstadoMision.PENDIENTE, 60));
+    }
+
+    @Test
+    @DisplayName("hayUrgentePendiente_urgenteYaEnVuelo_devuelveFalse")
+    void hayUrgentePendiente_urgenteYaEnVuelo_devuelveFalse() {
+        assertFalse(hayUrgenteHaceMinutos(Prioridad.URGENTE, EstadoMision.EN_VUELO, 60));
+    }
+
+    @Test
+    @DisplayName("hayUrgentePendiente_listaVacia_devuelveFalse")
+    void hayUrgentePendiente_listaVacia_devuelveFalse() {
+        assertFalse(EstadisticasFlota.hayUrgentePendienteMasDeDiezMinutos(List.of(), AHORA));
+    }
+
+    @Test
+    @DisplayName("hayUrgentePendiente_listaNula_lanzaIllegalArgumentException")
+    void hayUrgentePendiente_listaNula_lanzaIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class,
+                () -> EstadisticasFlota.hayUrgentePendienteMasDeDiezMinutos(null, AHORA));
+    }
+
+    @Test
+    @DisplayName("hayUrgentePendiente_ahoraNulo_lanzaIllegalArgumentException")
+    void hayUrgentePendiente_ahoraNulo_lanzaIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class,
+                () -> EstadisticasFlota.hayUrgentePendienteMasDeDiezMinutos(List.of(), null));
     }
 }

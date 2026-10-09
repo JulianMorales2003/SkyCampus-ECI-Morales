@@ -1,5 +1,7 @@
 package v2.service;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Comparator;
@@ -10,9 +12,12 @@ import util.Validaciones;
 import v2.model.Drone;
 import v2.model.EstadoMision;
 import v2.model.Mision;
+import v2.model.Prioridad;
 import v2.model.TipoDrone;
 
 public final class EstadisticasFlota {
+
+    public static final Duration UMBRAL_URGENTE_PENDIENTE = Duration.ofMinutes(10);
 
     private EstadisticasFlota() {
     }
@@ -47,5 +52,15 @@ public final class EstadisticasFlota {
                 .filter(mision -> mision.estado() == EstadoMision.FALLIDA)
                 .count();
         return fallidas * 100.0 / misiones.size();
+    }
+
+    public static boolean hayUrgentePendienteMasDeDiezMinutos(List<Mision> misiones, Instant ahora) {
+        Validaciones.exigirPresente(misiones, "misiones");
+        Validaciones.exigirPresente(ahora, "ahora");
+        return misiones.stream()
+                .filter(mision -> mision.prioridad() == Prioridad.URGENTE)
+                .filter(mision -> mision.estado() == EstadoMision.PENDIENTE)
+                .anyMatch(mision -> Duration.between(mision.creadaEn(), ahora)
+                        .compareTo(UMBRAL_URGENTE_PENDIENTE) > 0);
     }
 }
