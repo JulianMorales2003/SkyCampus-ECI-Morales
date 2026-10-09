@@ -14,6 +14,11 @@
         <junit.version>5.10.2</junit.version>
         <jacoco.version>0.8.11</jacoco.version>
         <mockito.version>5.11.0</mockito.version>
+
+        <!-- SonarQube: mismo alcance que JaCoCo (la demo "app" no cuenta para la cobertura) -->
+        <sonar.projectKey>skycampus-v2</sonar.projectKey>
+        <sonar.projectName>SkyCampus v2</sonar.projectName>
+        <sonar.coverage.exclusions>**/app/**</sonar.coverage.exclusions>
     </properties>
 
     <dependencies>
@@ -46,7 +51,8 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
 
-                <!-- Solo se excluye el código de demostración (app); model y el resto SÍ se miden -->
+                <!-- Quality Gate: el build falla si la cobertura de líneas baja del 80% o la de ramas del 70%.
+                     Solo se excluye el código de demostración (app); model y el resto SÍ se miden -->
                 <configuration>
                     <excludes>
                         <exclude>**/app/**</exclude>
@@ -82,6 +88,11 @@
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
                                             <minimum>0.80</minimum>
+                                        </limit>
+                                        <limit>
+                                            <counter>BRANCH</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.70</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
