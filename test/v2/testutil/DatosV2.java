@@ -6,6 +6,7 @@ import v2.model.EstadoDrone;
 import v2.model.EstadoMision;
 import v2.model.Mision;
 import v2.model.Prioridad;
+import v2.model.SolicitudMision;
 import v2.model.TipoDrone;
 
 public final class DatosV2 {
@@ -26,5 +27,17 @@ public final class DatosV2 {
     public static Mision mision(String id, Drone drone, EstadoMision estado,
                                 Prioridad prioridad, Instant creadaEn) {
         return new Mision(id, drone, "Biblioteca", 300, prioridad, estado, creadaEn);
+    }
+
+    public static Drone drone(String id, TipoDrone tipo, int bateria) {
+        return new Drone(id, tipo, bateria, true, EstadoDrone.DISPONIBLE);
+    }
+
+    public static Drone droneNoDisponible(String id, TipoDrone tipo, int bateria) {
+        return new Drone(id, tipo, bateria, false, EstadoDrone.EN_VUELO);
+    }
+
+    public static SolicitudMision solicitud(String id, int pesoGramos, Prioridad prioridad) {
+        return new SolicitudMision(id, "Biblioteca", pesoGramos, prioridad);
     }
 }
