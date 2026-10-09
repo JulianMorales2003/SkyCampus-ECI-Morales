@@ -3,19 +3,19 @@ package app;
 import java.time.Instant;
 import java.util.List;
 import util.Consola;
-import v2.asignacion.EstrategiaBateriaJusta;
-import v2.asignacion.EstrategiaMayorBateria;
-import v2.asignacion.EstrategiaTipoSegunPaquete;
-import v2.eventos.AlertaTecnico;
-import v2.eventos.PanelOperador;
-import v2.eventos.SistemaLog;
-import v2.model.Drone;
-import v2.model.EstadoDrone;
-import v2.model.Mision;
-import v2.model.Prioridad;
-import v2.model.SolicitudMision;
-import v2.model.TipoDrone;
-import v2.service.GestorFlota;
+import skycampus.v2.asignacion.EstrategiaBateriaJusta;
+import skycampus.v2.asignacion.EstrategiaMayorBateria;
+import skycampus.v2.asignacion.EstrategiaTipoSegunPaquete;
+import skycampus.v2.eventos.AlertaTecnico;
+import skycampus.v2.eventos.PanelOperador;
+import skycampus.v2.eventos.SistemaLog;
+import skycampus.v2.model.Drone;
+import skycampus.v2.model.EstadoDrone;
+import skycampus.v2.model.Mision;
+import skycampus.v2.model.Prioridad;
+import skycampus.v2.model.SolicitudMision;
+import skycampus.v2.model.TipoDrone;
+import skycampus.v2.service.GestorFlota;
 
 public class Monferno03App {
 

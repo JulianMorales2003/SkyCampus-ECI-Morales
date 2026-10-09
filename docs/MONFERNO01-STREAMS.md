@@ -2,10 +2,10 @@
 Estudiante: Julian Felipe Morales Zambrano
 
 ## Contexto
-La v2 trae 20 drones de 3 tipos (`MINI`, `CARGO`, `EXPRESS`), misiones con peso en gramos y prioridad (`URGENTE`, `NORMAL`, `BAJO`). El dashboard del operador necesita estadísticas agrupadas. Todas las consultas están en `v2.service.EstadisticasFlota` y usan solo Streams.
+La v2 trae 20 drones de 3 tipos (`MINI`, `CARGO`, `EXPRESS`), misiones con peso en gramos y prioridad (`URGENTE`, `NORMAL`, `BAJO`). El dashboard del operador necesita estadísticas agrupadas. Todas las consultas están en `skycampus.v2.service.EstadisticasFlota` y usan solo Streams.
 
 ## Decisión de diseño: el modelo v2 vive en el paquete `v2`
-El modelo del MVP (`model.Drone`, `model.Mision`) ya tiene 121 pruebas que dependen de sus constructores. Cambiarlos para agregar tipo, peso y prioridad como enum habría roto esas pruebas. Por eso el modelo v2 es un paquete nuevo (`v2.model`) con la forma que pide el enunciado, y el MVP queda intacto. Los retos siguientes de Monferno (Strategy, Observer) se construyen sobre `v2`.
+El modelo del MVP (`model.Drone`, `model.Mision`) ya tiene 121 pruebas que dependen de sus constructores. Cambiarlos para agregar tipo, peso y prioridad como enum habría roto esas pruebas. Por eso el modelo v2 es un paquete nuevo (`skycampus.v2.model`) con la forma que pide el enunciado, y el MVP queda intacto. Los retos siguientes de Monferno (Strategy, Observer) se construyen sobre `v2`.
 
 ## Las cuatro consultas
 | # | Pregunta | Método | Operaciones de Stream |
