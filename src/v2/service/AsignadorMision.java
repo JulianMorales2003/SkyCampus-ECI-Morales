@@ -69,7 +69,8 @@ public class AsignadorMision {
     private boolean climaPermiteVolar() {
         try {
             return clima.esApto();
-        } catch (RuntimeException e) {
+        } catch (RuntimeException ignored) {
+            // Sin respuesta del clima no se vuela: el resultado se publica como CLIMA_ADVERSO.
             return false;
         }
     }

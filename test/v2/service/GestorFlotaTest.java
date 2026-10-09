@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Test;
 import v2.asignacion.EstrategiaBateriaJusta;
 import v2.asignacion.EstrategiaMayorBateria;
 import v2.eventos.AlertaTecnico;
-import v2.eventos.EventoFlota;
 import v2.eventos.ObservadorFlota;
 import v2.eventos.PanelOperador;
 import v2.eventos.SistemaLog;

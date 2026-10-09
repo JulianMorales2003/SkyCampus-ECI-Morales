@@ -1,5 +1,7 @@
 package alerta;
 
+import util.Consola;
+
 public class AlertaOperadorConsola implements AlertaOperador {
 
     @Override
@@ -10,6 +12,6 @@ public class AlertaOperadorConsola implements AlertaOperador {
         if (mensaje == null || mensaje.isBlank()) {
             throw new IllegalArgumentException("El mensaje de la alerta no puede ser nulo ni vacío.");
         }
-        System.out.println("[ALERTA para " + operador + "] " + mensaje);
+        Consola.imprimir("[ALERTA para " + operador + "] " + mensaje);
     }
 }

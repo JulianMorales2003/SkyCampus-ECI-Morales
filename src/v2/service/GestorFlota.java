@@ -23,7 +23,7 @@ public class GestorFlota {
         cambiarEstrategia(estrategia);
     }
 
-    public void cambiarEstrategia(EstrategiaAsignacion nueva) {
+    public final void cambiarEstrategia(EstrategiaAsignacion nueva) {
         Validaciones.exigirPresente(nueva, "estrategia");
         this.estrategia = nueva;
     }

@@ -17,6 +17,7 @@ import reporte.GeneradorReporte;
 import ruta.EstrategiaRuta;
 import ruta.RutaDirecta;
 import ruta.RutaEvitandoEdificios;
+import util.Consola;
 
 public class SolidApp {
 
@@ -35,7 +36,7 @@ public class SolidApp {
         alerta.enviar("Operador 1", "Misión asignada al drone " + elegido.id()
                 + " con destino " + asignacion.mision().destino() + ".");
 
-        System.out.println(new GeneradorReporte().generar(repositorio.listarTodas()));
+        Consola.imprimir(new GeneradorReporte().generar(repositorio.listarTodas()));
         mostrarRutas(asignacion.mision());
         demostrarReglasDeAsignacion(flota);
     }
@@ -71,28 +72,28 @@ public class SolidApp {
     private static void mostrarRutas(Mision mision) {
         List<EstrategiaRuta> estrategias = List.of(new RutaDirecta(), new RutaEvitandoEdificios());
         for (EstrategiaRuta estrategia : estrategias) {
-            System.out.println(estrategia.getClass().getSimpleName() + ": "
+            Consola.imprimir(estrategia.getClass().getSimpleName() + ": "
                     + estrategia.calcular(mision.origen(), mision.destino()));
         }
     }
 
     private static void demostrarReglasDeAsignacion(List<Drone> flotaActualizada) {
-        System.out.println("\n--- Reglas de asignación ---");
+        Consola.imprimir("\n--- Reglas de asignación ---");
         Drone droneEnVuelo = flotaActualizada.get(2);
         Drone otroDrone = flotaActualizada.get(0);
         Mision otraMision = crearMisionPendiente(droneEnVuelo);
         intentarAsignar("Mismo drone otra vez", otraMision, droneEnVuelo);
         intentarAsignar("Drone distinto al de la misión", otraMision, otroDrone);
-        System.out.println("Drone que ofrece ahora la estrategia: "
+        Consola.imprimir("Drone que ofrece ahora la estrategia: "
                 + elegirDrone(flotaActualizada).id());
     }
 
     private static void intentarAsignar(String escenario, Mision mision, Drone drone) {
         try {
             new AsignadorMision().asignar(mision, drone);
-            System.out.println(escenario + ": asignada");
+            Consola.imprimir(escenario + ": asignada");
         } catch (IllegalStateException | IllegalArgumentException excepcionAsignacion) {
-            System.out.println(escenario + ": RECHAZADA - " + excepcionAsignacion.getMessage());
+            Consola.imprimir(escenario + ": RECHAZADA - " + excepcionAsignacion.getMessage());
         }
     }
 }

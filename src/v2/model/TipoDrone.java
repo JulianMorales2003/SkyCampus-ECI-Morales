@@ -13,10 +13,6 @@ public enum TipoDrone {
         this.capacidadGramos = capacidadGramos;
     }
 
-    public int pesoMinimoGramos() {
-        return pesoMinimoGramos;
-    }
-
     public int capacidadGramos() {
         return capacidadGramos;
     }
