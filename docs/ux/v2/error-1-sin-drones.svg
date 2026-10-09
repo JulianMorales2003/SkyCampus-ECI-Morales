@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" font-family="DejaVu Sans, Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1280" height="760" fill="#0B1220"/>
+<rect x="0" y="0" width="1280" height="72" rx="0" fill="#0F1B33"/>
+<rect x="32" y="20" width="32" height="32" rx="8" fill="#7C3AED"/>
+<text x="48" y="43" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">S</text>
+<text x="78" y="43" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start">SkyCampus</text>
+<text x="1248" y="43" font-size="16" font-weight="400" fill="#94A3B8" text-anchor="end">Formulario de misión · Paso 2 de 3 · Error: sin drones</text>
+<text x="32" y="118" font-size="24" font-weight="700" fill="#F1F5F9" text-anchor="start">Nueva misión</text>
+<rect x="32" y="134" width="1216" height="52" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<g transform="translate(54,160)" fill="none" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="-5,0 -1,4 6,-4"/></g>
+<text x="76" y="166" font-size="15" font-weight="600" fill="#F1F5F9" text-anchor="start">Clima apto para volar</text>
+<text x="300" y="166" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="start">viento 12 km/h (límite 30 km/h) · sin lluvia · consultado a las 14:35</text>
+<rect x="32" y="206" width="620" height="396" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="52" y="240" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">DATOS DE LA MISIÓN</text>
+<text x="52" y="278" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Origen</text>
+<rect x="52" y="288" width="280" height="46" rx="8" fill="#0B1220" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="68" y="317" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque A</text>
+<text x="314" y="317" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">▾</text>
+<text x="352" y="278" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Destino</text>
+<rect x="352" y="288" width="280" height="46" rx="8" fill="#0B1220" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="368" y="317" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque C</text>
+<text x="614" y="317" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">▾</text>
+<text x="52" y="356" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Peso del paquete</text>
+<rect x="52" y="366" width="280" height="46" rx="8" fill="#0B1220" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="68" y="395" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">300</text>
+<text x="316" y="395" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">g</text>
+<text x="352" y="356" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Prioridad</text>
+<rect x="352.0" y="366" width="90.0" height="46" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="397.0" y="395" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Urgente</text>
+<rect x="448.0" y="366" width="90.0" height="46" rx="8" fill="#7C3AED" stroke="#7C3AED" stroke-width="1.5"/>
+<text x="493.0" y="395" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Normal</text>
+<rect x="544.0" y="366" width="90.0" height="46" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="589.0" y="395" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Bajo</text>
+<text x="52" y="436" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Máximo permitido: 2000 g</text>
+<text x="52" y="510" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Tipo de paquete</text>
+<rect x="52" y="520" width="113" height="36" rx="18" fill="#7C3AED" stroke="#7C3AED" stroke-width="1.5"/>
+<text x="108.5" y="544" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Documento</text>
+<rect x="175" y="520" width="79" height="36" rx="18" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="214.5" y="544" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Libro</text>
+<rect x="264" y="520" width="96" height="36" rx="18" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="312.0" y="544" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Muestra</text>
+<rect x="370" y="520" width="70" height="36" rx="18" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="405.0" y="544" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Otro</text>
+<text x="52" y="584" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Los drones aptos se actualizan solos al cambiar el peso, el destino o la prioridad.</text>
+<rect x="684" y="206" width="564" height="396" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="704" y="240" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">DRONES APTOS AHORA (0)</text>
+<g transform="translate(718,268)" fill="none" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="0,-7 7,6 -7,6" stroke-width="2"/><line x1="0" y1="-2" x2="0" y2="2" stroke-width="2"/><circle cx="0" cy="4.2" r="0.6" stroke-width="1.5"/></g>
+<text x="738" y="274" font-size="16" font-weight="700" fill="#F1F5F9" text-anchor="start">No hay drones disponibles para esta misión</text>
+<text x="704" y="300" font-size="13" font-weight="400" fill="#94A3B8" text-anchor="start">La flota de 20 drones está así ahora:</text>
+<rect x="704" y="316" width="178" height="28" rx="14" fill="#3B82F6"/>
+<g transform="translate(721,330)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="-6,-5 7,0 -6,5 -3,0" fill="#0B1220" stroke-width="1"/></g>
+<text x="736" y="335" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">En vuelo</text>
+<text x="900" y="336" font-size="14" font-weight="400" fill="#F1F5F9" text-anchor="start">12 drones</text>
+<rect x="704" y="350" width="178" height="28" rx="14" fill="#EAB308"/>
+<g transform="translate(721,364)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="1,-7 -5,1 -1,1 -2,7 5,-2 1,-2" fill="#0B1220" stroke-width="1"/></g>
+<text x="736" y="369" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">En carga</text>
+<text x="900" y="370" font-size="14" font-weight="400" fill="#F1F5F9" text-anchor="start">4 drones</text>
+<rect x="704" y="384" width="178" height="28" rx="14" fill="#EF4444"/>
+<g transform="translate(721,398)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="-4.5" y1="-4.5" x2="4.5" y2="4.5"/><line x1="4.5" y1="-4.5" x2="-4.5" y2="4.5"/></g>
+<text x="736" y="403" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">Fallo</text>
+<text x="900" y="404" font-size="14" font-weight="400" fill="#F1F5F9" text-anchor="start">1 drones</text>
+<rect x="704" y="418" width="178" height="28" rx="14" fill="#94A3B8"/>
+<g transform="translate(721,432)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="-5" y1="5" x2="1" y2="-1"/><circle cx="3" cy="-3" r="3.5"/></g>
+<text x="736" y="437" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">Mantenimiento</text>
+<text x="900" y="438" font-size="14" font-weight="400" fill="#F1F5F9" text-anchor="start">2 drones</text>
+<text x="704" y="474" font-size="13" font-weight="400" fill="#F1F5F9" text-anchor="start">Disponible, pero con batería bajo el mínimo (30%): 1 drone</text>
+<rect x="704" y="492" width="300" height="48" rx="8" fill="#7C3AED"/>
+<text x="854.0" y="520.9" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Programar para más tarde</text>
+<rect x="1020" y="492" width="208" height="48" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="1124.0" y="520.9" font-size="14" font-weight="600" fill="#F1F5F9" text-anchor="middle">Reintentar ahora</text>
+<text x="704" y="574" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Se intentará asignar cuando haya un drone apto. Puedes cancelar la programación.</text>
+<rect x="32" y="660" width="200" height="64" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="132.0" y="697.25" font-size="15" font-weight="600" fill="#F1F5F9" text-anchor="middle">Cancelar</text>
+<rect x="948" y="648" width="300" height="80" rx="8" fill="#334155"/>
+<text x="1098.0" y="694.3" font-size="18" font-weight="600" fill="#94A3B8" text-anchor="middle">Continuar</text>
+<text x="930" y="692" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="end">No disponible: no hay drones aptos</text>
+</svg>
