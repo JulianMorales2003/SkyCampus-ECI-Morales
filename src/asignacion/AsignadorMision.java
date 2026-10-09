@@ -1,5 +1,8 @@
 package asignacion;
 
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
 import model.Drone;
 import model.EstadoMision;
 import model.Mision;
@@ -32,5 +35,19 @@ public class AsignadorMision {
     private static Mision misionEnVuelo(Mision mision, Drone droneReservado) {
         return new Mision(mision.id(), droneReservado, mision.origen(), mision.destino(), mision.tipoCarga(),
                 EstadoMision.EN_VUELO, mision.prioridad(), mision.notas(), mision.horaMaximaEntrega());
+    }
+
+    public Optional<Asignacion> asignarAutomaticamente(Mision mision, List<Drone> flota) {
+        Validaciones.exigirPresente(mision, "mision");
+        Validaciones.exigirPresente(flota, "flota");
+        return flota.stream()
+                .filter(Drone::disponible)
+                .max(Comparator.comparingInt(Drone::bateria))
+                .map(elegido -> asignar(misionDelDrone(mision, elegido), elegido));
+    }
+
+    private static Mision misionDelDrone(Mision mision, Drone drone) {
+        return new Mision(mision.id(), drone, mision.origen(), mision.destino(), mision.tipoCarga(),
+                mision.estado(), mision.prioridad(), mision.notas(), mision.horaMaximaEntrega());
     }
 }
