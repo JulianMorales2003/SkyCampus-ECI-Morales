@@ -25,17 +25,45 @@ Se conservaron **ambos** cambios, sin borrar nada de ninguno:
 - Final de la clase: los dos métodos nuevos, uno tras otro.
 - Se eliminaron las marcas `<<<<<<<`, `=======` y `>>>>>>>`.
 
-Verificación: compila y pasan las pruebas de ambas ramas juntas (`AsignadorMisionAutomaticoTest` y `AsignadorMisionNotificacionTest`).
+Verificación: el resultado se contrastó con una versión de referencia del archivo resuelto, no quedaron marcas de conflicto, compila y pasan las pruebas de ambas ramas juntas (`AsignadorMisionAutomaticoTest` y `AsignadorMisionNotificacionTest`): `mvn clean verify` dio 130 pruebas, 0 fallos y `BUILD SUCCESS`.
 
 ## Uso de `git stash`
 Mientras se escribía la asignación automática se necesitó revisar `develop` sin perder el trabajo sin commit:
 ```
-[PEGA AQUÍ la salida de git stash, git checkout develop, git checkout <rama> y git stash pop]
+git stash
+Saved working directory and index state WIP on feature/MoralesZambrano-asignacion-automatica: c9c635a merge: integra feature/MoralesZambrano-sonarqube en develop (reto 14 aprobado)
+
+git status -sb
+## feature/MoralesZambrano-asignacion-automatica
+
+git checkout develop
+Switched to branch 'develop'
+Your branch is up to date with 'origin/develop'.
+
+git checkout feature/MoralesZambrano-asignacion-automatica
+Switched to branch 'feature/MoralesZambrano-asignacion-automatica'
+
+git stash pop
+On branch feature/MoralesZambrano-asignacion-automatica
+Changes not staged for commit:
+        modified:   src/asignacion/AsignadorMision.java
+Dropped refs/stash@{0} (dd4837f96a7290968720b9633302b09035f7195d)
 ```
 
 ## Historial: `git log --oneline --graph --all --decorate`
 ```
-[PEGA AQUÍ la salida real]
+*   5262a7d (HEAD -> feature/MoralesZambrano-monferno-02-integracion) merge: integra asignacion automatica y sistema de alertas
+|\
+| * e102c34 (origin/feature/MoralesZambrano-alertas-asignacion, feature/MoralesZambrano-alertas-asignacion) test: agrega pruebas de asignar y notificar
+| * c142e24 feat: agrega asignarYNotificar que asigna la mision y avisa al operador
+* |   d78aef8 merge: integra la asignacion automatica en la rama de integracion
+|\ \
+| |/
+|/|
+| * 68a7000 (origin/feature/MoralesZambrano-asignacion-automatica, feature/MoralesZambrano-asignacion-automatica) test: agrega pruebas de la asignacion automatica
+| * 6c75b56 feat: agrega asignarAutomaticamente que elige el drone disponible con mas bateria
+|/
+*   c9c635a (origin/develop, develop) merge: integra feature/MoralesZambrano-sonarqube en develop (reto 14 aprobado)
 ```
 
 ## ¿Merge o rebase?
