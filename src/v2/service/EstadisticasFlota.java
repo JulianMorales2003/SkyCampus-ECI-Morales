@@ -2,9 +2,12 @@ package v2.service;
 
 import java.util.EnumMap;
 import java.util.List;
+import java.util.Comparator;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import util.Validaciones;
+import v2.model.Drone;
 import v2.model.EstadoMision;
 import v2.model.Mision;
 import v2.model.TipoDrone;
@@ -22,5 +25,16 @@ public final class EstadisticasFlota {
                         mision -> mision.drone().tipo(),
                         () -> new EnumMap<>(TipoDrone.class),
                         Collectors.counting()));
+    }
+
+    public static Optional<Drone> droneConMasCompletadas(List<Mision> misiones) {
+        Validaciones.exigirPresente(misiones, "misiones");
+        Map<String, List<Mision>> completadasPorDrone = misiones.stream()
+                .filter(mision -> mision.estado() == EstadoMision.COMPLETADA)
+                .collect(Collectors.groupingBy(mision -> mision.drone().id()));
+        return completadasPorDrone.entrySet().stream()
+                .max(Comparator.comparingInt((Map.Entry<String, List<Mision>> grupo) -> grupo.getValue().size())
+                        .thenComparing(Map.Entry::getKey, Comparator.reverseOrder()))
+                .map(grupo -> grupo.getValue().get(0).drone());
     }
 }
