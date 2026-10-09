@@ -2,6 +2,7 @@ package app;
 
 import java.time.Instant;
 import java.util.List;
+import util.Consola;
 import v2.asignacion.EstrategiaBateriaJusta;
 import v2.asignacion.EstrategiaMayorBateria;
 import v2.asignacion.EstrategiaTipoSegunPaquete;
@@ -32,26 +33,26 @@ public class Monferno03App {
 
         SistemaLog log = new SistemaLog();
         GestorFlota gestor = new GestorFlota(new EstrategiaMayorBateria());
-        gestor.suscribir(new PanelOperador(System.out::println));
+        gestor.suscribir(new PanelOperador(Consola::imprimir));
         gestor.suscribir(log);
-        gestor.suscribir(new AlertaTecnico(System.out::println));
+        gestor.suscribir(new AlertaTecnico(Consola::imprimir));
 
-        System.out.println("== Estrategia: mayor batería ==");
+        Consola.imprimir("== Estrategia: mayor batería ==");
         gestor.asignar(normal, flota, AHORA);
 
-        System.out.println("== Estrategia: batería justa (ahorra los drones más cargados) ==");
+        Consola.imprimir("== Estrategia: batería justa (ahorra los drones más cargados) ==");
         gestor.cambiarEstrategia(new EstrategiaBateriaJusta());
         Mision enVuelo = gestor.asignar(normal, flota, AHORA).orElseThrow();
 
-        System.out.println("== Estrategia: tipo según el paquete (urgente -> EXPRESS) ==");
+        Consola.imprimir("== Estrategia: tipo según el paquete (urgente -> EXPRESS) ==");
         gestor.cambiarEstrategia(new EstrategiaTipoSegunPaquete());
         gestor.asignar(urgente, flota, AHORA);
 
-        System.out.println("== Cierre y fallo ==");
+        Consola.imprimir("== Cierre y fallo ==");
         gestor.completar(enVuelo, AHORA);
         gestor.reportarFallo(flota.get(3), AHORA);
 
-        System.out.println("== Registro del log (" + log.registros().size() + " eventos) ==");
-        log.registros().forEach(System.out::println);
+        Consola.imprimir("== Registro del log (" + log.registros().size() + " eventos) ==");
+        log.registros().forEach(Consola::imprimir);
     }
 }

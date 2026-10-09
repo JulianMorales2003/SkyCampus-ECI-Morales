@@ -9,6 +9,7 @@ import java.util.List;
 import model.Drone;
 import model.Mision;
 import model.TipoCarga;
+import util.Consola;
 import validacion.ResultadoValidacion;
 import validacion.ValidadorBateria;
 import validacion.ValidadorCarga;
@@ -46,7 +47,7 @@ public class PatronesApp {
     }
 
     private static void demostrarBuilder(Drone drone) {
-        System.out.println("=== Problema 1: Builder ===");
+        Consola.imprimir("=== Problema 1: Builder ===");
         demostrarSoloObligatorios(drone);
         demostrarConOpcionales(drone);
         demostrarCampoFaltante(drone);
@@ -57,7 +58,7 @@ public class PatronesApp {
                 .drone(drone).origen(BLOQUE_C).destino(BIBLIOTECA)
                 .tipoCarga(TipoCarga.SOBRE)
                 .build();
-        System.out.println("Solo obligatorios -> " + describirOpcionales(mision));
+        Consola.imprimir("Solo obligatorios -> " + describirOpcionales(mision));
     }
 
     private static void demostrarConOpcionales(Drone drone) {
@@ -68,14 +69,14 @@ public class PatronesApp {
                 .notas("Urgente: examen mañana")
                 .horaMaximaEntrega(LocalTime.of(10, 30))
                 .build();
-        System.out.println("Con opcionales    -> " + describirOpcionales(mision));
+        Consola.imprimir("Con opcionales    -> " + describirOpcionales(mision));
     }
 
     private static void demostrarCampoFaltante(Drone drone) {
         try {
             new MisionBuilder().drone(drone).destino(BIBLIOTECA).tipoCarga(TipoCarga.SOBRE).build();
         } catch (IllegalStateException excepcionCampoFaltante) {
-            System.out.println("Falta un obligatorio -> " + excepcionCampoFaltante.getMessage());
+            Consola.imprimir("Falta un obligatorio -> " + excepcionCampoFaltante.getMessage());
         }
     }
 
@@ -85,7 +86,7 @@ public class PatronesApp {
     }
 
     private static void demostrarCadenaDeValidacion(List<Drone> flota) {
-        System.out.println("\n=== Problema 2: Chain of Responsibility ===");
+        Consola.imprimir("\n=== Problema 2: Chain of Responsibility ===");
         ValidadorEnCadena cadena = new ValidadorBateria();
         cadena.setSiguiente(new ValidadorDestino(DESTINOS_VALIDOS))
                 .setSiguiente(new ValidadorCarga(CAPACIDAD_DRONE_GRAMOS));
@@ -105,11 +106,11 @@ public class PatronesApp {
 
     private static void imprimir(String escenario, ResultadoValidacion resultado) {
         String texto = resultado.valido() ? "APROBADA" : "RECHAZADA - " + resultado.motivo();
-        System.out.println(escenario + ": " + texto);
+        Consola.imprimir(escenario + ": " + texto);
     }
 
     private static void demostrarEstrategias(List<Drone> flota) {
-        System.out.println("\n=== Problema 3: Strategy ===");
+        Consola.imprimir("\n=== Problema 3: Strategy ===");
         AsignadorDrones asignador = new AsignadorDrones(new EstrategiaMayorBateria());
         imprimirAsignacion("Mayor batería", asignador, flota, BLOQUE_B);
 
@@ -122,6 +123,6 @@ public class PatronesApp {
     private static void imprimirAsignacion(String etiqueta, AsignadorDrones asignador,
                                            List<Drone> flota, String origen) {
         String resultado = asignador.asignar(flota, origen).map(Drone::id).orElse(SIN_DRONE);
-        System.out.println(etiqueta + ": " + resultado);
+        Consola.imprimir(etiqueta + ": " + resultado);
     }
 }

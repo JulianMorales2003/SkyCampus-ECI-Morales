@@ -2,6 +2,7 @@ package app;
 
 import java.time.Instant;
 import java.util.List;
+import util.Consola;
 import v2.model.Drone;
 import v2.model.EstadoDrone;
 import v2.model.EstadoMision;
@@ -30,11 +31,11 @@ public class Monferno01App {
                 mision("M-07", mini, EstadoMision.PENDIENTE, Prioridad.URGENTE, 14),
                 mision("M-08", express, EstadoMision.PENDIENTE, Prioridad.BAJO, 3));
 
-        System.out.println("1. Completadas por tipo: " + EstadisticasFlota.completadasPorTipo(misiones));
-        System.out.println("2. Drone con más completadas: "
+        Consola.imprimir("1. Completadas por tipo: " + EstadisticasFlota.completadasPorTipo(misiones));
+        Consola.imprimir("2. Drone con más completadas: "
                 + EstadisticasFlota.droneConMasCompletadas(misiones).map(Drone::id).orElse("ninguno"));
-        System.out.printf("3. Misiones fallidas: %.1f%%%n", EstadisticasFlota.porcentajeFallidas(misiones));
-        System.out.println("4. ¿Urgente pendiente hace más de 10 min?: "
+        Consola.imprimir(String.format("3. Misiones fallidas: %.1f%%", EstadisticasFlota.porcentajeFallidas(misiones)));
+        Consola.imprimir("4. ¿Urgente pendiente hace más de 10 min?: "
                 + EstadisticasFlota.hayUrgentePendienteMasDeDiezMinutos(misiones, AHORA));
     }
 
