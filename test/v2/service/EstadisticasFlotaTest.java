@@ -87,4 +87,28 @@ class EstadisticasFlotaTest {
     void droneConMasCompletadas_listaNula_lanzaIllegalArgumentException() {
         assertThrows(IllegalArgumentException.class, () -> EstadisticasFlota.droneConMasCompletadas(null));
     }
+
+    @Test
+    @DisplayName("porcentajeFallidas_unaDeCuatro_devuelveVeinticincoPorCiento")
+    void porcentajeFallidas_unaDeCuatro_devuelveVeinticincoPorCiento() {
+        List<Mision> misiones = List.of(
+                mision("M-1", mini, EstadoMision.FALLIDA),
+                mision("M-2", mini, EstadoMision.COMPLETADA),
+                mision("M-3", cargo, EstadoMision.COMPLETADA),
+                mision("M-4", cargo, EstadoMision.PENDIENTE));
+
+        assertEquals(25.0, EstadisticasFlota.porcentajeFallidas(misiones), 0.0001);
+    }
+
+    @Test
+    @DisplayName("porcentajeFallidas_listaVacia_devuelveCero")
+    void porcentajeFallidas_listaVacia_devuelveCero() {
+        assertEquals(0.0, EstadisticasFlota.porcentajeFallidas(List.of()), 0.0001);
+    }
+
+    @Test
+    @DisplayName("porcentajeFallidas_listaNula_lanzaIllegalArgumentException")
+    void porcentajeFallidas_listaNula_lanzaIllegalArgumentException() {
+        assertThrows(IllegalArgumentException.class, () -> EstadisticasFlota.porcentajeFallidas(null));
+    }
 }

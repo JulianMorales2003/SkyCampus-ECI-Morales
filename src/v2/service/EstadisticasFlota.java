@@ -37,4 +37,15 @@ public final class EstadisticasFlota {
                         .thenComparing(Map.Entry::getKey, Comparator.reverseOrder()))
                 .map(grupo -> grupo.getValue().get(0).drone());
     }
+
+    public static double porcentajeFallidas(List<Mision> misiones) {
+        Validaciones.exigirPresente(misiones, "misiones");
+        if (misiones.isEmpty()) {
+            return 0.0;
+        }
+        long fallidas = misiones.stream()
+                .filter(mision -> mision.estado() == EstadoMision.FALLIDA)
+                .count();
+        return fallidas * 100.0 / misiones.size();
+    }
 }
