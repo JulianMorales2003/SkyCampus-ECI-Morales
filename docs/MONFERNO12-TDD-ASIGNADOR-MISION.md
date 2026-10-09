@@ -6,11 +6,11 @@ El asignador se escribió con el ciclo rojo, verde, refactor: primero las prueba
 
 | Pieza | Paquete | Qué hace |
 |---|---|---|
-| `AsignadorMision` | `v2.service` | Valida el peso, consulta el clima, filtra los drones aptos, elige uno y avisa del resultado con un evento |
-| `ApiMeteorologica` | `v2.clima` | Interfaz del sistema externo (`boolean esApto()`); la implementación real vendrá en otro reto |
-| `EstrategiaPorPrioridad` | `v2.asignacion` | Urgentes al EXPRESS con más batería (si no hay, al de mayor batería); el resto, al de mayor batería |
-| `TipoDrone.admitePeso(int)` | `v2.model` | Peso mínimo y capacidad por tipo (RN-02 y RN-04) |
-| 3 tipos nuevos en `TipoEvento` | `v2.eventos` | `CLIMA_ADVERSO`, `PAQUETE_EXCEDE_CAPACIDAD` y `URGENTE_SIN_DRONE_RAPIDO` |
+| `AsignadorMision` | `skycampus.v2.service` | Valida el peso, consulta el clima, filtra los drones aptos, elige uno y avisa del resultado con un evento |
+| `ApiMeteorologica` | `skycampus.v2.clima` | Interfaz del sistema externo (`boolean esApto()`); la implementación real vendrá en otro reto |
+| `EstrategiaPorPrioridad` | `skycampus.v2.asignacion` | Urgentes al EXPRESS con más batería (si no hay, al de mayor batería); el resto, al de mayor batería |
+| `TipoDrone.admitePeso(int)` | `skycampus.v2.model` | Peso mínimo y capacidad por tipo (RN-02 y RN-04) |
+| 3 tipos nuevos en `TipoEvento` | `skycampus.v2.eventos` | `CLIMA_ADVERSO`, `PAQUETE_EXCEDE_CAPACIDAD` y `URGENTE_SIN_DRONE_RAPIDO` |
 
 Reglas del caso SC-07 que implementa ([`MONFERNO07-SC07-ASIGNACION-AUTOMATICA.md`](MONFERNO07-SC07-ASIGNACION-AUTOMATICA.md)):
 - RN-01: el drone tiene al menos 30 % de batería.

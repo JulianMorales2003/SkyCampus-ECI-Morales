@@ -45,7 +45,7 @@ public class SolidApp {
         return List.of(
                 new Drone("D-01", MODELO_DRONE, 85, true, "Bloque A"),
                 new Drone("D-02", MODELO_DRONE, 42, false, "Biblioteca"),
-                new Drone("D-03", MODELO_DRONE, 91, true, "Bloque C"),
+                new Drone("D-03", MODELO_DRONE, 91, true, ORIGEN),
                 new Drone("D-04", MODELO_DRONE, 18, true, "Bloque B"),
                 new Drone("D-05", MODELO_DRONE, 67, true, "Bloque D"));
     }

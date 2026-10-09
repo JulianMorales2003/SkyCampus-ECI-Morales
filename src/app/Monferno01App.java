@@ -3,13 +3,13 @@ package app;
 import java.time.Instant;
 import java.util.List;
 import util.Consola;
-import v2.model.Drone;
-import v2.model.EstadoDrone;
-import v2.model.EstadoMision;
-import v2.model.Mision;
-import v2.model.Prioridad;
-import v2.model.TipoDrone;
-import v2.service.EstadisticasFlota;
+import skycampus.v2.model.Drone;
+import skycampus.v2.model.EstadoDrone;
+import skycampus.v2.model.EstadoMision;
+import skycampus.v2.model.Mision;
+import skycampus.v2.model.Prioridad;
+import skycampus.v2.model.TipoDrone;
+import skycampus.v2.service.EstadisticasFlota;
 
 public class Monferno01App {
 

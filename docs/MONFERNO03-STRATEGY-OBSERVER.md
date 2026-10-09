@@ -1,6 +1,6 @@
 # Monferno · Reto 03 — Strategy y Observer sobre SkyCampus v2
 
-Todo el código nuevo vive en `v2` (`v2.asignacion`, `v2.eventos`, `v2.service`), igual que en el Reto 01. El MVP queda intacto.
+Todo el código nuevo vive en `v2` (`skycampus.v2.asignacion`, `skycampus.v2.eventos`, `skycampus.v2.service`), igual que en el Reto 01. El MVP queda intacto.
 
 ## 1. Strategy: cómo se elige el drone
 

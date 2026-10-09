@@ -57,17 +57,25 @@ class MisionBuilderTest {
     @Test
     @DisplayName("build: falta de cada campo obligatorio lanza IllegalStateException")
     void build_faltaCampoObligatorio_lanzaIllegalStateException() {
-        assertThrows(IllegalStateException.class, () -> new MisionBuilder().origen("A").destino("B").tipoCarga(TipoCarga.SOBRE).build());
-        assertThrows(IllegalStateException.class, () -> new MisionBuilder().drone(drone).destino("B").tipoCarga(TipoCarga.SOBRE).build());
-        assertThrows(IllegalStateException.class, () -> new MisionBuilder().drone(drone).origen("A").tipoCarga(TipoCarga.SOBRE).build());
-        assertThrows(IllegalStateException.class, () -> new MisionBuilder().drone(drone).origen("A").destino("B").build());
+        MisionBuilder sinDrone = new MisionBuilder().origen("A").destino("B").tipoCarga(TipoCarga.SOBRE);
+        MisionBuilder sinOrigen = new MisionBuilder().drone(drone).destino("B").tipoCarga(TipoCarga.SOBRE);
+        MisionBuilder sinDestino = new MisionBuilder().drone(drone).origen("A").tipoCarga(TipoCarga.SOBRE);
+        MisionBuilder sinTipoCarga = new MisionBuilder().drone(drone).origen("A").destino("B");
+
+        assertThrows(IllegalStateException.class, sinDrone::build);
+        assertThrows(IllegalStateException.class, sinOrigen::build);
+        assertThrows(IllegalStateException.class, sinDestino::build);
+        assertThrows(IllegalStateException.class, sinTipoCarga::build);
     }
 
     @Test
     @DisplayName("build: origen o destino en blanco lanza IllegalStateException")
     void build_textoEnBlanco_lanzaIllegalStateException() {
-        assertThrows(IllegalStateException.class, () -> builderMinimo().origen("  ").build());
-        assertThrows(IllegalStateException.class, () -> builderMinimo().destino("").build());
+        MisionBuilder origenEnBlanco = builderMinimo().origen("  ");
+        MisionBuilder destinoVacio = builderMinimo().destino("");
+
+        assertThrows(IllegalStateException.class, origenEnBlanco::build);
+        assertThrows(IllegalStateException.class, destinoVacio::build);
     }
 
     @Test
