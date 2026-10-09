@@ -51,7 +51,7 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
 
-                <!-- Quality Gate: el build falla si la cobertura de líneas baja del 80% o la de ramas del 70%.
+                <!-- Quality Gate: el build falla si la cobertura de líneas baja del 85% o la de ramas del 85%.
                      Solo se excluye el código de demostración (app); model y el resto SÍ se miden -->
                 <configuration>
                     <excludes>
@@ -87,12 +87,12 @@
                                         <limit>
                                             <counter>LINE</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.80</minimum>
+                                            <minimum>0.85</minimum>
                                         </limit>
                                         <limit>
                                             <counter>BRANCH</counter>
                                             <value>COVEREDRATIO</value>
-                                            <minimum>0.70</minimum>
+                                            <minimum>0.85</minimum>
                                         </limit>
                                     </limits>
                                 </rule>
