@@ -1,5 +1,6 @@
 package asignacion;
 
+import alerta.AlertaOperador;
 import model.Drone;
 import model.EstadoMision;
 import model.Mision;
@@ -32,5 +33,13 @@ public class AsignadorMision {
     private static Mision misionEnVuelo(Mision mision, Drone droneReservado) {
         return new Mision(mision.id(), droneReservado, mision.origen(), mision.destino(), mision.tipoCarga(),
                 EstadoMision.EN_VUELO, mision.prioridad(), mision.notas(), mision.horaMaximaEntrega());
+    }
+
+    public Asignacion asignarYNotificar(Mision mision, Drone droneActual, AlertaOperador alerta, String operador) {
+        Validaciones.exigirPresente(alerta, "alerta");
+        Asignacion asignacion = asignar(mision, droneActual);
+        alerta.enviar(operador, "Misión asignada al drone " + droneActual.id()
+                + " con destino " + mision.destino() + ".");
+        return asignacion;
     }
 }
