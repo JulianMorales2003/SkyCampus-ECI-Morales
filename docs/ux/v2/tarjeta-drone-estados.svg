@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1120" viewBox="0 0 1280 1120" font-family="DejaVu Sans, Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1280" height="1120" fill="#0B1220"/>
+<rect x="0" y="0" width="1280" height="72" rx="0" fill="#0F1B33"/>
+<rect x="32" y="20" width="32" height="32" rx="8" fill="#7C3AED"/>
+<text x="48" y="43" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">S</text>
+<text x="78" y="43" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start">SkyCampus</text>
+<text x="1248" y="43" font-size="16" font-weight="400" fill="#94A3B8" text-anchor="end">Sistema de diseño v2 · Componentes</text>
+<text x="32" y="118" font-size="24" font-weight="700" fill="#F1F5F9" text-anchor="start">Tarjeta de drone: los 5 estados</text>
+<text x="32" y="142" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="start">Mismo tamaño, misma estructura y mismos datos. El estado se lee por el nombre, el ícono y el color, nunca solo por el color.</text>
+<text x="32" y="182" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">1 · Disponible (asignable)</text>
+<rect x="32" y="190" width="372" height="216" rx="8" fill="#1E293B" stroke="#7C3AED" stroke-width="2.5"/>
+<text x="52" y="226" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-01</text>
+<text x="52" y="246" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">MINI</text>
+<rect x="248" y="206" width="136" height="28" rx="14" fill="#22C55E"/>
+<g transform="translate(265,220)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="-5,0 -1,4 6,-4"/></g>
+<text x="280" y="225" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">Disponible</text>
+<rect x="52" y="270" width="190" height="10" rx="5" fill="#334155"/>
+<rect x="52" y="270" width="161.5" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="108.0" y="266" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="165.0" y="266" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="256" y="280" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">85%</text>
+<g transform="translate(59,337)" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0,6 C-5,0 -5,-6 0,-6 C5,-6 5,0 0,6 Z"/><circle cx="0" cy="-2" r="1.5"/></g>
+<text x="74" y="342" font-size="15" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque A</text>
+<rect x="108" y="354" width="96" height="40" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="156.0" y="378.55" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Ver detalle</text>
+<rect x="214" y="354" width="170" height="40" rx="8" fill="#7C3AED"/>
+<text x="299.0" y="378.9" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Asignar misión</text>
+<text x="454" y="182" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">2 · En vuelo</text>
+<rect x="454" y="190" width="372" height="216" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="474" y="226" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-02</text>
+<text x="474" y="246" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">MINI</text>
+<rect x="689" y="206" width="117" height="28" rx="14" fill="#3B82F6"/>
+<g transform="translate(706,220)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="-6,-5 7,0 -6,5 -3,0" fill="#0B1220" stroke-width="1"/></g>
+<text x="721" y="225" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">En vuelo</text>
+<rect x="474" y="270" width="190" height="10" rx="5" fill="#334155"/>
+<rect x="474" y="270" width="79.8" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="530.0" y="266" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="587.0" y="266" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="678" y="280" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">42%</text>
+<text x="474" y="311" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Bloqueado: en misión</text>
+<g transform="translate(481,337)" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0,6 C-5,0 -5,-6 0,-6 C5,-6 5,0 0,6 Z"/><circle cx="0" cy="-2" r="1.5"/></g>
+<text x="496" y="342" font-size="15" font-weight="400" fill="#F1F5F9" text-anchor="start">Biblioteca</text>
+<rect x="530" y="354" width="96" height="40" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="578.0" y="378.55" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Ver detalle</text>
+<rect x="636" y="354" width="170" height="40" rx="8" fill="#334155"/>
+<text x="721.0" y="378.9" font-size="14" font-weight="600" fill="#94A3B8" text-anchor="middle">Asignar misión</text>
+<text x="876" y="182" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">3 · En carga</text>
+<rect x="876" y="190" width="372" height="216" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="896" y="226" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-03</text>
+<text x="896" y="246" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">CARGO</text>
+<rect x="1111" y="206" width="117" height="28" rx="14" fill="#EAB308"/>
+<g transform="translate(1128,220)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="1,-7 -5,1 -1,1 -2,7 5,-2 1,-2" fill="#0B1220" stroke-width="1"/></g>
+<text x="1143" y="225" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">En carga</text>
+<rect x="896" y="270" width="190" height="10" rx="5" fill="#334155"/>
+<rect x="896" y="270" width="127.3" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="952.0" y="266" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="1009.0" y="266" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="1100" y="280" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">67%</text>
+<text x="896" y="311" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Bloqueado: en carga</text>
+<g transform="translate(903,337)" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0,6 C-5,0 -5,-6 0,-6 C5,-6 5,0 0,6 Z"/><circle cx="0" cy="-2" r="1.5"/></g>
+<text x="918" y="342" font-size="15" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque D</text>
+<rect x="952" y="354" width="96" height="40" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="1000.0" y="378.55" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Ver detalle</text>
+<rect x="1058" y="354" width="170" height="40" rx="8" fill="#334155"/>
+<text x="1143.0" y="378.9" font-size="14" font-weight="600" fill="#94A3B8" text-anchor="middle">Asignar misión</text>
+<text x="32" y="472" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">4 · Fallo</text>
+<rect x="32" y="480" width="372" height="216" rx="8" fill="#1E293B" stroke="#EF4444" stroke-width="2.5"/>
+<text x="52" y="516" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-04</text>
+<text x="52" y="536" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">EXPRESS</text>
+<rect x="295" y="496" width="89" height="28" rx="14" fill="#EF4444"/>
+<g transform="translate(312,510)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="-4.5" y1="-4.5" x2="4.5" y2="4.5"/><line x1="4.5" y1="-4.5" x2="-4.5" y2="4.5"/></g>
+<text x="327" y="515" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">Fallo</text>
+<rect x="52" y="560" width="190" height="10" rx="5" fill="#334155"/>
+<rect x="52" y="560" width="172.9" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="108.0" y="556" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="165.0" y="556" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="256" y="570" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">91%</text>
+<text x="52" y="601" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Bloqueado: reporta fallo</text>
+<g transform="translate(59,627)" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0,6 C-5,0 -5,-6 0,-6 C5,-6 5,0 0,6 Z"/><circle cx="0" cy="-2" r="1.5"/></g>
+<text x="74" y="632" font-size="15" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque C</text>
+<rect x="108" y="644" width="96" height="40" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="156.0" y="668.55" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Ver detalle</text>
+<rect x="214" y="644" width="170" height="40" rx="8" fill="#334155"/>
+<text x="299.0" y="668.9" font-size="14" font-weight="600" fill="#94A3B8" text-anchor="middle">Asignar misión</text>
+<text x="454" y="472" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">5 · Mantenimiento</text>
+<rect x="454" y="480" width="372" height="216" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="474" y="516" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-05</text>
+<text x="474" y="536" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">MINI</text>
+<rect x="642" y="496" width="164" height="28" rx="14" fill="#94A3B8"/>
+<g transform="translate(659,510)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="-5" y1="5" x2="1" y2="-1"/><circle cx="3" cy="-3" r="3.5"/></g>
+<text x="674" y="515" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">Mantenimiento</text>
+<rect x="474" y="560" width="190" height="10" rx="5" fill="#334155"/>
+<rect x="474" y="560" width="104.5" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="530.0" y="556" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="587.0" y="556" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="678" y="570" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">55%</text>
+<text x="474" y="601" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Bloqueado: en mantenimiento</text>
+<g transform="translate(481,627)" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0,6 C-5,0 -5,-6 0,-6 C5,-6 5,0 0,6 Z"/><circle cx="0" cy="-2" r="1.5"/></g>
+<text x="496" y="632" font-size="15" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque B</text>
+<rect x="530" y="644" width="96" height="40" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="578.0" y="668.55" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Ver detalle</text>
+<rect x="636" y="644" width="170" height="40" rx="8" fill="#334155"/>
+<text x="721.0" y="668.9" font-size="14" font-weight="600" fill="#94A3B8" text-anchor="middle">Asignar misión</text>
+<text x="876" y="472" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Variante: Disponible con batería bajo el mínimo</text>
+<rect x="876" y="480" width="372" height="216" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="896" y="516" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-06</text>
+<text x="896" y="536" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">MINI</text>
+<rect x="1092" y="496" width="136" height="28" rx="14" fill="#22C55E"/>
+<g transform="translate(1109,510)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="-5,0 -1,4 6,-4"/></g>
+<text x="1124" y="515" font-size="14" font-weight="600" fill="#0B1220" text-anchor="start">Disponible</text>
+<rect x="896" y="560" width="190" height="10" rx="5" fill="#334155"/>
+<rect x="896" y="560" width="34.2" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="952.0" y="556" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="1009.0" y="556" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="1100" y="570" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">18%</text>
+<g transform="translate(903,597)" fill="none" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="0,-7 7,6 -7,6" stroke-width="2"/><line x1="0" y1="-2" x2="0" y2="2" stroke-width="2"/><circle cx="0" cy="4.2" r="0.6" stroke-width="1.5"/></g>
+<text x="918" y="601" font-size="12" font-weight="600" fill="#F1F5F9" text-anchor="start">Bajo mínimo (mín. 30%)</text>
+<g transform="translate(903,627)" fill="none" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M0,6 C-5,0 -5,-6 0,-6 C5,-6 5,0 0,6 Z"/><circle cx="0" cy="-2" r="1.5"/></g>
+<text x="918" y="632" font-size="15" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque B</text>
+<rect x="952" y="644" width="96" height="40" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="1000.0" y="668.55" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Ver detalle</text>
+<rect x="1058" y="644" width="170" height="40" rx="8" fill="#334155"/>
+<text x="1143.0" y="668.9" font-size="14" font-weight="600" fill="#94A3B8" text-anchor="middle">Asignar misión</text>
+<text x="32" y="740" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start">Botón "Asignar misión": 5 estados</text>
+<text x="32" y="772" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Default</text>
+<rect x="32" y="784" width="220" height="48" rx="8" fill="#7C3AED"/>
+<text x="142.0" y="813.25" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle">Asignar misión</text>
+<text x="276" y="772" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Hover</text>
+<rect x="276" y="784" width="220" height="48" rx="8" fill="#6D28D9" stroke="#C4B5FD" stroke-width="2"/>
+<text x="386.0" y="813.25" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle">Asignar misión</text>
+<text x="520" y="772" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Procesando</text>
+<rect x="520" y="784" width="220" height="48" rx="8" fill="#7C3AED"/>
+<g transform="translate(576.5,808.0)" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M-6,0 A6,6 0 1 1 0,6" stroke-width="2.5"/></g>
+<text x="642.0" y="813.25" font-size="15" font-weight="600" fill="#FFFFFF" text-anchor="middle">Asignando…</text>
+<text x="764" y="772" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Éxito</text>
+<rect x="764" y="784" width="220" height="48" rx="8" fill="#F1F5F9"/>
+<g transform="translate(798.75,808.0)" fill="none" stroke="#0B1220" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="-5,0 -1,4 6,-4"/></g>
+<text x="886.0" y="813.25" font-size="15" font-weight="600" fill="#0B1220" text-anchor="middle">Misión asignada</text>
+<text x="1008" y="772" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Deshabilitado</text>
+<rect x="1008" y="784" width="220" height="48" rx="8" fill="#334155"/>
+<text x="1118.0" y="813.25" font-size="15" font-weight="600" fill="#94A3B8" text-anchor="middle">Asignar misión</text>
+<text x="32" y="856" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Éxito usa el color de texto principal y no el verde, porque el verde solo significa "Disponible". El hover oscurece el morado (7,1:1 con texto blanco).</text>
+<text x="32" y="906" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start">Indicador de batería: 3 niveles</text>
+<text x="32" y="938" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Alta · 60% o más</text>
+<rect x="32" y="954" width="230" height="10" rx="5" fill="#334155"/>
+<rect x="32" y="954" width="195.5" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="100.0" y="950" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="169.0" y="950" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="276" y="964" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">85%</text>
+<text x="442" y="938" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Media · 30% a 59%</text>
+<rect x="442" y="954" width="230" height="10" rx="5" fill="#334155"/>
+<rect x="442" y="954" width="103.5" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="510.0" y="950" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="579.0" y="950" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="686" y="964" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">45%</text>
+<text x="852" y="938" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Baja · menos de 30%</text>
+<rect x="852" y="954" width="230" height="10" rx="5" fill="#334155"/>
+<rect x="852" y="954" width="41.4" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="920.0" y="950" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="989.0" y="950" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="1096" y="964" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">18%</text>
+<g transform="translate(860,993)" fill="none" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="0,-7 7,6 -7,6" stroke-width="2"/><line x1="0" y1="-2" x2="0" y2="2" stroke-width="2"/><circle cx="0" cy="4.2" r="0.6" stroke-width="1.5"/></g>
+<text x="876" y="997" font-size="12" font-weight="600" fill="#F1F5F9" text-anchor="start">Bajo mínimo: no se puede asignar (RN-01)</text>
+<text x="32" y="1040" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Las marcas verticales señalan el 30% (mínimo para asignar) y el 60%. Los niveles se distinguen por la posición de la barra frente a las marcas y por la etiqueta;</text>
+<text x="32" y="1058" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">el rojo, el amarillo y el verde se reservan para los estados del drone, como en el manual de identidad del reto 08.</text>
+</svg>
