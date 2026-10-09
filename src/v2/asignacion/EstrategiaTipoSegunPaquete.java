@@ -10,7 +10,7 @@ import v2.model.TipoDrone;
 
 public class EstrategiaTipoSegunPaquete implements EstrategiaAsignacion {
 
-    public static final int PESO_MAXIMO_MINI_GRAMOS = 1000;
+    public static final int PESO_MAXIMO_MINI_GRAMOS = TipoDrone.MINI.capacidadGramos();
 
     private final EstrategiaAsignacion desempate = new EstrategiaMayorBateria();
 
