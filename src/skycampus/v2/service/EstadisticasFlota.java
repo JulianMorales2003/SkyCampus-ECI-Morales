@@ -16,6 +16,9 @@ import skycampus.v2.model.Prioridad;
 import skycampus.v2.model.TipoDrone;
 
 public final class EstadisticasFlota {
+    private static final String PARAMETRO_MISIONES = "misiones";
+    private static final String PARAMETRO_AHORA = "ahora";
+
 
     public static final Duration UMBRAL_URGENTE_PENDIENTE = Duration.ofMinutes(10);
 
@@ -23,7 +26,7 @@ public final class EstadisticasFlota {
     }
 
     public static Map<TipoDrone, Long> completadasPorTipo(List<Mision> misiones) {
-        Validaciones.exigirPresente(misiones, "misiones");
+        Validaciones.exigirPresente(misiones, PARAMETRO_MISIONES);
         return misiones.stream()
                 .filter(mision -> mision.estado() == EstadoMision.COMPLETADA)
                 .collect(Collectors.groupingBy(
@@ -33,7 +36,7 @@ public final class EstadisticasFlota {
     }
 
     public static Optional<Drone> droneConMasCompletadas(List<Mision> misiones) {
-        Validaciones.exigirPresente(misiones, "misiones");
+        Validaciones.exigirPresente(misiones, PARAMETRO_MISIONES);
         Map<String, List<Mision>> completadasPorDrone = misiones.stream()
                 .filter(mision -> mision.estado() == EstadoMision.COMPLETADA)
                 .collect(Collectors.groupingBy(mision -> mision.drone().id()));
@@ -44,7 +47,7 @@ public final class EstadisticasFlota {
     }
 
     public static double porcentajeFallidas(List<Mision> misiones) {
-        Validaciones.exigirPresente(misiones, "misiones");
+        Validaciones.exigirPresente(misiones, PARAMETRO_MISIONES);
         if (misiones.isEmpty()) {
             return 0.0;
         }
@@ -55,8 +58,8 @@ public final class EstadisticasFlota {
     }
 
     public static boolean hayUrgentePendienteMasDeDiezMinutos(List<Mision> misiones, Instant ahora) {
-        Validaciones.exigirPresente(misiones, "misiones");
-        Validaciones.exigirPresente(ahora, "ahora");
+        Validaciones.exigirPresente(misiones, PARAMETRO_MISIONES);
+        Validaciones.exigirPresente(ahora, PARAMETRO_AHORA);
         return misiones.stream()
                 .filter(mision -> mision.prioridad() == Prioridad.URGENTE)
                 .filter(mision -> mision.estado() == EstadoMision.PENDIENTE)

@@ -39,9 +39,10 @@ class GeneradorReporteTest {
 
         String reporte = generador.generar(List.of(m1, m2));
 
-        assertEquals("REPORTE DE MISIONES (2)\n"
-                + "M-1 | D-01 | Bloque A -> Biblioteca | SOBRE | PENDIENTE\n"
-                + "M-2 | D-02 | Bloque B -> Bloque C | LIBRO | EN_VUELO", reporte);
+        assertEquals("""
+                REPORTE DE MISIONES (2)
+                M-1 | D-01 | Bloque A -> Biblioteca | SOBRE | PENDIENTE
+                M-2 | D-02 | Bloque B -> Bloque C | LIBRO | EN_VUELO""", reporte);
         assertTrue(reporte.contains("(2)"));
     }
 }

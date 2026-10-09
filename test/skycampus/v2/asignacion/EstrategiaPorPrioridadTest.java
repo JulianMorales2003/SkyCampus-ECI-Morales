@@ -11,6 +11,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import skycampus.v2.model.Drone;
 import skycampus.v2.model.Prioridad;
+import skycampus.v2.model.SolicitudMision;
 import skycampus.v2.model.TipoDrone;
 
 @DisplayName("EstrategiaPorPrioridad (RF-07 + RF-08)")
@@ -50,7 +51,7 @@ class EstrategiaPorPrioridadTest {
     @DisplayName("seleccionar_argumentosNulos_lanzaExcepcion")
     void seleccionar_argumentosNulos_lanzaExcepcion() {
         assertThrows(IllegalArgumentException.class, () -> estrategia.seleccionar(null, flota));
-        assertThrows(IllegalArgumentException.class,
-                () -> estrategia.seleccionar(solicitud("M-1", 200, Prioridad.NORMAL), null));
+        SolicitudMision valida = solicitud("M-1", 200, Prioridad.NORMAL);
+        assertThrows(IllegalArgumentException.class, () -> estrategia.seleccionar(valida, null));
     }
 }

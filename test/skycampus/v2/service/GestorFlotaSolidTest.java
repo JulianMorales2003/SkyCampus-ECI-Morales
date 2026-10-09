@@ -10,6 +10,7 @@ import static skycampus.v2.testutil.DatosV2.solicitud;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -163,6 +164,9 @@ class GestorFlotaSolidTest {
         assertEquals(EstrategiaAsignacion.class, estrategia.getType());
         assertTrue(EstrategiaAsignacion.class.isInterface());
         for (Field campo : GestorFlota.class.getDeclaredFields()) {
+            if (Modifier.isStatic(campo.getModifiers())) {
+                continue;
+            }
             assertTrue(campo.getType().isInterface(),
                     "El campo " + campo.getName() + " debería ser una interfaz, es " + campo.getType());
         }

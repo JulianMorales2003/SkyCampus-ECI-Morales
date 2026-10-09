@@ -15,6 +15,8 @@ import skycampus.v2.model.Mision;
 import skycampus.v2.model.SolicitudMision;
 
 public class GestorFlota {
+    private static final String PARAMETRO_AHORA = "ahora";
+
 
     private final List<ObservadorFlota> observadores = new ArrayList<>();
     private EstrategiaAsignacion estrategia;
@@ -40,7 +42,7 @@ public class GestorFlota {
     public Optional<Mision> asignar(SolicitudMision solicitud, List<Drone> flota, Instant ahora) {
         Validaciones.exigirPresente(solicitud, "solicitud");
         Validaciones.exigirPresente(flota, "flota");
-        Validaciones.exigirPresente(ahora, "ahora");
+        Validaciones.exigirPresente(ahora, PARAMETRO_AHORA);
         Optional<Mision> mision = estrategia.seleccionar(solicitud, flota)
                 .map(drone -> new Mision(solicitud.id(), drone, solicitud.destino(),
                         solicitud.pesoPaqueteGramos(), solicitud.prioridad(),
@@ -59,7 +61,7 @@ public class GestorFlota {
 
     public Mision completar(Mision mision, Instant ahora) {
         Validaciones.exigirPresente(mision, "mision");
-        Validaciones.exigirPresente(ahora, "ahora");
+        Validaciones.exigirPresente(ahora, PARAMETRO_AHORA);
         Mision completada = new Mision(mision.id(), mision.drone(), mision.destino(),
                 mision.pesoPaqueteGramos(), mision.prioridad(), EstadoMision.COMPLETADA,
                 mision.creadaEn());
@@ -71,7 +73,7 @@ public class GestorFlota {
 
     public void reportarFallo(Drone drone, Instant ahora) {
         Validaciones.exigirPresente(drone, "drone");
-        Validaciones.exigirPresente(ahora, "ahora");
+        Validaciones.exigirPresente(ahora, PARAMETRO_AHORA);
         notificar(new EventoFlota(TipoEvento.FALLO_DRONE,
                 "El drone " + drone.id() + " reportó un fallo.", ahora));
     }
