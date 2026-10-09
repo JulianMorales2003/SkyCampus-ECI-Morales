@@ -1,5 +1,6 @@
 package asignacion;
 
+import alerta.AlertaOperador;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -49,5 +50,13 @@ public class AsignadorMision {
     private static Mision misionDelDrone(Mision mision, Drone drone) {
         return new Mision(mision.id(), drone, mision.origen(), mision.destino(), mision.tipoCarga(),
                 mision.estado(), mision.prioridad(), mision.notas(), mision.horaMaximaEntrega());
+    }
+
+    public Asignacion asignarYNotificar(Mision mision, Drone droneActual, AlertaOperador alerta, String operador) {
+        Validaciones.exigirPresente(alerta, "alerta");
+        Asignacion asignacion = asignar(mision, droneActual);
+        alerta.enviar(operador, "Misión asignada al drone " + droneActual.id()
+                + " con destino " + mision.destino() + ".");
+        return asignacion;
     }
 }
