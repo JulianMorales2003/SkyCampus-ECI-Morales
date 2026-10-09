@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" font-family="DejaVu Sans, Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1280" height="760" fill="#0B1220"/>
+<rect x="0" y="0" width="1280" height="72" rx="0" fill="#0F1B33"/>
+<rect x="32" y="20" width="32" height="32" rx="8" fill="#7C3AED"/>
+<text x="48" y="43" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">S</text>
+<text x="78" y="43" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start">SkyCampus</text>
+<text x="1248" y="43" font-size="16" font-weight="400" fill="#94A3B8" text-anchor="end">Formulario de misión · Paso 2 de 3</text>
+<text x="32" y="118" font-size="24" font-weight="700" fill="#F1F5F9" text-anchor="start">Nueva misión</text>
+<rect x="32" y="134" width="1216" height="52" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<g transform="translate(54,160)" fill="none" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="-5,0 -1,4 6,-4"/></g>
+<text x="76" y="166" font-size="15" font-weight="600" fill="#F1F5F9" text-anchor="start">Clima apto para volar</text>
+<text x="300" y="166" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="start">viento 12 km/h (límite 30 km/h) · sin lluvia · consultado a las 14:35</text>
+<rect x="32" y="206" width="620" height="396" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="52" y="240" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">DATOS DE LA MISIÓN</text>
+<text x="52" y="278" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Origen</text>
+<rect x="52" y="288" width="280" height="46" rx="8" fill="#0B1220" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="68" y="317" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque A</text>
+<text x="314" y="317" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">▾</text>
+<text x="352" y="278" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Destino</text>
+<rect x="352" y="288" width="280" height="46" rx="8" fill="#0B1220" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="368" y="317" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start">Bloque C</text>
+<text x="614" y="317" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">▾</text>
+<text x="52" y="356" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Peso del paquete</text>
+<rect x="52" y="366" width="280" height="46" rx="8" fill="#0B1220" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="68" y="395" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">300</text>
+<text x="316" y="395" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">g</text>
+<text x="352" y="356" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Prioridad</text>
+<rect x="352.0" y="366" width="90.0" height="46" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="397.0" y="395" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Urgente</text>
+<rect x="448.0" y="366" width="90.0" height="46" rx="8" fill="#7C3AED" stroke="#7C3AED" stroke-width="1.5"/>
+<text x="493.0" y="395" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Normal</text>
+<rect x="544.0" y="366" width="90.0" height="46" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="589.0" y="395" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Bajo</text>
+<text x="52" y="436" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Máximo permitido: 2000 g</text>
+<text x="52" y="510" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="start">Tipo de paquete</text>
+<rect x="52" y="520" width="113" height="36" rx="18" fill="#7C3AED" stroke="#7C3AED" stroke-width="1.5"/>
+<text x="108.5" y="544" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Documento</text>
+<rect x="175" y="520" width="79" height="36" rx="18" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="214.5" y="544" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Libro</text>
+<rect x="264" y="520" width="96" height="36" rx="18" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="312.0" y="544" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Muestra</text>
+<rect x="370" y="520" width="70" height="36" rx="18" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="405.0" y="544" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="middle">Otro</text>
+<text x="52" y="584" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Los drones aptos se actualizan solos al cambiar el peso, el destino o la prioridad.</text>
+<rect x="684" y="206" width="564" height="396" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="704" y="240" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">DRONES APTOS AHORA (3)</text>
+<rect x="704" y="258" width="524" height="58" rx="8" fill="#0B1220" stroke="#7C3AED" stroke-width="2.5"/>
+<text x="720" y="284" font-size="17" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-01</text>
+<text x="720" y="304" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">MINI</text>
+<rect x="834" y="282" width="150" height="10" rx="5" fill="#334155"/>
+<rect x="834" y="282" width="127.5" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="878.0" y="278" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="923.0" y="278" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="998" y="292" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">85%</text>
+<text x="1212" y="292" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="end">Elegido</text>
+<rect x="704" y="328" width="524" height="58" rx="8" fill="#0B1220" stroke="#334155" stroke-width="1.5"/>
+<text x="720" y="354" font-size="17" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-05</text>
+<text x="720" y="374" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">MINI</text>
+<rect x="834" y="352" width="150" height="10" rx="5" fill="#334155"/>
+<rect x="834" y="352" width="108.0" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="878.0" y="348" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="923.0" y="348" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="998" y="362" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">72%</text>
+<rect x="704" y="398" width="524" height="58" rx="8" fill="#0B1220" stroke="#334155" stroke-width="1.5"/>
+<text x="720" y="424" font-size="17" font-weight="700" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">D-08</text>
+<text x="720" y="444" font-size="11" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">CARGO</text>
+<rect x="834" y="422" width="150" height="10" rx="5" fill="#334155"/>
+<rect x="834" y="422" width="93.0" height="10" rx="5" fill="#F1F5F9"/>
+<rect x="878.0" y="418" width="2" height="18" rx="0" fill="#94A3B8"/>
+<rect x="923.0" y="418" width="2" height="18" rx="0" fill="#94A3B8"/>
+<text x="998" y="432" font-size="16" font-weight="400" fill="#F1F5F9" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">62%</text>
+<text x="704" y="490" font-size="14" font-weight="600" fill="#F1F5F9" text-anchor="start">Estrategia: mayor batería.</text>
+<text x="704" y="512" font-size="13" font-weight="400" fill="#94A3B8" text-anchor="start">El sistema propone D-01 (85%, el de más batería que soporta 300 g).</text>
+<text x="704" y="540" font-size="13" font-weight="400" fill="#94A3B8" text-anchor="start">En el paso 3 podrás revisar la ruta antes de confirmar.</text>
+<rect x="32" y="660" width="200" height="64" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="132.0" y="697.25" font-size="15" font-weight="600" fill="#F1F5F9" text-anchor="middle">Cancelar</text>
+<rect x="948" y="648" width="300" height="80" rx="8" fill="#7C3AED"/>
+<text x="1098.0" y="694.3" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="middle">Continuar</text>
+</svg>

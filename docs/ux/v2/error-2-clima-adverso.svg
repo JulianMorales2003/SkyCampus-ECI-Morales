@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" font-family="DejaVu Sans, Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1280" height="760" fill="#0B1220"/>
+<rect x="0" y="0" width="1280" height="72" rx="0" fill="#0F1B33"/>
+<rect x="32" y="20" width="32" height="32" rx="8" fill="#7C3AED"/>
+<text x="48" y="43" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">S</text>
+<text x="78" y="43" font-size="20" font-weight="700" fill="#F1F5F9" text-anchor="start">SkyCampus</text>
+<text x="1248" y="43" font-size="16" font-weight="400" fill="#94A3B8" text-anchor="end">Formulario de misión · Paso 2 de 3 · Error: clima</text>
+<text x="32" y="118" font-size="24" font-weight="700" fill="#F1F5F9" text-anchor="start">Nueva misión</text>
+<rect x="32" y="134" width="1216" height="60" rx="8" fill="#1E293B" stroke="#F1F5F9" stroke-width="3"/>
+<g transform="translate(62,164)" fill="none" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="-5" y="-5" width="10" height="10" fill="#F1F5F9" stroke-width="1"/></g>
+<text x="90" y="160" font-size="18" font-weight="700" fill="#F1F5F9" text-anchor="start">Vuelos suspendidos por clima</text>
+<text x="90" y="182" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="start">El viento (38 km/h) supera el límite de 30 km/h y hay lluvia. Consultado a las 14:35.</text>
+<rect x="32" y="206" width="620" height="396" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="52" y="240" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">DATOS DE LA MISIÓN</text>
+<text x="52" y="278" font-size="13" font-weight="600" fill="#334155" text-anchor="start">Origen</text>
+<rect x="52" y="288" width="280" height="46" rx="8" fill="#0B1220" stroke="#334155" stroke-width="1.5"/>
+<text x="68" y="317" font-size="16" font-weight="400" fill="#94A3B8" text-anchor="start">Bloque A</text>
+<text x="314" y="317" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">▾</text>
+<text x="352" y="278" font-size="13" font-weight="600" fill="#334155" text-anchor="start">Destino</text>
+<rect x="352" y="288" width="280" height="46" rx="8" fill="#0B1220" stroke="#334155" stroke-width="1.5"/>
+<text x="368" y="317" font-size="16" font-weight="400" fill="#94A3B8" text-anchor="start">Bloque C</text>
+<text x="614" y="317" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">▾</text>
+<text x="52" y="356" font-size="13" font-weight="600" fill="#334155" text-anchor="start">Peso del paquete</text>
+<rect x="52" y="366" width="280" height="46" rx="8" fill="#0B1220" stroke="#334155" stroke-width="1.5"/>
+<text x="68" y="395" font-size="16" font-weight="400" fill="#94A3B8" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">300</text>
+<text x="316" y="395" font-size="14" font-weight="400" fill="#94A3B8" text-anchor="end">g</text>
+<text x="352" y="356" font-size="13" font-weight="600" fill="#334155" text-anchor="start">Prioridad</text>
+<rect x="352.0" y="366" width="90.0" height="46" rx="8" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="397.0" y="395" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="middle">Urgente</text>
+<rect x="448.0" y="366" width="90.0" height="46" rx="8" fill="#334155" stroke="#334155" stroke-width="1.5"/>
+<text x="493.0" y="395" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Normal</text>
+<rect x="544.0" y="366" width="90.0" height="46" rx="8" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="589.0" y="395" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="middle">Bajo</text>
+<text x="52" y="436" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Máximo permitido: 2000 g</text>
+<text x="52" y="510" font-size="13" font-weight="600" fill="#334155" text-anchor="start">Tipo de paquete</text>
+<rect x="52" y="520" width="113" height="36" rx="18" fill="#334155" stroke="#334155" stroke-width="1.5"/>
+<text x="108.5" y="544" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Documento</text>
+<rect x="175" y="520" width="79" height="36" rx="18" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="214.5" y="544" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="middle">Libro</text>
+<rect x="264" y="520" width="96" height="36" rx="18" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="312.0" y="544" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="middle">Muestra</text>
+<rect x="370" y="520" width="70" height="36" rx="18" fill="none" stroke="#334155" stroke-width="1.5"/>
+<text x="405.0" y="544" font-size="13" font-weight="600" fill="#94A3B8" text-anchor="middle">Otro</text>
+<text x="52" y="584" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Los drones aptos se actualizan solos al cambiar el peso, el destino o la prioridad.</text>
+<rect x="684" y="206" width="564" height="396" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1.5"/>
+<text x="704" y="240" font-size="12" font-weight="600" fill="#94A3B8" text-anchor="start" letter-spacing="1.2">CONDICIONES ACTUALES</text>
+<g transform="translate(716,271)" fill="none" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="-4.5" y1="-4.5" x2="4.5" y2="4.5"/><line x1="4.5" y1="-4.5" x2="-4.5" y2="4.5"/></g>
+<text x="738" y="276" font-size="15" font-weight="600" fill="#F1F5F9" text-anchor="start">Viento</text>
+<text x="1228" y="276" font-size="15" font-weight="400" fill="#F1F5F9" text-anchor="end">38 km/h · límite 30 km/h</text>
+<line x1="704" y1="292" x2="1228" y2="292" stroke="#334155" stroke-width="1.5"/>
+<g transform="translate(716,317)" fill="none" stroke="#F1F5F9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="-4.5" y1="-4.5" x2="4.5" y2="4.5"/><line x1="4.5" y1="-4.5" x2="-4.5" y2="4.5"/></g>
+<text x="738" y="322" font-size="15" font-weight="600" fill="#F1F5F9" text-anchor="start">Lluvia</text>
+<text x="1228" y="322" font-size="15" font-weight="400" fill="#F1F5F9" text-anchor="end">Sí · el límite es sin lluvia</text>
+<line x1="704" y1="338" x2="1228" y2="338" stroke="#334155" stroke-width="1.5"/>
+<text x="704" y="372" font-size="14" font-weight="600" fill="#F1F5F9" text-anchor="start">Drones aptos: ninguno mientras dure la suspensión.</text>
+<text x="704" y="396" font-size="13" font-weight="400" fill="#94A3B8" text-anchor="start">La consulta se repite cada 5 minutos (supuesto); también</text>
+<text x="704" y="414" font-size="13" font-weight="400" fill="#94A3B8" text-anchor="start">puedes volver a consultar ahora.</text>
+<rect x="704" y="450" width="230" height="48" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="819.0" y="478.9" font-size="14" font-weight="600" fill="#F1F5F9" text-anchor="middle">Volver a consultar clima</text>
+<rect x="950" y="450" width="278" height="48" rx="8" fill="#7C3AED"/>
+<text x="1089.0" y="478.9" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Programar para más tarde</text>
+<text x="704" y="530" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">Si la API del clima no responde en 3 s, el flujo también se bloquea</text>
+<text x="704" y="548" font-size="12" font-weight="400" fill="#94A3B8" text-anchor="start">con el mensaje "No se pudo verificar el clima".</text>
+<rect x="32" y="660" width="200" height="64" rx="8" fill="none" stroke="#94A3B8" stroke-width="1.5"/>
+<text x="132.0" y="697.25" font-size="15" font-weight="600" fill="#F1F5F9" text-anchor="middle">Cancelar</text>
+<rect x="948" y="648" width="300" height="80" rx="8" fill="#334155"/>
+<text x="1098.0" y="694.3" font-size="18" font-weight="600" fill="#94A3B8" text-anchor="middle">Continuar</text>
+<text x="930" y="692" font-size="13" font-weight="600" fill="#F1F5F9" text-anchor="end">No disponible: vuelos suspendidos</text>
+</svg>
