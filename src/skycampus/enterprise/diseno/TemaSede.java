@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Los cuatro design tokens que cambian entre sedes. Es todo lo que un equipo define para añadir una
+ * Los cuatro design tokens que cambian entre sedes. Es lo único que un equipo define para añadir una
  * universidad: los componentes, la estructura HTML y el resto de variables no se tocan.
  *
  * @param sede identificador en minúsculas, el mismo de {@code data-sede} y del nombre del archivo del tema
