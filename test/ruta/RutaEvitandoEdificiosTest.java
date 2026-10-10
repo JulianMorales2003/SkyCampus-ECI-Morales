@@ -24,4 +24,10 @@ class RutaEvitandoEdificiosTest {
         assertThrows(IllegalArgumentException.class, () -> ruta.calcular(null, "B"));
         assertThrows(IllegalArgumentException.class, () -> ruta.calcular("A", "  "));
     }
+
+    @Test
+    @DisplayName("calcular: origen igual al destino lanza IllegalArgumentException")
+    void calcular_origenIgualAlDestino_lanzaExcepcion() {
+        assertThrows(IllegalArgumentException.class, () -> ruta.calcular("Biblioteca", "Biblioteca"));
+    }
 }

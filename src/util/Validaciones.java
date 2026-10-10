@@ -16,4 +16,10 @@ public final class Validaciones {
             throw new IllegalArgumentException("El campo '" + campo + "' no puede ser nulo ni vacío.");
         }
     }
+
+    public static void exigirDistintos(String primero, String segundo, String mensaje) {
+        if (primero.equals(segundo)) {
+            throw new IllegalArgumentException(mensaje);
+        }
+    }
 }
