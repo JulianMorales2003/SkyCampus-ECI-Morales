@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="760" viewBox="0 0 1500 760" font-family="DejaVu Sans, Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1500" height="760" fill="#FFFFFF"/>
+<defs>
+<marker id="flecha" markerWidth="14" markerHeight="12" refX="13" refY="6" orient="auto" markerUnits="userSpaceOnUse"><polyline points="1,1 13,6 1,11" fill="none" stroke="#334155" stroke-width="2"/></marker>
+<marker id="hueca" markerWidth="16" markerHeight="14" refX="15" refY="7" orient="auto" markerUnits="userSpaceOnUse"><polygon points="1,1 15,7 1,13" fill="#fff" stroke="#334155" stroke-width="1.8"/></marker>
+</defs>
+<text x="750" y="42" text-anchor="middle" font-size="26" font-weight="bold" fill="#0F172A">AsignadorMision en 3 capas: las dependencias apuntan al dominio</text>
+
+<rect x="40" y="90" width="420" height="330" rx="12" fill="#F1F5F9" stroke="#64748B" stroke-width="2"/>
+<text x="250" y="124" text-anchor="middle" font-size="20" font-weight="bold" fill="#0F172A">Infraestructura</text>
+<text x="250" y="146" text-anchor="middle" font-size="14" fill="#475569">JPA y HTTP viven aquí</text>
+<rect x="70" y="170" width="360" height="90" rx="8" fill="#fff" stroke="#64748B" stroke-width="1.6"/>
+<text x="250" y="206" text-anchor="middle" font-size="18" font-weight="bold" fill="#0F172A">RepositorioFlotaJPA</text>
+<text x="250" y="234" text-anchor="middle" font-size="14" fill="#475569">implements RepositorioFlota</text>
+<rect x="70" y="290" width="360" height="90" rx="8" fill="#fff" stroke="#64748B" stroke-width="1.6"/>
+<text x="250" y="326" text-anchor="middle" font-size="18" font-weight="bold" fill="#0F172A">ServicioClimaOpenWeather</text>
+<text x="250" y="354" text-anchor="middle" font-size="14" fill="#475569">implements ServicioClima</text>
+
+<rect x="540" y="90" width="420" height="330" rx="12" fill="#ECFDF5" stroke="#15803D" stroke-width="2.5"/>
+<text x="750" y="124" text-anchor="middle" font-size="20" font-weight="bold" fill="#14532D">Dominio</text>
+<text x="750" y="146" text-anchor="middle" font-size="14" fill="#166534">solo java.*: sin Spring, JPA ni librerías</text>
+<rect x="570" y="165" width="170" height="100" rx="8" fill="#fff" stroke="#15803D" stroke-width="1.6"/>
+<text x="655" y="190" text-anchor="middle" font-size="13" fill="#166534">«interface»</text>
+<text x="655" y="214" text-anchor="middle" font-size="16" font-weight="bold" fill="#14532D">RepositorioFlota</text>
+<text x="655" y="244" text-anchor="middle" font-size="12" fill="#166534">findDisponibles(sede)</text>
+<rect x="760" y="165" width="170" height="100" rx="8" fill="#fff" stroke="#15803D" stroke-width="1.6"/>
+<text x="845" y="190" text-anchor="middle" font-size="13" fill="#166534">«interface»</text>
+<text x="845" y="214" text-anchor="middle" font-size="13" font-weight="bold" fill="#14532D">EstrategiaAsignacion</text>
+<text x="845" y="244" text-anchor="middle" font-size="12" fill="#166534">seleccionar(sol, lista)</text>
+<rect x="570" y="285" width="170" height="100" rx="8" fill="#fff" stroke="#15803D" stroke-width="1.6"/>
+<text x="655" y="310" text-anchor="middle" font-size="13" fill="#166534">«interface»</text>
+<text x="655" y="334" text-anchor="middle" font-size="16" font-weight="bold" fill="#14532D">ServicioClima</text>
+<text x="655" y="364" text-anchor="middle" font-size="12" fill="#166534">condicionesAptas(o, d)</text>
+<rect x="760" y="285" width="170" height="100" rx="8" fill="#fff" stroke="#15803D" stroke-width="1.6"/>
+<text x="845" y="310" text-anchor="middle" font-size="13" fill="#166534">«interface»</text>
+<text x="845" y="334" text-anchor="middle" font-size="16" font-weight="bold" fill="#14532D">ObservadorDrone</text>
+<text x="845" y="364" text-anchor="middle" font-size="12" fill="#166534">alOcurrir(evento)</text>
+<text x="750" y="408" text-anchor="middle" font-size="13" fill="#166534">records: Drone, SolicitudEntrega, EventoAsignacion</text>
+
+<rect x="1040" y="90" width="420" height="330" rx="12" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text x="1250" y="124" text-anchor="middle" font-size="20" font-weight="bold" fill="#1E3A8A">Aplicación</text>
+<text x="1250" y="146" text-anchor="middle" font-size="14" fill="#1E40AF">casos de uso: conoce solo el dominio</text>
+<rect x="1070" y="260" width="360" height="120" rx="8" fill="#fff" stroke="#1D4ED8" stroke-width="1.6"/>
+<text x="1250" y="294" text-anchor="middle" font-size="19" font-weight="bold" fill="#1E3A8A">AsignadorMision</text>
+<text x="1250" y="322" text-anchor="middle" font-size="13" fill="#1E40AF">repo · clima · estrategia · notificador</text>
+<text x="1250" y="346" text-anchor="middle" font-size="13" fill="#1E40AF">(final, inyectados por constructor)</text>
+<rect x="1070" y="170" width="360" height="70" rx="8" fill="#fff" stroke="#1D4ED8" stroke-width="1.6"/>
+<text x="1250" y="212" text-anchor="middle" font-size="17" font-weight="bold" fill="#1E3A8A">EstrategiaMayorBateria</text>
+
+<line x1="460" y1="215" x2="538" y2="215" stroke="#334155" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#hueca)"/>
+<line x1="460" y1="335" x2="538" y2="335" stroke="#334155" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#hueca)"/>
+<line x1="1040" y1="325" x2="962" y2="325" stroke="#334155" stroke-width="2" marker-end="url(#flecha)"/>
+<line x1="1040" y1="205" x2="962" y2="205" stroke="#334155" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#hueca)"/>
+<text x="499" y="204" text-anchor="middle" font-size="11" fill="#334155">implementa</text><text x="499" y="324" text-anchor="middle" font-size="11" fill="#334155">implementa</text>
+<text x="1001" y="315" text-anchor="middle" font-size="11" fill="#334155">usa los 4</text><text x="1001" y="195" text-anchor="middle" font-size="11" fill="#334155">implementa</text>
+
+<rect x="40" y="480" width="1420" height="230" rx="12" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+<text x="750" y="516" text-anchor="middle" font-size="20" font-weight="bold" fill="#78350F">En las pruebas: Mockito ocupa el lugar de la infraestructura</text>
+<rect x="80" y="545" width="300" height="130" rx="8" fill="#fff" stroke="#B45309" stroke-width="1.6"/>
+<text x="230" y="580" text-anchor="middle" font-size="16" font-weight="bold" fill="#78350F">@Mock RepositorioFlota</text>
+<text x="230" y="606" text-anchor="middle" font-size="14" fill="#92400E">sin base de datos</text>
+<text x="230" y="640" text-anchor="middle" font-size="12" fill="#92400E">when(...).thenReturn(lista)</text>
+<rect x="420" y="545" width="300" height="130" rx="8" fill="#fff" stroke="#B45309" stroke-width="1.6"/>
+<text x="570" y="580" text-anchor="middle" font-size="16" font-weight="bold" fill="#78350F">@Mock ServicioClima</text>
+<text x="570" y="606" text-anchor="middle" font-size="14" fill="#92400E">sin llamada HTTP</text>
+<text x="570" y="640" text-anchor="middle" font-size="12" fill="#92400E">when(...).thenReturn(true / throw)</text>
+<rect x="760" y="545" width="300" height="130" rx="8" fill="#fff" stroke="#B45309" stroke-width="1.6"/>
+<text x="910" y="580" text-anchor="middle" font-size="16" font-weight="bold" fill="#78350F">@Mock ObservadorDrone</text>
+<text x="910" y="606" text-anchor="middle" font-size="14" fill="#92400E">captura el evento</text>
+<text x="910" y="640" text-anchor="middle" font-size="12" fill="#92400E">verify + ArgumentCaptor</text>
+<rect x="1100" y="545" width="320" height="130" rx="8" fill="#fff" stroke="#1D4ED8" stroke-width="1.6"/>
+<text x="1260" y="580" text-anchor="middle" font-size="16" font-weight="bold" fill="#1E3A8A">new AsignadorMision(...)</text>
+<text x="1260" y="606" text-anchor="middle" font-size="14" fill="#1E40AF">clase real bajo prueba</text>
+<text x="1260" y="640" text-anchor="middle" font-size="12" fill="#1E40AF">recibe los mocks por constructor</text>
+</svg>
