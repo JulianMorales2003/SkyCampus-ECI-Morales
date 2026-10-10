@@ -158,7 +158,7 @@ class MatrizTrazabilidadTest {
 
     @Test
     @DisplayName("cada conflicto detectado aparece en los requisitos de la matriz que involucra")
-    void conflictos_apareceEnLosRequisitosQueInvolucra() throws IOException {
+    void conflictos_apareceEnLosRequisitosQueInvolucra() {
         CONFLICTOS.forEach((conflicto, minimo) -> {
             try {
                 long involucrados = filas(MATRIZ).stream().filter(fila -> lista(fila[7]).contains(conflicto)).count();
