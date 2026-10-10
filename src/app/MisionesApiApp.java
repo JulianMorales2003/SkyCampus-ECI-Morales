@@ -12,6 +12,7 @@ import skycampus.enterprise.dominio.PoliticaVuelo;
 import skycampus.enterprise.dominio.RestriccionAerea;
 import skycampus.enterprise.infraestructura.CatalogoSedesEnMemoria;
 import skycampus.enterprise.infraestructura.RepositorioFlotaEnMemoria;
+import util.Consola;
 
 /** Demostración: levanta el endpoint en el puerto 8080 con datos de ejemplo y clima y Aerocivil siempre aptos. */
 public final class MisionesApiApp {
@@ -27,10 +28,10 @@ public final class MisionesApiApp {
         AtomicInteger ids = new AtomicInteger();
         CrearMision caso = new CrearMision(sedes,
                 new RepositorioFlotaEnMemoria(List.of(new Drone("ECI-D1", "ECI", 50), new Drone("ECI-D2", "ECI", 90))),
-                (origen, destino) -> true, new EstrategiaMayorBateria(), evento -> System.out.println(evento),
+                (origen, destino) -> true, new EstrategiaMayorBateria(), evento -> Consola.imprimir(evento.toString()),
                 new AutorizadorVuelo(politica, plan -> true), () -> "M-" + ids.incrementAndGet());
         MisionesApi api = new MisionesApi(caso, 8080);
         api.iniciar();
-        System.out.println("POST http://127.0.0.1:" + api.puerto() + MisionesApi.RUTA);
+        Consola.imprimir("POST http://127.0.0.1:" + api.puerto() + MisionesApi.RUTA);
     }
 }
