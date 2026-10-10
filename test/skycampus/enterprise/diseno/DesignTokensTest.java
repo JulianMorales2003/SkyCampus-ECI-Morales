@@ -54,6 +54,8 @@ class DesignTokensTest {
     private static final Pattern CLASE = Pattern.compile("class=\"([^\"]*)\"");
     private static final Pattern DATA_SEDE = Pattern.compile("data-sede=\"([^\"]*)\"");
     private static final Pattern ESTILO_EN_LINEA = Pattern.compile("style=\"([^\"]*)\"");
+    private static final Pattern ESTILO_NIVEL = Pattern.compile("--nivel: \\d{1,3}%");
+    private static final Pattern ATRIBUTO_SEDE = Pattern.compile("data-sede=\"[a-z]+\"");
     private static final Pattern ENLACE_LOCAL = Pattern.compile("<link rel=\"stylesheet\" href=\"(?!https?:)([^\"]+)\"");
 
     private static String leer(Path archivo) {
@@ -236,7 +238,7 @@ class DesignTokensTest {
         assertFalse(html.contains("<style"));
         assertFalse(COLOR_LITERAL.matcher(html).find());
         for (String estilo : valoresDe(ESTILO_EN_LINEA, html)) {
-            assertTrue(estilo.matches("--nivel: \\d{1,3}%"), "estilo en línea no permitido: " + estilo);
+            assertTrue(ESTILO_NIVEL.matcher(estilo).matches(), "estilo en línea no permitido: " + estilo);
         }
     }
 
@@ -294,7 +296,7 @@ class DesignTokensTest {
         List<String> contenedores = new ArrayList<>();
         Matcher m = Pattern.compile("<div class=\"demo-columna sede-lienzo\" data-sede=\"[a-z]+\">").matcher(html);
         while (m.find()) {
-            contenedores.add(m.group().replaceAll("data-sede=\"[a-z]+\"", ""));
+            contenedores.add(ATRIBUTO_SEDE.matcher(m.group()).replaceAll(""));
         }
 
         assertEquals(3, contenedores.size());
