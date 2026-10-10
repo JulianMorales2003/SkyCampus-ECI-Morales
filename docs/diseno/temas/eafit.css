@@ -1,0 +1,7 @@
+/* Universidad EAFIT */
+[data-sede="eafit"] {
+  --color-primary: #2D6A4F;
+  --color-alert: #E63946;
+  --font-ui: "Source Sans 3", "Source Sans Pro", system-ui, sans-serif;
+  --border-radius: 12px;
+}

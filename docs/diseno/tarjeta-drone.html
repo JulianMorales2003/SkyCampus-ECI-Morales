@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tarjeta de drone en 4 identidades</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="componentes.css">
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="temas/eci.css">
+  <link rel="stylesheet" href="temas/unal.css">
+  <link rel="stylesheet" href="temas/uniandes.css">
+  <link rel="stylesheet" href="temas/eafit.css">
+</head>
+<body>
+  <h1 class="demo-titulo">Tarjeta de drone en 4 identidades</h1>
+  <p class="demo-nota">Mismo HTML y mismo CSS en las cuatro columnas. Lo único que cambia es el atributo data-sede del contenedor, que activa los 4 tokens de temas/&lt;sede&gt;.css. Los datos de los drones son ilustrativos.</p>
+  <main class="demo-rejilla">
+    <div class="demo-columna sede-lienzo" data-sede="eci">
+      <h2 class="demo-etiqueta">Sede ECI</h2>
+        <article class="tarjeta-drone" data-estado="disponible">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-01</h3>
+            <span class="tarjeta-drone__tipo">MINI</span>
+            <span class="tarjeta-drone__estado">Disponible</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="alto" style="--nivel: 86%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="86">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">86 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede ECI · Hangar 1</p>
+          <p class="tarjeta-drone__aviso" data-tipo="info" hidden>Sin avisos</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button">Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="en-vuelo">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-02</h3>
+            <span class="tarjeta-drone__tipo">CARGO</span>
+            <span class="tarjeta-drone__estado">En vuelo</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="medio" style="--nivel: 58%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">58 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede ECI · En ruta</p>
+          <p class="tarjeta-drone__aviso" data-tipo="info">Bloqueado: en misión</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="disponible">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-03</h3>
+            <span class="tarjeta-drone__tipo">EXPRESS</span>
+            <span class="tarjeta-drone__estado">Disponible</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="bajo" style="--nivel: 18%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="18">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">18 % · Bajo mínimo</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede ECI · Hangar 2</p>
+          <p class="tarjeta-drone__aviso" data-tipo="alerta">Bajo mínimo (mín. 30 %): no se puede asignar</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="fallo">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-04</h3>
+            <span class="tarjeta-drone__tipo">MINI</span>
+            <span class="tarjeta-drone__estado">Fallo</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="medio" style="--nivel: 41%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="41">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">41 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede ECI · Taller</p>
+          <p class="tarjeta-drone__aviso" data-tipo="alerta">Bloqueado: reporta fallo de motor</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+    </div>
+    <div class="demo-columna sede-lienzo" data-sede="unal">
+      <h2 class="demo-etiqueta">Sede UNAL</h2>
+        <article class="tarjeta-drone" data-estado="disponible">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-01</h3>
+            <span class="tarjeta-drone__tipo">MINI</span>
+            <span class="tarjeta-drone__estado">Disponible</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="alto" style="--nivel: 86%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="86">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">86 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede UNAL · Hangar 1</p>
+          <p class="tarjeta-drone__aviso" data-tipo="info" hidden>Sin avisos</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button">Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="en-vuelo">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-02</h3>
+            <span class="tarjeta-drone__tipo">CARGO</span>
+            <span class="tarjeta-drone__estado">En vuelo</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="medio" style="--nivel: 58%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">58 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede UNAL · En ruta</p>
+          <p class="tarjeta-drone__aviso" data-tipo="info">Bloqueado: en misión</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="disponible">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-03</h3>
+            <span class="tarjeta-drone__tipo">EXPRESS</span>
+            <span class="tarjeta-drone__estado">Disponible</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="bajo" style="--nivel: 18%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="18">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">18 % · Bajo mínimo</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede UNAL · Hangar 2</p>
+          <p class="tarjeta-drone__aviso" data-tipo="alerta">Bajo mínimo (mín. 30 %): no se puede asignar</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="fallo">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-04</h3>
+            <span class="tarjeta-drone__tipo">MINI</span>
+            <span class="tarjeta-drone__estado">Fallo</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="medio" style="--nivel: 41%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="41">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">41 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede UNAL · Taller</p>
+          <p class="tarjeta-drone__aviso" data-tipo="alerta">Bloqueado: reporta fallo de motor</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+    </div>
+    <div class="demo-columna sede-lienzo" data-sede="uniandes">
+      <h2 class="demo-etiqueta">Sede Uniandes</h2>
+        <article class="tarjeta-drone" data-estado="disponible">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-01</h3>
+            <span class="tarjeta-drone__tipo">MINI</span>
+            <span class="tarjeta-drone__estado">Disponible</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="alto" style="--nivel: 86%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="86">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">86 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede Uniandes · Hangar 1</p>
+          <p class="tarjeta-drone__aviso" data-tipo="info" hidden>Sin avisos</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button">Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="en-vuelo">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-02</h3>
+            <span class="tarjeta-drone__tipo">CARGO</span>
+            <span class="tarjeta-drone__estado">En vuelo</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="medio" style="--nivel: 58%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">58 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede Uniandes · En ruta</p>
+          <p class="tarjeta-drone__aviso" data-tipo="info">Bloqueado: en misión</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="disponible">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-03</h3>
+            <span class="tarjeta-drone__tipo">EXPRESS</span>
+            <span class="tarjeta-drone__estado">Disponible</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="bajo" style="--nivel: 18%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="18">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">18 % · Bajo mínimo</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede Uniandes · Hangar 2</p>
+          <p class="tarjeta-drone__aviso" data-tipo="alerta">Bajo mínimo (mín. 30 %): no se puede asignar</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="fallo">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-04</h3>
+            <span class="tarjeta-drone__tipo">MINI</span>
+            <span class="tarjeta-drone__estado">Fallo</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="medio" style="--nivel: 41%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="41">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">41 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede Uniandes · Taller</p>
+          <p class="tarjeta-drone__aviso" data-tipo="alerta">Bloqueado: reporta fallo de motor</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+    </div>
+    <div class="demo-columna sede-lienzo" data-sede="eafit">
+      <h2 class="demo-etiqueta">Sede EAFIT</h2>
+        <article class="tarjeta-drone" data-estado="disponible">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-01</h3>
+            <span class="tarjeta-drone__tipo">MINI</span>
+            <span class="tarjeta-drone__estado">Disponible</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="alto" style="--nivel: 86%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="86">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">86 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede EAFIT · Hangar 1</p>
+          <p class="tarjeta-drone__aviso" data-tipo="info" hidden>Sin avisos</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button">Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="en-vuelo">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-02</h3>
+            <span class="tarjeta-drone__tipo">CARGO</span>
+            <span class="tarjeta-drone__estado">En vuelo</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="medio" style="--nivel: 58%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">58 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede EAFIT · En ruta</p>
+          <p class="tarjeta-drone__aviso" data-tipo="info">Bloqueado: en misión</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="disponible">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-03</h3>
+            <span class="tarjeta-drone__tipo">EXPRESS</span>
+            <span class="tarjeta-drone__estado">Disponible</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="bajo" style="--nivel: 18%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="18">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">18 % · Bajo mínimo</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede EAFIT · Hangar 2</p>
+          <p class="tarjeta-drone__aviso" data-tipo="alerta">Bajo mínimo (mín. 30 %): no se puede asignar</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+        <article class="tarjeta-drone" data-estado="fallo">
+          <header class="tarjeta-drone__cabecera">
+            <h3 class="tarjeta-drone__id">D-04</h3>
+            <span class="tarjeta-drone__tipo">MINI</span>
+            <span class="tarjeta-drone__estado">Fallo</span>
+          </header>
+          <div class="indicador-bateria" data-nivel="medio" style="--nivel: 41%">
+            <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="41">
+              <div class="indicador-bateria__relleno"></div>
+            </div>
+            <span class="indicador-bateria__valor">41 %</span>
+          </div>
+          <p class="tarjeta-drone__ubicacion">Sede EAFIT · Taller</p>
+          <p class="tarjeta-drone__aviso" data-tipo="alerta">Bloqueado: reporta fallo de motor</p>
+          <footer class="tarjeta-drone__acciones">
+            <button class="boton boton--secundario" type="button">Ver detalle</button>
+            <button class="boton" type="button" disabled>Asignar misión</button>
+          </footer>
+        </article>
+    </div>
+  </main>
+</body>
+</html>

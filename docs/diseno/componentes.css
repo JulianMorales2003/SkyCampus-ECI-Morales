@@ -1,0 +1,307 @@
+/* Componentes de SkyCampus Enterprise. Son idénticos en las 4 sedes: aquí no hay colores literales,
+   ni nombres de fuente, ni radios en píxeles. Todo sale de var(--...) (tokens de temas/<sede>.css
+   y variables compartidas de base.css). */
+
+.sede-lienzo {
+  font-family: var(--font-ui);
+  font-size: var(--texto-md);
+  color: var(--color-text);
+}
+
+/* ---------- Botón ---------- */
+.boton {
+  min-height: var(--alto-control);
+  padding: 0 var(--espacio-4);
+  font-family: var(--font-ui);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+.boton:hover {
+  background: color-mix(in srgb, var(--color-primary) 85%, var(--color-text));
+}
+
+.boton:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.boton--peligro {
+  color: var(--color-text);
+  background: var(--color-surface);
+  border-color: var(--color-alert);
+}
+
+.boton--peligro:hover {
+  background: color-mix(in srgb, var(--color-alert) 14%, var(--color-surface));
+}
+
+.boton:disabled {
+  color: var(--color-text-suave);
+  background: var(--color-pista);
+  border-color: var(--color-borde);
+  cursor: not-allowed;
+}
+
+/* ---------- Indicador de batería ---------- */
+.indicador-bateria {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-3);
+}
+
+.indicador-bateria__pista {
+  position: relative;
+  flex: 1;
+  height: 12px;
+  overflow: hidden;
+  background: var(--color-pista);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+}
+
+.indicador-bateria__relleno {
+  width: var(--nivel);
+  height: 100%;
+  background: var(--color-primary);
+}
+
+.indicador-bateria[data-nivel="bajo"] .indicador-bateria__relleno {
+  background: var(--color-alert);
+}
+
+.indicador-bateria__pista::before,
+.indicador-bateria__pista::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  content: "";
+  background: var(--color-text);
+  opacity: 0.55;
+}
+
+.indicador-bateria__pista::before {
+  left: 30%;
+}
+
+.indicador-bateria__pista::after {
+  left: 60%;
+}
+
+.indicador-bateria__valor {
+  min-width: 5.5rem;
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.indicador-bateria[data-nivel="bajo"] .indicador-bateria__valor::before {
+  content: "\25B2  ";
+}
+
+/* ---------- Tarjeta de drone ---------- */
+.tarjeta-drone {
+  display: grid;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+}
+
+.tarjeta-drone[data-estado="fallo"] {
+  border: 3px solid var(--color-alert);
+}
+
+.tarjeta-drone__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-2);
+}
+
+.tarjeta-drone__id {
+  margin: 0;
+  font-size: var(--texto-lg);
+  color: var(--color-primary);
+}
+
+.tarjeta-drone__tipo {
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text-suave);
+}
+
+.tarjeta-drone__estado {
+  margin-left: auto;
+  padding: var(--espacio-1) var(--espacio-3);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+}
+
+.tarjeta-drone[data-estado="fallo"] .tarjeta-drone__estado {
+  background: color-mix(in srgb, var(--color-alert) 14%, var(--color-surface));
+  border-color: var(--color-alert);
+}
+
+.tarjeta-drone[data-estado="disponible"] .tarjeta-drone__estado::before {
+  content: "\2713  ";
+}
+
+.tarjeta-drone[data-estado="en-vuelo"] .tarjeta-drone__estado::before {
+  content: "\27A4  ";
+}
+
+.tarjeta-drone[data-estado="en-carga"] .tarjeta-drone__estado::before {
+  content: "\26A1  ";
+}
+
+.tarjeta-drone[data-estado="fallo"] .tarjeta-drone__estado::before {
+  content: "\2715  ";
+}
+
+.tarjeta-drone[data-estado="mantenimiento"] .tarjeta-drone__estado::before {
+  content: "\2699  ";
+}
+
+.tarjeta-drone__ubicacion {
+  margin: 0;
+  font-size: var(--texto-sm);
+  color: var(--color-text-suave);
+}
+
+.tarjeta-drone__aviso,
+.panel-mision__aviso {
+  margin: 0;
+  padding: var(--espacio-2) var(--espacio-3);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  background: color-mix(in srgb, var(--color-alert) 14%, var(--color-surface));
+  border-left: 6px solid var(--color-alert);
+  border-radius: var(--border-radius);
+}
+
+.tarjeta-drone__aviso[hidden] {
+  display: none;
+}
+
+/* ---------- Panel de misión activa ---------- */
+.panel-mision {
+  display: grid;
+  gap: var(--espacio-4);
+  padding: var(--espacio-5);
+  background: var(--color-fondo);
+  border: 1px solid var(--color-borde);
+  border-top: 8px solid var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+.panel-mision__cabecera {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-3);
+}
+
+.panel-mision__titulo {
+  margin: 0;
+  font-size: var(--texto-lg);
+  color: var(--color-primary);
+}
+
+.panel-mision__estado {
+  margin-left: auto;
+  padding: var(--espacio-1) var(--espacio-3);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  border-radius: var(--border-radius);
+}
+
+.panel-mision__ruta {
+  margin: 0;
+  font-weight: 700;
+}
+
+.panel-mision__etapas {
+  display: grid;
+  gap: var(--espacio-2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.panel-mision__etapa {
+  padding: var(--espacio-2) var(--espacio-3);
+  font-size: var(--texto-sm);
+  color: var(--color-text-suave);
+  background: var(--color-surface);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--border-radius);
+}
+
+.panel-mision__etapa[data-estado="completada"]::before {
+  content: "\2713  ";
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.panel-mision__etapa[data-estado="actual"] {
+  font-weight: 700;
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+}
+
+.panel-mision__etapa[data-estado="actual"]::before {
+  content: "\27A4  ";
+  color: var(--color-primary);
+}
+
+.panel-mision__etapa[data-estado="pendiente"]::before {
+  content: "\25CB  ";
+}
+
+.panel-mision__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-3);
+}
+
+/* ---------- Complementos de botón y tarjeta ---------- */
+.boton--secundario {
+  color: var(--color-primary);
+  background: var(--color-surface);
+}
+
+.boton--secundario:hover {
+  background: color-mix(in srgb, var(--color-primary) 12%, var(--color-surface));
+}
+
+.boton:disabled:hover {
+  background: var(--color-pista);
+}
+
+.tarjeta-drone__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-2);
+}
+
+.tarjeta-drone__aviso[data-tipo="info"] {
+  font-weight: 400;
+  background: var(--color-fondo);
+  border-left-color: var(--color-borde);
+}

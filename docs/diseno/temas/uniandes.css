@@ -1,0 +1,7 @@
+/* Universidad de los Andes */
+[data-sede="uniandes"] {
+  --color-primary: #0057A8;
+  --color-alert: #E63946;
+  --font-ui: "Inter", system-ui, sans-serif;
+  --border-radius: 8px;
+}

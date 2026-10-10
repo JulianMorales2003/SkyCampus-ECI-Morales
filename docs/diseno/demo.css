@@ -1,0 +1,40 @@
+/* Solo la maqueta de las páginas de demostración (rejilla y etiquetas). No forma parte del sistema. */
+body {
+  margin: 0;
+  padding: var(--espacio-5);
+  font-family: system-ui, sans-serif;
+  color: var(--color-text);
+  background: var(--color-surface);
+}
+
+.demo-titulo {
+  margin: 0 0 var(--espacio-2);
+}
+
+.demo-nota {
+  max-width: 70ch;
+  margin: 0 0 var(--espacio-5);
+  color: var(--color-text-suave);
+}
+
+.demo-rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--espacio-5);
+  align-items: start;
+}
+
+.demo-columna {
+  display: grid;
+  gap: var(--espacio-4);
+  align-content: start;
+}
+
+.demo-etiqueta {
+  margin: 0;
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-suave);
+}

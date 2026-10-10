@@ -1,0 +1,7 @@
+/* Universidad Nacional de Colombia */
+[data-sede="unal"] {
+  --color-primary: #7B0000;
+  --color-alert: #E63946;
+  --font-ui: "Merriweather", Georgia, serif;
+  --border-radius: 4px;
+}
