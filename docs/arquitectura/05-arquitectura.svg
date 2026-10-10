@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="900" viewBox="0 0 1500 900" font-family="DejaVu Sans, Inter, Segoe UI, Helvetica, Arial, sans-serif">
+<rect width="1500" height="900" fill="#FFFFFF"/>
+<defs><marker id="tri-composite" markerWidth="16" markerHeight="14" refX="15" refY="7" orient="auto" markerUnits="userSpaceOnUse"><polygon points="1,1 15,7 1,13" fill="#fff" stroke="#1D4ED8" stroke-width="1.6"/></marker><marker id="opn-composite" markerWidth="14" markerHeight="12" refX="13" refY="6" orient="auto" markerUnits="userSpaceOnUse"><polyline points="1,1 13,6 1,11" fill="none" stroke="#1D4ED8" stroke-width="1.8"/></marker><marker id="tri-strategy" markerWidth="16" markerHeight="14" refX="15" refY="7" orient="auto" markerUnits="userSpaceOnUse"><polygon points="1,1 15,7 1,13" fill="#fff" stroke="#15803D" stroke-width="1.6"/></marker><marker id="opn-strategy" markerWidth="14" markerHeight="12" refX="13" refY="6" orient="auto" markerUnits="userSpaceOnUse"><polyline points="1,1 13,6 1,11" fill="none" stroke="#15803D" stroke-width="1.8"/></marker><marker id="tri-observer" markerWidth="16" markerHeight="14" refX="15" refY="7" orient="auto" markerUnits="userSpaceOnUse"><polygon points="1,1 15,7 1,13" fill="#fff" stroke="#C2410C" stroke-width="1.6"/></marker><marker id="opn-observer" markerWidth="14" markerHeight="12" refX="13" refY="6" orient="auto" markerUnits="userSpaceOnUse"><polyline points="1,1 13,6 1,11" fill="none" stroke="#C2410C" stroke-width="1.8"/></marker><marker id="tri-factory" markerWidth="16" markerHeight="14" refX="15" refY="7" orient="auto" markerUnits="userSpaceOnUse"><polygon points="1,1 15,7 1,13" fill="#fff" stroke="#7E22CE" stroke-width="1.6"/></marker><marker id="opn-factory" markerWidth="14" markerHeight="12" refX="13" refY="6" orient="auto" markerUnits="userSpaceOnUse"><polyline points="1,1 13,6 1,11" fill="none" stroke="#7E22CE" stroke-width="1.8"/></marker><marker id="tri-neutral" markerWidth="16" markerHeight="14" refX="15" refY="7" orient="auto" markerUnits="userSpaceOnUse"><polygon points="1,1 15,7 1,13" fill="#fff" stroke="#334155" stroke-width="1.6"/></marker><marker id="opn-neutral" markerWidth="14" markerHeight="12" refX="13" refY="6" orient="auto" markerUnits="userSpaceOnUse"><polyline points="1,1 13,6 1,11" fill="none" stroke="#334155" stroke-width="1.8"/></marker></defs>
+<text x="40" y="46" font-size="24" font-weight="700" fill="#111827" text-anchor="start">Arquitectura de rutas multi-etapa de SkyCampus Enterprise</text>
+<text x="40" y="72" font-size="14" font-weight="400" fill="#475569" text-anchor="start">Cuatro patrones colaboran en un solo flujo: despachar(origen, destino, estaciones)</text>
+<rect x="40" y="92" width="16" height="16" rx="3" fill="#1D4ED8"/>
+<text x="64" y="105" font-size="13" font-weight="600" fill="#111827" text-anchor="start">Composite</text>
+<rect x="190" y="92" width="16" height="16" rx="3" fill="#15803D"/>
+<text x="214" y="105" font-size="13" font-weight="600" fill="#111827" text-anchor="start">Strategy</text>
+<rect x="340" y="92" width="16" height="16" rx="3" fill="#C2410C"/>
+<text x="364" y="105" font-size="13" font-weight="600" fill="#111827" text-anchor="start">Observer</text>
+<rect x="490" y="92" width="16" height="16" rx="3" fill="#7E22CE"/>
+<text x="514" y="105" font-size="13" font-weight="600" fill="#111827" text-anchor="start">Factory Method</text>
+<rect x="60" y="200" width="311" height="116" rx="6" fill="#fff" stroke="#334155" stroke-width="2"/>
+<path d="M60,250 L60,206 Q60,200 66,200 L365,200 Q371,200 371,206 L371,250 Z" fill="#334155" fill-opacity="0.10"/>
+<text x="215.5" y="222" font-size="12" font-weight="400" fill="#334155" text-anchor="middle">«cliente»</text>
+<text x="215.5" y="244" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">GestorMisiones</text>
+<line x1="60" y1="250" x2="371" y2="250" stroke="#334155" stroke-width="1.5"/>
+<line x1="60" y1="264" x2="371" y2="264" stroke="#334155" stroke-width="1"/>
+<text x="72" y="284" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">despachar(origen, destino, estaciones)</text>
+<text x="72" y="303" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">ejecutar(ruta)</text>
+<rect x="560" y="200" width="258" height="115" rx="6" fill="#fff" stroke="#15803D" stroke-width="2"/>
+<path d="M560,230 L560,206 Q560,200 566,200 L812,200 Q818,200 818,206 L818,230 Z" fill="#15803D" fill-opacity="0.10"/>
+<text x="689.0" y="224" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">PlanificadorRutas</text>
+<line x1="560" y1="230" x2="818" y2="230" stroke="#15803D" stroke-width="1.5"/>
+<text x="572" y="254" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">estrategia</text>
+<text x="572" y="273" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">alcanceMaximoKm</text>
+<line x1="560" y1="282" x2="818" y2="282" stroke="#15803D" stroke-width="1"/>
+<text x="572" y="302" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">planificar(...): Optional&lt;Ruta&gt;</text>
+<rect x="1000" y="200" width="300" height="116" rx="6" fill="#fff" stroke="#15803D" stroke-width="2"/>
+<path d="M1000,250 L1000,206 Q1000,200 1006,200 L1294,200 Q1300,200 1300,206 L1300,250 Z" fill="#15803D" fill-opacity="0.10"/>
+<text x="1150.0" y="222" font-size="12" font-weight="400" fill="#15803D" text-anchor="middle">«interface»</text>
+<text x="1150.0" y="244" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">EstrategiaOptimizacionRuta</text>
+<line x1="1000" y1="250" x2="1300" y2="250" stroke="#15803D" stroke-width="1.5"/>
+<line x1="1000" y1="264" x2="1300" y2="264" stroke="#15803D" stroke-width="1"/>
+<text x="1012" y="284" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">criterio()</text>
+<text x="1012" y="303" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">elegir(candidatas)</text>
+<rect x="560" y="430" width="266" height="116" rx="6" fill="#fff" stroke="#1D4ED8" stroke-width="2"/>
+<path d="M560,480 L560,436 Q560,430 566,430 L820,430 Q826,430 826,436 L826,480 Z" fill="#1D4ED8" fill-opacity="0.10"/>
+<text x="693.0" y="452" font-size="12" font-weight="400" fill="#1D4ED8" text-anchor="middle">«interface»</text>
+<text x="693.0" y="474" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">Ruta</text>
+<line x1="560" y1="480" x2="826" y2="480" stroke="#1D4ED8" stroke-width="1.5"/>
+<line x1="560" y1="494" x2="826" y2="494" stroke="#1D4ED8" stroke-width="1"/>
+<text x="572" y="514" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">ejecutar(ctx)</text>
+<text x="572" y="533" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">distanciaKm(), duracionMinutos()</text>
+<rect x="270" y="640" width="170" height="77" rx="6" fill="#fff" stroke="#1D4ED8" stroke-width="2"/>
+<path d="M270,670 L270,646 Q270,640 276,640 L434,640 Q440,640 440,646 L440,670 Z" fill="#1D4ED8" fill-opacity="0.10"/>
+<text x="355.0" y="664" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">TramoSimple</text>
+<line x1="270" y1="670" x2="440" y2="670" stroke="#1D4ED8" stroke-width="1.5"/>
+<line x1="270" y1="684" x2="440" y2="684" stroke="#1D4ED8" stroke-width="1"/>
+<text x="282" y="704" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">ejecutar(ctx)</text>
+<rect x="470" y="640" width="170" height="77" rx="6" fill="#fff" stroke="#1D4ED8" stroke-width="2"/>
+<path d="M470,670 L470,646 Q470,640 476,640 L634,640 Q640,640 640,646 L640,670 Z" fill="#1D4ED8" fill-opacity="0.10"/>
+<text x="555.0" y="664" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">ParadaDeCarga</text>
+<line x1="470" y1="670" x2="640" y2="670" stroke="#1D4ED8" stroke-width="1.5"/>
+<line x1="470" y1="684" x2="640" y2="684" stroke="#1D4ED8" stroke-width="1"/>
+<text x="482" y="704" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">ejecutar(ctx)</text>
+<rect x="670" y="640" width="190" height="96" rx="6" fill="#fff" stroke="#1D4ED8" stroke-width="2"/>
+<path d="M670,670 L670,646 Q670,640 676,640 L854,640 Q860,640 860,646 L860,670 Z" fill="#1D4ED8" fill-opacity="0.10"/>
+<text x="765.0" y="664" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">RutaCompuesta</text>
+<line x1="670" y1="670" x2="860" y2="670" stroke="#1D4ED8" stroke-width="1.5"/>
+<text x="682" y="694" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">etapas: List&lt;Ruta&gt;</text>
+<line x1="670" y1="703" x2="860" y2="703" stroke="#1D4ED8" stroke-width="1"/>
+<text x="682" y="723" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">ejecutar(ctx)</text>
+<rect x="1000" y="430" width="300" height="116" rx="6" fill="#fff" stroke="#334155" stroke-width="2"/>
+<path d="M1000,480 L1000,436 Q1000,430 1006,430 L1294,430 Q1300,430 1300,436 L1300,480 Z" fill="#334155" fill-opacity="0.10"/>
+<text x="1150.0" y="452" font-size="12" font-weight="400" fill="#334155" text-anchor="middle">«record»</text>
+<text x="1150.0" y="474" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">ContextoEjecucion</text>
+<line x1="1000" y1="480" x2="1300" y2="480" stroke="#334155" stroke-width="1.5"/>
+<text x="1012" y="504" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">fabrica</text>
+<text x="1012" y="523" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">notificador</text>
+<line x1="1000" y1="532" x2="1300" y2="532" stroke="#334155" stroke-width="1"/>
+<rect x="1000" y="600" width="300" height="116" rx="6" fill="#fff" stroke="#7E22CE" stroke-width="2"/>
+<path d="M1000,650 L1000,606 Q1000,600 1006,600 L1294,600 Q1300,600 1300,606 L1300,650 Z" fill="#7E22CE" fill-opacity="0.10"/>
+<text x="1150.0" y="622" font-size="12" font-weight="400" fill="#7E22CE" text-anchor="middle">«creador»</text>
+<text x="1150.0" y="644" font-size="15" font-weight="700" fill="#111827" text-anchor="middle" font-style="italic">FabricaDroneEtapa</text>
+<line x1="1000" y1="650" x2="1300" y2="650" stroke="#7E22CE" stroke-width="1.5"/>
+<line x1="1000" y1="664" x2="1300" y2="664" stroke="#7E22CE" stroke-width="1"/>
+<text x="1012" y="684" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">prepararPara(tramo)</text>
+<text x="1012" y="703" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">#crearDrone(tramo)</text>
+<rect x="1000" y="740" width="300" height="77" rx="6" fill="#fff" stroke="#C2410C" stroke-width="2"/>
+<path d="M1000,770 L1000,746 Q1000,740 1006,740 L1294,740 Q1300,740 1300,746 L1300,770 Z" fill="#C2410C" fill-opacity="0.10"/>
+<text x="1150.0" y="764" font-size="15" font-weight="700" fill="#111827" text-anchor="middle">NotificadorRuta</text>
+<line x1="1000" y1="770" x2="1300" y2="770" stroke="#C2410C" stroke-width="1.5"/>
+<line x1="1000" y1="784" x2="1300" y2="784" stroke="#C2410C" stroke-width="1"/>
+<text x="1012" y="804" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start" font-family="DejaVu Sans Mono, JetBrains Mono, Consolas, monospace">suscribir(o)  publicar(e)</text>
+<polyline points="371,246 560,246" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#opn-neutral)"/>
+<rect x="418" y="228" width="96" height="19" rx="4" fill="#fff" fill-opacity="0.92"/>
+<text x="466" y="241.4" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">1  planificar</text>
+<polyline points="818,246 1000,246" fill="none" stroke="#15803D" stroke-width="1.8" marker-end="url(#opn-strategy)"/>
+<rect x="875" y="228" width="69" height="19" rx="4" fill="#fff" fill-opacity="0.92"/>
+<text x="910" y="241.0" font-size="12" font-weight="600" fill="#15803D" text-anchor="middle">2  elegir</text>
+<polyline points="689,315 693,430" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#opn-composite)"/>
+<rect x="698" y="332" width="122" height="19" rx="4" fill="#fff" fill-opacity="0.92"/>
+<text x="759.0" y="345" font-size="12" font-weight="600" fill="#1D4ED8" text-anchor="middle">devuelve una Ruta</text>
+<polyline points="216,316 216,520 560,520" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#opn-neutral)"/>
+<rect x="225" y="502" width="182" height="19" rx="4" fill="#fff" fill-opacity="0.92"/>
+<text x="315.5" y="515" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">3  ruta.ejecutar(contexto)</text>
+<polyline points="355,640 355,600 693,600 693,546" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#tri-composite)"/>
+<polyline points="555,640 555,600 693,600 693,546" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#tri-composite)"/>
+<polyline points="765,640 765,600 693,600 693,546" fill="none" stroke="#1D4ED8" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#tri-composite)"/>
+<polyline points="826,488 1000,488" fill="none" stroke="#334155" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#opn-neutral)"/>
+<rect x="845" y="470" width="50" height="19" rx="4" fill="#fff" fill-opacity="0.92"/>
+<text x="870" y="483.0" font-size="12" font-weight="600" fill="#334155" text-anchor="middle">recibe</text>
+<polyline points="1090,546 1090,600" fill="none" stroke="#7E22CE" stroke-width="1.8" marker-end="url(#opn-factory)"/>
+<rect x="1107" y="577" width="155" height="19" rx="4" fill="#fff" fill-opacity="0.92"/>
+<text x="1185.0" y="590" font-size="12" font-weight="600" fill="#7E22CE" text-anchor="middle">4  drone para la etapa</text>
+<polyline points="1300,523 1340,523 1340,778 1300,778" fill="none" stroke="#C2410C" stroke-width="1.8" marker-end="url(#opn-observer)"/>
+<rect x="1302" y="627" width="76" height="19" rx="4" fill="#fff" fill-opacity="0.92"/>
+<text x="1340" y="640" font-size="12" font-weight="600" fill="#C2410C" text-anchor="middle">5  eventos</text>
+<path d="M60,770 L806,770 L820,784 L820,888 L60,888 Z" fill="#334155" fill-opacity="0.07" stroke="#334155" stroke-width="1.3"/>
+<text x="72" y="792" font-size="13" font-weight="700" fill="#334155" text-anchor="start">Cómo colaboran</text>
+<text x="72" y="814" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start">Flujo: el gestor pide una ruta al planificador (Strategy),</text>
+<text x="72" y="832" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start">la ejecuta sin saber si es simple o compuesta (Composite),</text>
+<text x="72" y="850" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start">cada tramo pide su drone a la fábrica (Factory Method)</text>
+<text x="72" y="868" font-size="12.5" font-weight="400" fill="#111827" text-anchor="start">y cada etapa avisa su resultado a los observadores (Observer).</text>
+</svg>
