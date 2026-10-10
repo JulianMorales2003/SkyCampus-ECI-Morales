@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de misión activa en 3 variantes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;600;700&family=Space+Grotesk:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="componentes.css">
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="temas/eci.css">
+  <link rel="stylesheet" href="temas/unal.css">
+  <link rel="stylesheet" href="temas/uniandes.css">
+</head>
+<body>
+  <h1 class="demo-titulo">Panel de misión activa en 3 variantes</h1>
+  <p class="demo-nota">Un solo componente con la misma estructura HTML y el mismo CSS. Cambia únicamente el atributo data-sede del contenedor. Los datos de las misiones son ilustrativos.</p>
+  <main class="demo-rejilla">
+    <div class="demo-columna sede-lienzo" data-sede="eci">
+      <p class="demo-etiqueta">Variante ECI</p>
+      <section class="panel-mision" aria-labelledby="titulo-eci">
+        <header class="panel-mision__cabecera">
+          <h2 class="panel-mision__titulo" id="titulo-eci">Misión M-018</h2>
+          <span class="panel-mision__estado">En vuelo</span>
+        </header>
+        <p class="panel-mision__ruta">ECI → Uniandes · 3 etapas</p>
+        <ol class="panel-mision__etapas">
+          <li class="panel-mision__etapa" data-estado="completada">Etapa 1 · ECI → Estación calle 116</li>
+          <li class="panel-mision__etapa" data-estado="actual">Etapa 2 · Estación calle 116 → Estación calle 80</li>
+          <li class="panel-mision__etapa" data-estado="pendiente">Etapa 3 · Estación calle 80 → Uniandes</li>
+        </ol>
+          <article class="tarjeta-drone" data-estado="en-vuelo">
+            <header class="tarjeta-drone__cabecera">
+              <h3 class="tarjeta-drone__id">D-02</h3>
+              <span class="tarjeta-drone__tipo">CARGO</span>
+              <span class="tarjeta-drone__estado">En vuelo</span>
+            </header>
+            <div class="indicador-bateria" data-nivel="medio" style="--nivel: 58%">
+              <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58">
+                <div class="indicador-bateria__relleno"></div>
+              </div>
+              <span class="indicador-bateria__valor">58 %</span>
+            </div>
+            <p class="tarjeta-drone__ubicacion">Sede ECI · En ruta</p>
+            <p class="tarjeta-drone__aviso" data-tipo="info">Bloqueado: en misión</p>
+            <footer class="tarjeta-drone__acciones">
+              <button class="boton boton--secundario" type="button">Ver detalle</button>
+              <button class="boton" type="button" disabled>Asignar misión</button>
+            </footer>
+          </article>
+        <p class="panel-mision__aviso">Estación calle 80 sin cupo: la etapa 3 espera hasta 30 min.</p>
+        <footer class="panel-mision__acciones">
+          <button class="boton" type="button">Ver ruta</button>
+          <button class="boton boton--peligro" type="button">Cancelar misión</button>
+        </footer>
+      </section>
+    </div>
+    <div class="demo-columna sede-lienzo" data-sede="unal">
+      <p class="demo-etiqueta">Variante UNAL</p>
+      <section class="panel-mision" aria-labelledby="titulo-unal">
+        <header class="panel-mision__cabecera">
+          <h2 class="panel-mision__titulo" id="titulo-unal">Misión M-021</h2>
+          <span class="panel-mision__estado">En vuelo</span>
+        </header>
+        <p class="panel-mision__ruta">UNAL → ECI · 2 etapas</p>
+        <ol class="panel-mision__etapas">
+          <li class="panel-mision__etapa" data-estado="completada">Etapa 1 · UNAL → Estación Park Way</li>
+          <li class="panel-mision__etapa" data-estado="actual">Etapa 2 · Estación Park Way → ECI</li>
+          <li class="panel-mision__etapa" data-estado="pendiente">Etapa 3 · Entrega y cierre en ECI</li>
+        </ol>
+          <article class="tarjeta-drone" data-estado="en-vuelo">
+            <header class="tarjeta-drone__cabecera">
+              <h3 class="tarjeta-drone__id">D-05</h3>
+              <span class="tarjeta-drone__tipo">EXPRESS</span>
+              <span class="tarjeta-drone__estado">En vuelo</span>
+            </header>
+            <div class="indicador-bateria" data-nivel="alto" style="--nivel: 72%">
+              <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="72">
+                <div class="indicador-bateria__relleno"></div>
+              </div>
+              <span class="indicador-bateria__valor">72 %</span>
+            </div>
+            <p class="tarjeta-drone__ubicacion">Sede UNAL · En ruta</p>
+            <p class="tarjeta-drone__aviso" data-tipo="info">Bloqueado: en misión</p>
+            <footer class="tarjeta-drone__acciones">
+              <button class="boton boton--secundario" type="button">Ver detalle</button>
+              <button class="boton" type="button" disabled>Asignar misión</button>
+            </footer>
+          </article>
+        <p class="panel-mision__aviso">Viento de 36 km/h en la etapa 2: se revisa cada 5 min.</p>
+        <footer class="panel-mision__acciones">
+          <button class="boton" type="button">Ver ruta</button>
+          <button class="boton boton--peligro" type="button">Cancelar misión</button>
+        </footer>
+      </section>
+    </div>
+    <div class="demo-columna sede-lienzo" data-sede="uniandes">
+      <p class="demo-etiqueta">Variante Uniandes</p>
+      <section class="panel-mision" aria-labelledby="titulo-uniandes">
+        <header class="panel-mision__cabecera">
+          <h2 class="panel-mision__titulo" id="titulo-uniandes">Misión M-024</h2>
+          <span class="panel-mision__estado">En vuelo</span>
+        </header>
+        <p class="panel-mision__ruta">Uniandes → UNAL · 2 etapas</p>
+        <ol class="panel-mision__etapas">
+          <li class="panel-mision__etapa" data-estado="completada">Etapa 1 · Uniandes → Estación Teusaquillo</li>
+          <li class="panel-mision__etapa" data-estado="actual">Etapa 2 · Estación Teusaquillo → UNAL</li>
+          <li class="panel-mision__etapa" data-estado="pendiente">Etapa 3 · Entrega y cierre en UNAL</li>
+        </ol>
+          <article class="tarjeta-drone" data-estado="en-vuelo">
+            <header class="tarjeta-drone__cabecera">
+              <h3 class="tarjeta-drone__id">D-07</h3>
+              <span class="tarjeta-drone__tipo">MINI</span>
+              <span class="tarjeta-drone__estado">En vuelo</span>
+            </header>
+            <div class="indicador-bateria" data-nivel="medio" style="--nivel: 34%">
+              <div class="indicador-bateria__pista" role="progressbar" aria-label="Batería" aria-valuemin="0" aria-valuemax="100" aria-valuenow="34">
+                <div class="indicador-bateria__relleno"></div>
+              </div>
+              <span class="indicador-bateria__valor">34 %</span>
+            </div>
+            <p class="tarjeta-drone__ubicacion">Sede Uniandes · En ruta</p>
+            <p class="tarjeta-drone__aviso" data-tipo="info">Bloqueado: en misión</p>
+            <footer class="tarjeta-drone__acciones">
+              <button class="boton boton--secundario" type="button">Ver detalle</button>
+              <button class="boton" type="button" disabled>Asignar misión</button>
+            </footer>
+          </article>
+        <p class="panel-mision__aviso">Batería de D-07 cerca del mínimo de 30 %: se evalúa recarga.</p>
+        <footer class="panel-mision__acciones">
+          <button class="boton" type="button">Ver ruta</button>
+          <button class="boton boton--peligro" type="button">Cancelar misión</button>
+        </footer>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

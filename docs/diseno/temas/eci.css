@@ -1,0 +1,7 @@
+/* Escuela Colombiana de Ingeniería Julio Garavito */
+[data-sede="eci"] {
+  --color-primary: #00457C;
+  --color-alert: #E63946;
+  --font-ui: "Space Grotesk", system-ui, sans-serif;
+  --border-radius: 10px;
+}

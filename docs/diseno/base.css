@@ -1,0 +1,24 @@
+/* Variables compartidas por las 4 sedes. Una sede NO las redefine: lo único que cambia entre
+   universidades son los 4 tokens de temas/<sede>.css. */
+:root {
+  --color-on-primary: #FFFFFF;
+  --color-surface: #FFFFFF;
+  --color-fondo: #F1F5F9;
+  --color-text: #0F172A;
+  --color-text-suave: #475569;
+  --color-borde: #CBD5E1;
+  --color-pista: #E2E8F0;
+
+  --espacio-1: 4px;
+  --espacio-2: 8px;
+  --espacio-3: 12px;
+  --espacio-4: 16px;
+  --espacio-5: 24px;
+
+  --texto-xs: 0.8125rem;
+  --texto-sm: 0.9375rem;
+  --texto-md: 1rem;
+  --texto-lg: 1.25rem;
+
+  --alto-control: 44px;
+}
