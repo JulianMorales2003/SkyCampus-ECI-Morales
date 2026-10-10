@@ -47,10 +47,10 @@ class DesignTokensTest {
     private static final String INICIO_PANEL = "<section class=\"panel-mision\"";
     private static final String FIN_PANEL = "</section>";
     private static final Pattern COLOR_LITERAL = Pattern.compile("#[0-9A-Fa-f]{3,8}\\b|\\b(?:rgb|rgba|hsl|hsla)\\(");
-    private static final Pattern DECLARACION = Pattern.compile("([a-z-]+)\\s*:\\s*([^;{}]+);");
+    private static final Pattern DECLARACION = Pattern.compile("([a-z-]+)\\s*:([^;{}]+);");
     private static final Pattern COLOR_CON_NOMBRE = Pattern.compile(
             "\\b(?:white|black|red|blue|green|gray|grey|yellow|orange|purple|navy|maroon)\\b");
-    private static final Pattern ETIQUETA = Pattern.compile("<(/?)([a-z0-9]+)([^>]*)>");
+    private static final Pattern ETIQUETA = Pattern.compile("<(/?)([a-z0-9]++)([^>]*+)>");
     private static final Pattern CLASE = Pattern.compile("class=\"([^\"]*)\"");
     private static final Pattern DATA_SEDE = Pattern.compile("data-sede=\"([^\"]*)\"");
     private static final Pattern ESTILO_EN_LINEA = Pattern.compile("style=\"([^\"]*)\"");

@@ -39,7 +39,7 @@ public record TemaSede(String sede, String colorPrimario, String colorAlerta, St
     private static final Pattern SEDE_VALIDA = Pattern.compile("[a-z]{2,20}");
     private static final Pattern RADIO_VALIDO = Pattern.compile("\\d{1,2}px");
     private static final Pattern BLOQUE = Pattern.compile("\\[data-sede=\"([^\"]*)\"]\\s*\\{([^}]*)}");
-    private static final Pattern DECLARACION = Pattern.compile("(--[a-z-]+)\\s*:\\s*([^;]+);");
+    private static final Pattern DECLARACION = Pattern.compile("(--[a-z-]+)\\s*:([^;]+);");
     private static final Pattern COMENTARIO = Pattern.compile("/\\*.*?\\*/", Pattern.DOTALL);
 
     public TemaSede {
