@@ -52,5 +52,18 @@ foreach ($c in $condiciones) {
     Post "qualitygates/create_condition" @{ gateName = $Gate; metric = $c[0]; op = $c[1]; error = $c[2] }
 }
 
+# SonarQube agrega por su cuenta condiciones sobre codigo nuevo (new_*) a un gate recien creado.
+# El reto de Infernape pide solo las 6 de la tabla, todas sobre el codigo completo: se quitan.
+if ($Nivel -eq "Infernape") {
+    try {
+        $creado = Invoke-RestMethod -Headers $h -Uri "$Host_/api/qualitygates/show?name=$([uri]::EscapeDataString($Gate))"
+        foreach ($c in ($creado.conditions | Where-Object { $_.metric -like "new_*" })) {
+            Post "qualitygates/delete_condition" @{ id = $c.id }
+        }
+    } catch {
+        Write-Warning "No se pudieron quitar las condiciones new_*; quitalas a mano en Quality Gates -> $Gate."
+    }
+}
+
 Post "qualitygates/select" @{ gateName = $Gate; projectKey = $Proyecto }
 Write-Host "Quality Gate '$Gate' creado y asignado a $Proyecto."
