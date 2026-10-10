@@ -150,9 +150,14 @@ class DesignTokensTest {
         for (Path tema : archivosDeTema().toList()) {
             Files.copy(tema, carpeta.resolve(tema.getFileName()));
         }
-        Files.writeString(carpeta.resolve("nueva.css"), "[data-sede=\"nueva\"] {\n"
-                + "  --color-primary: #5B2C83;\n  --color-alert: #E63946;\n"
-                + "  --font-ui: \"Roboto\", system-ui, sans-serif;\n  --border-radius: 6px;\n}\n");
+        Files.writeString(carpeta.resolve("nueva.css"), """
+                [data-sede="nueva"] {
+                  --color-primary: #5B2C83;
+                  --color-alert: #E63946;
+                  --font-ui: "Roboto", system-ui, sans-serif;
+                  --border-radius: 6px;
+                }
+                """);
 
         List<TemaSede> temas = temasDe(carpeta);
 
