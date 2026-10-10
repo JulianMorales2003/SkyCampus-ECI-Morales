@@ -6,7 +6,8 @@ Construir la matriz de trazabilidad de SkyCampus Enterprise con 8 RF y 4 RNF: pa
 
 ## 1. Numeración
 
-Continúa los documentos anteriores: el MVP tiene RF-01 a RF-03 y RNF-01 a RNF-03 ([`RETO06-RF-RNF-MOSCOW.md`](RETO06-RF-RNF-MOSCOW.md)), y la v2 tiene RF-07 a RF-11 y RNF-04 a RNF-07 ([`MONFERNO06-RF-RNF-V2.md`](MONFERNO06-RF-RNF-V2.md)). Enterprise sigue desde ahí: **RF-12 a RF-19** y **RNF-08 a RNF-11**, que es lo que el enunciado da por hecho al hablar de RF-12 y RNF-09. Los casos de uso siguen desde SC-07 (SC-08 a SC-14) y las historias desde HU-8 (HU-9 a HU-16).
+Continúa los documentos anteriores: el MVP tiene RF-01 a RF-03 y RNF-01 a RNF-03 ([`RETO06-RF-RNF-MOSCOW.md`](RETO06-RF-RNF-MOSCOW.md)), y la v2 tiene RF-07 a RF-11 y RNF-04 a RNF-07 ([`MONFERNO06-RF-RNF-V2.md`](MONFERNO06-RF-RNF-V2.md)). Enterprise sigue desde ahí: **RF-12 a RF-19** y **RNF-08 a RNF-11**, que es lo que el enunciado da por hecho al hablar de RF-12 y RNF-09. Los casos de uso siguen desde SC-07 (SC-08 a SC-14) y las historias desde HU-8 (HU-9 a HU-16).
+| SC-15 | Planificar una ruta multi-etapa entre sedes | Operador de drones |
 
 ## 2. Requerimientos (texto final, ya sin contradicciones)
 
@@ -48,7 +49,8 @@ Todos los RNF tienen número, condición y forma de verificación; ninguno usa "
 | SC-11 | Asignar drone de la sede de origen a una misión | Sistema (lo dispara una solicitud) | RF-15, RNF-11 |
 | SC-12 | Autorizar un vuelo entre sedes | Sistema (lo dispara una misión) | RF-16, RNF-09, RNF-10, RNF-11 |
 | SC-13 | Consultar la eficiencia de la red o de una sede | Superadmin y Coordinador de sede | RF-17, RF-19 |
-| SC-14 | Seguir las etapas de una ruta | Operador de drones | RF-18 |
+| SC-14 | Seguir las etapas de una ruta | Operador de drones | RF-18 |
+| SC-15 | Planificar una ruta multi-etapa entre sedes | Operador de drones |
 
 ## 4. Historias de usuario
 
@@ -94,11 +96,12 @@ Los RNF no tienen historia propia: son criterios de aceptación de las historias
 |---|---|---|---|---|---|---|
 | RF-12 | El coordinador de cada sede puede configurar el radio máximo de vuelo de los drones de su sede | Should | SC-08 | HU-9 [PEGA: clave] | `PoliticaVueloTest#configurarRadio_pedidoMayorQueLaAerocivil_rigeElLimiteDeLaAerocivil`<br>`PoliticaVueloTest#configurarRadio_pedidoDentroDeLosLimites_rigeElPedido` | C-01, C-02 |
 | RF-13 | El superadmin define el techo de radio de toda la red | Should | SC-09 | HU-10 [PEGA: clave] | `PoliticaVueloTest#definirTechoRed_menorQueElRadioDelCoordinador_rigeElTecho` | C-02 |
-| RF-14 | El sistema planifica la ruta entre sedes, directa o con parada de carga, según un criterio elegible | Must | SC-10 | HU-11 [PEGA: clave] | `PlanificadorYGestorTest#planificar_destinoMasLejosQueElAlcance_usaLaEstacionMasCorta`<br>`RutaCompuestaTest#rutaCompuesta_anidada_tieneTresNivelesYSeComportaComoUnaSola` | - |
+| RF-14 | El sistema planifica la ruta entre sedes, directa o con parada de carga, según un criterio elegible | Must | SC-10, SC-15 | HU-11 [PEGA: clave] | `PlanificadorYGestorTest#planificar_destinoMasLejosQueElAlcance_usaLaEstacionMasCorta`<br>`RutaCompuestaTest#rutaCompuesta_anidada_tieneTresNivelesYSeComportaComoUnaSola` | - |
 | RF-15 | El sistema asigna a cada misión que no sea urgente el drone con más batería disponible en la sede de origen | Must | SC-11 | HU-12 [PEGA: clave] | `AsignadorMisionTest#asigna_conClimaApto_eligeMayorBateria`<br>`AsignadorMisionTest#asigna_consultaLaSedeDeOrigen` | C-04 |
-| RF-16 | Ningún vuelo entre sedes despega sin la autorización de la Aerocivil | Must | SC-12 | HU-13 [PEGA: clave] | `AutorizadorVueloTest#decidir_planValidoYAerocivilAutoriza_autoriza`<br>`AutorizadorVueloTest#decidir_urgenteONo_siemprePideLaAutorizacionDeLaAerocivil` | C-03 |
+| RF-16 | Ningún vuelo entre sedes despega sin la autorización de la Aerocivil | Must | SC-12, SC-15 | HU-13 [PEGA: clave] | `AutorizadorVueloTest#decidir_planValidoYAerocivilAutoriza_autoriza`<br>`AutorizadorVueloTest#decidir_urgenteONo_siemprePideLaAutorizacionDeLaAerocivil` | C-03 |
 | RF-17 | El superadmin ve el ranking de eficiencia de las sedes de la red | Could | SC-13 | HU-14 [PEGA: clave] | `AnalyticsRedTest#ranking_escenarios_ordenaPorTasaLuegoEntregadasLuegoNombre` | - |
-| RF-18 | El sistema avisa el inicio, la finalización y el fallo de cada etapa de una ruta | Should | SC-14 | HU-15 [PEGA: clave] | `RutaCompuestaTest#ejecutar_rutaCompuesta_avisaIniciadaYCompletadaDeCadaEtapaEnOrden`<br>`PlanificadorYGestorTest#ejecutar_etapaFallida_losObservadoresRecibenLaAlertaSinCambiarLaRuta` | - |
+| RF-18 | El sistema avisa el inicio, la finalización y el fallo de cada etapa de una ruta | Should | SC-14 | HU-15 [PEGA: clave] | `RutaCompuestaTest#ejecutar_rutaCompuesta_avisaIniciadaYCompletadaDeCadaEtapaEnOrden`<br>`PlanificadorYGestorTest#ejecutar_etapaFallida_losObservadoresRecibenLaAlertaSinCambiarLaRuta` | - |
+| SC-15 | Planificar una ruta multi-etapa entre sedes | Operador de drones |
 | RF-19 | El coordinador consulta la eficiencia de su propia sede | Could | SC-13 | HU-16 [PEGA: clave] | `AnalyticsRedTest#eficienciaPorSede_escenarios_calculaLasCuatroMetricasPorSede` | - |
 | RNF-08 | Planificar una ruta entre sedes con 20 estaciones tarda menos de 500 ms | Should | SC-10 | HU-11 [PEGA: clave] | `RequisitosEnterpriseTest#rnf08_planificarConVeinteEstaciones_tardaMenosDe500ms` | - |
 | RNF-09 | Las rutas entre sedes respetan el espacio aéreo de la Aerocivil y ningún drone vuela a más de 120 m en zona urbana | Must | SC-12, SC-08 | HU-13 [PEGA: clave]<br>HU-9 [PEGA: clave] | `AutorizadorVueloTest#decidir_alturaSobre120EnZonaUrbana_rechaza`<br>`AutorizadorVueloTest#decidir_radioConfiguradoPorElCoordinadorQueViolaLaAerocivil_seRechaza`<br>`PoliticaVueloTest#radioEfectivo_laAerocivilReduceElLimiteDespues_seSigueCumpliendo` | C-01, C-03 |
