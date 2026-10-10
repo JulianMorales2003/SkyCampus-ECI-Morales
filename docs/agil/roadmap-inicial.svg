@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="684pt" height="380.304pt" viewBox="0 0 684 380.304" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-10T04:33:58.175771</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 380.304
+L 684 380.304
+L 684 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 18.36 324.3168
+L 219.24 324.3168
+Q 225.936 324.3168 225.936 317.664
+L 225.936 51.552
+Q 225.936 44.8992 219.24 44.8992
+L 18.36 44.8992
+Q 11.664 44.8992 11.664 51.552
+L 11.664 317.664
+Q 11.664 324.3168 18.36 324.3168
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #f1f5f9; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 25.056 149.1264
+L 212.544 149.1264
+Q 217.008 149.1264 217.008 144.6912
+L 217.008 121.9608
+Q 217.008 117.5256 212.544 117.5256
+L 25.056 117.5256
+Q 20.592 117.5256 20.592 121.9608
+L 20.592 144.6912
+Q 20.592 149.1264 25.056 149.1264
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #00457c"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 25.056 186.8256
+L 212.544 186.8256
+Q 217.008 186.8256 217.008 182.3904
+L 217.008 159.66
+Q 217.008 155.2248 212.544 155.2248
+L 25.056 155.2248
+Q 20.592 155.2248 20.592 159.66
+L 20.592 182.3904
+Q 20.592 186.8256 25.056 186.8256
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #00457c"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 25.056 224.5248
+L 212.544 224.5248
+Q 217.008 224.5248 217.008 220.0896
+L 217.008 197.3592
+Q 217.008 192.924 212.544 192.924
+L 25.056 192.924
+Q 20.592 192.924 20.592 197.3592
+L 20.592 220.0896
+Q 20.592 224.5248 25.056 224.5248
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #00457c"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 25.056 262.224
+L 212.544 262.224
+Q 217.008 262.224 217.008 257.7888
+L 217.008 235.0584
+Q 217.008 230.6232 212.544 230.6232
+L 25.056 230.6232
+Q 20.592 230.6232 20.592 235.0584
+L 20.592 257.7888
+Q 20.592 262.224 25.056 262.224
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #2d6a4f"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 25.056 299.9232
+L 212.544 299.9232
+Q 217.008 299.9232 217.008 295.488
+L 217.008 272.7576
+Q 217.008 268.3224 212.544 268.3224
+L 25.056 268.3224
+Q 20.592 268.3224 20.592 272.7576
+L 20.592 295.488
+Q 20.592 299.9232 25.056 299.9232
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #2d6a4f"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 238.77 324.3168
+L 439.65 324.3168
+Q 446.346 324.3168 446.346 317.664
+L 446.346 51.552
+Q 446.346 44.8992 439.65 44.8992
+L 238.77 44.8992
+Q 232.074 44.8992 232.074 51.552
+L 232.074 317.664
+Q 232.074 324.3168 238.77 324.3168
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #f1f5f9; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 245.466 149.1264
+L 432.954 149.1264
+Q 437.418 149.1264 437.418 144.6912
+L 437.418 121.9608
+Q 437.418 117.5256 432.954 117.5256
+L 245.466 117.5256
+Q 241.002 117.5256 241.002 121.9608
+L 241.002 144.6912
+Q 241.002 149.1264 245.466 149.1264
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #00457c"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 245.466 186.8256
+L 432.954 186.8256
+Q 437.418 186.8256 437.418 182.3904
+L 437.418 159.66
+Q 437.418 155.2248 432.954 155.2248
+L 245.466 155.2248
+Q 241.002 155.2248 241.002 159.66
+L 241.002 182.3904
+Q 241.002 186.8256 245.466 186.8256
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #2d6a4f"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 245.466 224.5248
+L 432.954 224.5248
+Q 437.418 224.5248 437.418 220.0896
+L 437.418 197.3592
+Q 437.418 192.924 432.954 192.924
+L 245.466 192.924
+Q 241.002 192.924 241.002 197.3592
+L 241.002 220.0896
+Q 241.002 224.5248 245.466 224.5248
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #2d6a4f"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 459.18 324.3168
+L 660.06 324.3168
+Q 666.756 324.3168 666.756 317.664
+L 666.756 51.552
+Q 666.756 44.8992 660.06 44.8992
+L 459.18 44.8992
+Q 452.484 44.8992 452.484 51.552
+L 452.484 317.664
+Q 452.484 324.3168 459.18 324.3168
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #f1f5f9; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 465.876 149.1264
+L 653.364 149.1264
+Q 657.828 149.1264 657.828 144.6912
+L 657.828 121.9608
+Q 657.828 117.5256 653.364 117.5256
+L 465.876 117.5256
+Q 461.412 117.5256 461.412 121.9608
+L 461.412 144.6912
+Q 461.412 149.1264 465.876 149.1264
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #2d6a4f"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 465.876 186.8256
+L 653.364 186.8256
+Q 657.828 186.8256 657.828 182.3904
+L 657.828 159.66
+Q 657.828 155.2248 653.364 155.2248
+L 465.876 155.2248
+Q 461.412 155.2248 461.412 159.66
+L 461.412 182.3904
+Q 461.412 186.8256 465.876 186.8256
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #8a6d00"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 465.876 224.5248
+L 653.364 224.5248
+Q 657.828 224.5248 657.828 220.0896
+L 657.828 197.3592
+Q 657.828 192.924 653.364 192.924
+L 465.876 192.924
+Q 461.412 192.924 461.412 197.3592
+L 461.412 220.0896
+Q 461.412 224.5248 465.876 224.5248
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #8a6d00"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 12.78 347.6016
+L 26.73 347.6016
+L 26.73 337.6224
+L 12.78 337.6224
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #00457c"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 79.74 347.6016
+L 93.69 347.6016
+L 93.69 337.6224
+L 79.74 337.6224
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #2d6a4f"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 146.7 347.6016
+L 160.65 347.6016
+L 160.65 337.6224
+L 146.7 337.6224
+z
+" clip-path="url(#p6e44f130d6)" style="fill: #8a6d00"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0f172a" x="12.78" y="23.832" transform="rotate(-0 12.78 23.832)">SkyCampus Enterprise · Roadmap del trimestre (plan inicial, 45 puntos)</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0f172a" x="21.15" y="62.64" transform="rotate(-0 21.15 62.64)">Sprint 1 · Conectividad</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #475569" x="21.15" y="79.272" transform="rotate(-0 21.15 79.272)">13 – 23 oct 2026 (9 días hábiles)</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0f172a" x="21.15" y="95.904" transform="rotate(-0 21.15 95.904)">16 de 18 puntos (89%)</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="28.404" y="135.670206" transform="rotate(-0 28.404 135.670206)">HU-13  Autorización Aerocivil</text>
+   </g>
+   <g id="text_6">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="209.196" y="135.670206" transform="rotate(-0 209.196 135.670206)">5 pt</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="28.404" y="173.369406" transform="rotate(-0 28.404 173.369406)">HU-18  Adaptador Aerocivil</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="209.196" y="173.369406" transform="rotate(-0 209.196 173.369406)">3 pt</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="28.404" y="211.068606" transform="rotate(-0 28.404 211.068606)">HU-12  Drone de sede origen</text>
+   </g>
+   <g id="text_10">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="209.196" y="211.068606" transform="rotate(-0 209.196 211.068606)">3 pt</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="28.404" y="248.767806" transform="rotate(-0 28.404 248.767806)">HU-9  Radio de la sede</text>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="209.196" y="248.767806" transform="rotate(-0 209.196 248.767806)">3 pt</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="28.404" y="286.467006" transform="rotate(-0 28.404 286.467006)">HU-10  Techo de la red</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="209.196" y="286.467006" transform="rotate(-0 209.196 286.467006)">2 pt</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0f172a" x="241.56" y="62.64" transform="rotate(-0 241.56 62.64)">Sprint 2 · Rutas multi-etapa</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #475569" x="241.56" y="79.272" transform="rotate(-0 241.56 79.272)">26 oct – 6 nov 2026 (9 días hábiles)</text>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0f172a" x="241.56" y="95.904" transform="rotate(-0 241.56 95.904)">16 de 18 puntos (89%)</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="248.814" y="135.670206" transform="rotate(-0 248.814 135.670206)">HU-11  Ruta entre sedes</text>
+   </g>
+   <g id="text_19">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="429.606" y="135.670206" transform="rotate(-0 429.606 135.670206)">8 pt</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="248.814" y="173.369406" transform="rotate(-0 248.814 173.369406)">HU-19  Reserva de estación</text>
+   </g>
+   <g id="text_21">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="429.606" y="173.369406" transform="rotate(-0 429.606 173.369406)">5 pt</text>
+   </g>
+   <g id="text_22">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="248.814" y="211.068606" transform="rotate(-0 248.814 211.068606)">HU-15  Avisos por etapa</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="429.606" y="211.068606" transform="rotate(-0 429.606 211.068606)">3 pt</text>
+   </g>
+   <g id="text_24">
+    <text style="font-weight: 700; font-size: 11px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0f172a" x="461.97" y="62.64" transform="rotate(-0 461.97 62.64)">Sprint 3 · Analytics y panel</text>
+   </g>
+   <g id="text_25">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #475569" x="461.97" y="79.272" transform="rotate(-0 461.97 79.272)">9 – 20 nov 2026 (9 días hábiles)</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #0f172a" x="461.97" y="95.904" transform="rotate(-0 461.97 95.904)">13 de 18 puntos (72%)</text>
+   </g>
+   <g id="text_27">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="469.224" y="135.670206" transform="rotate(-0 469.224 135.670206)">HU-17  Panel de superadmin</text>
+   </g>
+   <g id="text_28">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="650.016" y="135.670206" transform="rotate(-0 650.016 135.670206)">8 pt</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="469.224" y="173.369406" transform="rotate(-0 469.224 173.369406)">HU-14  Ranking de sedes</text>
+   </g>
+   <g id="text_30">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="650.016" y="173.369406" transform="rotate(-0 650.016 173.369406)">3 pt</text>
+   </g>
+   <g id="text_31">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #ffffff" x="469.224" y="211.068606" transform="rotate(-0 469.224 211.068606)">HU-16  Eficiencia de mi sede</text>
+   </g>
+   <g id="text_32">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: end; fill: #ffffff" x="650.016" y="211.068606" transform="rotate(-0 650.016 211.068606)">2 pt</text>
+   </g>
+   <g id="text_33">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="32.31" y="345.095437" transform="rotate(-0 32.31 345.095437)">Must</text>
+   </g>
+   <g id="text_34">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="99.27" y="345.095437" transform="rotate(-0 99.27 345.095437)">Should</text>
+   </g>
+   <g id="text_35">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start" x="166.23" y="345.095437" transform="rotate(-0 166.23 345.095437)">Could</text>
+   </g>
+   <g id="text_36">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans', 'Arial', 'Bitstream Vera Sans', 'Computer Modern Sans Serif', 'Lucida Grande', 'Verdana', 'Geneva', 'Lucid', 'Helvetica', 'Avant Garde', sans-serif; text-anchor: start; fill: #475569" x="12.78" y="366.4512" transform="rotate(-0 12.78 366.4512)">Capacidad = 20 puntos por 10 días del enunciado de Monferno, ajustada a 9 días hábiles por festivo. No es una velocidad medida.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6e44f130d6">
+   <rect x="7.2" y="7.2" width="669.6" height="365.904"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,12 @@
+historia;requisito;moscow;puntos;sprint_inicial;sprint_tras_retro;responsable;depende_de;origen
+HU-9;RF-12;SHOULD;3;1;1;María;;reto 06
+HU-10;RF-13;SHOULD;2;1;2;Julian;;reto 06
+HU-11;RF-14;MUST;8;2;2;Juan;HU-13;reto 06
+HU-12;RF-15;MUST;3;1;1;Juan;;reto 06
+HU-13;RF-16;MUST;5;1;1;Julian;HU-18;reto 06
+HU-14;RF-17;COULD;3;3;3;Julian;;reto 06
+HU-15;RF-18;SHOULD;3;2;3;Julian;HU-11;reto 06
+HU-16;RF-19;COULD;2;3;3;Juan;;reto 06
+HU-17;nuevo;SHOULD;8;3;3;María;HU-10;reto 09
+HU-18;RNF-10;MUST;3;1;1;Juan;;reto 09
+HU-19;SC-15;SHOULD;5;2;2;María;HU-11;reto 09
