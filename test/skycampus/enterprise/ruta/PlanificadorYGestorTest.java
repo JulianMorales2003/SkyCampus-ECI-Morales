@@ -86,12 +86,14 @@ class PlanificadorYGestorTest {
     @Test
     @DisplayName("planificar_datosInvalidos_lanzaExcepcion")
     void planificar_datosInvalidos_lanzaExcepcion() {
+        MenorDistancia criterio = new MenorDistancia();
+
         assertThrows(IllegalArgumentException.class, () -> planificador.planificar(null, UNAL, ESTACIONES));
         assertThrows(IllegalArgumentException.class, () -> planificador.planificar(ECI, null, ESTACIONES));
         assertThrows(IllegalArgumentException.class, () -> planificador.planificar(ECI, UNAL, null));
         assertThrows(IllegalArgumentException.class, () -> planificador.planificar(ECI, ECI, ESTACIONES));
         assertThrows(IllegalArgumentException.class, () -> new PlanificadorRutas(null, 10));
-        assertThrows(IllegalArgumentException.class, () -> new PlanificadorRutas(new MenorDistancia(), 0));
+        assertThrows(IllegalArgumentException.class, () -> new PlanificadorRutas(criterio, 0));
     }
 
     @Test
