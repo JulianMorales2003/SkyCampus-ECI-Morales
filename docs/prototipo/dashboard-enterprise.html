@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="es" data-sede="eci">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SkyCampus Enterprise · Dashboard multi-sede (prototipo)</title>
+<!-- Tokens del reto 08: lo único que cambia entre identidades son los 4 tokens de temas/<sede>.css -->
+<link rel="stylesheet" href="../diseno/base.css">
+<link rel="stylesheet" href="../diseno/temas/eci.css">
+<link rel="stylesheet" href="../diseno/temas/unal.css">
+<style>
+  /* Este archivo NO define colores de marca, fuentes ni radios: todo sale de var(--...). */
+  :root { --color-ok: #166534; --color-ok-bg: #DCFCE7; --color-warn: #92400E; --color-warn-bg: #FEF3C7; --color-info-bg: #E0F2FE; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); background: var(--color-fondo); color: var(--color-text); font-size: var(--texto-md); line-height: 1.45; }
+  header.app { background: var(--color-primary); color: var(--color-on-primary); padding: var(--espacio-3) var(--espacio-5); display: flex; flex-wrap: wrap; gap: var(--espacio-4); align-items: center; justify-content: space-between; }
+  header.app h1 { font-size: var(--texto-lg); margin: 0; }
+  .grupo { display: flex; align-items: center; gap: var(--espacio-3); flex-wrap: wrap; }
+  .segmentado { display: inline-flex; border: 2px solid var(--color-on-primary); border-radius: var(--border-radius); overflow: hidden; }
+  .segmentado button { min-height: 36px; padding: 0 var(--espacio-4); background: transparent; color: var(--color-on-primary); border: 0; font: inherit; cursor: pointer; }
+  .segmentado button[aria-pressed="true"] { background: var(--color-on-primary); color: var(--color-primary); font-weight: 700; }
+  .vivo { font-size: var(--texto-sm); display: flex; gap: var(--espacio-2); align-items: center; }
+  .punto { width: 10px; height: 10px; border-radius: 50%; background: #4ADE80; }
+  .vivo.pausado .punto { background: #FBBF24; }
+  nav.tabs { display: flex; gap: var(--espacio-2); padding: var(--espacio-3) var(--espacio-5) 0; border-bottom: 1px solid var(--color-borde); background: var(--color-surface); }
+  nav.tabs button { min-height: var(--alto-control); padding: 0 var(--espacio-4); border: 0; border-bottom: 4px solid transparent; background: transparent; font: inherit; cursor: pointer; color: var(--color-text-suave); }
+  nav.tabs button[aria-selected="true"] { border-bottom-color: var(--color-primary); color: var(--color-text); font-weight: 700; }
+  main { padding: var(--espacio-5); max-width: 1180px; margin: 0 auto; }
+  h2 { font-size: var(--texto-lg); margin: 0 0 var(--espacio-3); }
+  .tarjeta { background: var(--color-surface); border: 1px solid var(--color-borde); border-radius: var(--border-radius); padding: var(--espacio-4); }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--espacio-3); margin-bottom: var(--espacio-5); }
+  .kpi b { display: block; font-size: 1.75rem; }
+  .kpi span { color: var(--color-text-suave); font-size: var(--texto-sm); }
+  .sedes { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--espacio-4); margin-bottom: var(--espacio-5); }
+  button.sede { text-align: left; font: inherit; color: inherit; cursor: pointer; border: 2px solid var(--color-borde); }
+  button.sede[aria-pressed="true"] { border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-pista); }
+  .sede h3 { margin: 0 0 var(--espacio-2); font-size: var(--texto-md); }
+  .barra { display: flex; height: 10px; border-radius: 99px; overflow: hidden; background: var(--color-pista); margin: var(--espacio-2) 0; }
+  .barra i { display: block; height: 100%; }
+  .chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px var(--espacio-2); border-radius: 99px; font-size: var(--texto-xs); font-weight: 600; background: var(--color-pista); }
+  .chip.ok { background: var(--color-ok-bg); color: var(--color-ok); }
+  .chip.warn { background: var(--color-warn-bg); color: var(--color-warn); }
+  .chip.alert { background: var(--color-alert); color: #fff; }
+  table { width: 100%; border-collapse: collapse; font-size: var(--texto-sm); }
+  th, td { text-align: left; padding: var(--espacio-2) var(--espacio-3); border-bottom: 1px solid var(--color-pista); }
+  .bat { display: inline-block; width: 90px; height: 8px; background: var(--color-pista); border-radius: 99px; vertical-align: middle; margin-right: var(--espacio-2); overflow: hidden; }
+  .bat i { display: block; height: 100%; background: var(--color-primary); }
+  .bat.baja i { background: var(--color-alert); }
+  .boton { min-height: var(--alto-control); padding: 0 var(--espacio-4); border-radius: var(--border-radius); border: 2px solid var(--color-primary); background: var(--color-primary); color: var(--color-on-primary); font: inherit; font-weight: 600; cursor: pointer; }
+  .boton.sec { background: var(--color-surface); color: var(--color-primary); }
+  .boton:disabled { opacity: .45; cursor: not-allowed; }
+  button:focus-visible, select:focus-visible, input:focus-visible, summary:focus-visible { outline: 3px solid var(--color-text); outline-offset: 2px; }
+  .pasos { display: flex; gap: var(--espacio-2); list-style: none; padding: 0; margin: 0 0 var(--espacio-4); flex-wrap: wrap; }
+  .pasos li { flex: 1; min-width: 120px; padding: var(--espacio-2) var(--espacio-3); border-radius: var(--border-radius); background: var(--color-pista); font-size: var(--texto-sm); color: var(--color-text-suave); }
+  .pasos li[aria-current="step"] { background: var(--color-primary); color: var(--color-on-primary); font-weight: 700; }
+  .pasos li.hecho { background: var(--color-ok-bg); color: var(--color-ok); }
+  .campo { display: flex; flex-direction: column; gap: var(--espacio-2); margin-bottom: var(--espacio-4); }
+  .campo label, legend { font-weight: 700; }
+  select { min-height: var(--alto-control); font: inherit; border: 2px solid var(--color-borde); border-radius: var(--border-radius); padding: 0 var(--espacio-3); background: var(--color-surface); }
+  fieldset { border: 0; padding: 0; margin: 0 0 var(--espacio-4); }
+  .opcion { display: flex; gap: var(--espacio-3); padding: var(--espacio-3); border: 2px solid var(--color-borde); border-radius: var(--border-radius); margin-bottom: var(--espacio-2); cursor: pointer; align-items: flex-start; }
+  .opcion:has(input:checked) { border-color: var(--color-primary); background: var(--color-fondo); }
+  .ayuda { color: var(--color-text-suave); font-size: var(--texto-sm); }
+  .aviso { border-radius: var(--border-radius); padding: var(--espacio-4); margin: var(--espacio-4) 0; border-left: 6px solid; }
+  .aviso h3 { margin: 0 0 var(--espacio-2); font-size: var(--texto-md); }
+  .aviso.error { background: #FEE2E2; border-color: var(--color-alert); }
+  .aviso.info { background: var(--color-info-bg); border-color: var(--color-primary); }
+  .aviso.ok { background: var(--color-ok-bg); border-color: var(--color-ok); }
+  .acciones { display: flex; gap: var(--espacio-3); flex-wrap: wrap; margin-top: var(--espacio-3); }
+  .tramos { list-style: none; padding: 0; margin: var(--espacio-3) 0; }
+  .tramos li { padding: var(--espacio-3); border-left: 4px solid var(--color-borde); margin-left: var(--espacio-2); background: var(--color-surface); }
+  .tramos li.curso { border-color: var(--color-primary); background: var(--color-info-bg); }
+  .tramos li.listo { border-color: var(--color-ok); }
+  .tramos li.fallo { border-color: var(--color-alert); background: #FEE2E2; }
+  .carga { height: 8px; background: var(--color-pista); border-radius: 99px; overflow: hidden; }
+  .carga i { display: block; height: 100%; width: 40%; background: var(--color-primary); animation: ir 1s infinite ease-in-out alternate; }
+  @keyframes ir { from { margin-left: 0 } to { margin-left: 60% } }
+  @media (prefers-reduced-motion: reduce) { .carga i { animation: none; width: 100%; } }
+  details.demo { margin-top: var(--espacio-5); }
+  .oculto { display: none !important; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+</head>
+<body>
+<header class="app">
+  <h1>SkyCampus Enterprise</h1>
+  <div class="grupo">
+    <div class="vivo" id="vivo" role="status"><span class="punto" aria-hidden="true"></span><span id="vivoTxt">En vivo</span>
+      <button class="boton sec" id="btnPausa" style="min-height:32px;padding:0 10px">Pausar</button></div>
+    <div class="segmentado" role="group" aria-label="Identidad de la sede">
+      <button type="button" data-tema="eci" aria-pressed="true">ECI</button>
+      <button type="button" data-tema="unal" aria-pressed="false">UNAL</button>
+    </div>
+  </div>
+</header>
+<nav class="tabs" role="tablist" aria-label="Secciones">
+  <button role="tab" id="tab-red" aria-selected="true" aria-controls="vista-red">Red de sedes</button>
+  <button role="tab" id="tab-ruta" aria-selected="false" aria-controls="vista-ruta">Planificar ruta entre sedes</button>
+</nav>
+
+<main>
+  <div id="estado" class="visually-hidden" role="status" aria-live="polite"></div>
+
+  <!-- ============ VISTA 1: RED ============ -->
+  <section id="vista-red" aria-labelledby="tab-red">
+    <h2>Estado de la flota en las 4 sedes</h2>
+    <div class="kpis" id="kpis"></div>
+    <div class="sedes" id="sedes"></div>
+    <div class="tarjeta" id="detalle"></div>
+  </section>
+
+  <!-- ============ VISTA 2: RUTA ============ -->
+  <section id="vista-ruta" class="oculto" aria-labelledby="tab-ruta">
+    <h2>Planificar una ruta entre sedes</h2>
+    <ol class="pasos" id="pasos"></ol>
+    <div class="tarjeta" id="panel"></div>
+    <details class="demo">
+      <summary>Condiciones de prueba (solo para quien evalúa el prototipo)</summary>
+      <p class="ayuda">Fuerzan situaciones que en la vida real no se pueden provocar a voluntad.</p>
+      <label><input type="checkbox" id="fAero"> La Aerocivil no responde (a los 3 s el vuelo no despega)</label><br>
+      <label><input type="checkbox" id="fEtapa"> Una etapa del vuelo falla (etapa 2 si hay parada de carga, si no la 1)</label>
+    </details>
+  </section>
+</main>
+
+<script>
+'use strict';
+/* ---------------- Datos de demostración ---------------- */
+const SEDES = [
+  { id: 'eci',     nombre: 'ECI',      largo: 'Escuela Colombiana de Ingeniería', viento: 12 },
+  { id: 'unal',    nombre: 'UNAL',     largo: 'Universidad Nacional',             viento: 38 },
+  { id: 'uniandes',nombre: 'Uniandes', largo: 'Universidad de los Andes',         viento: 9  },
+  { id: 'eafit',   nombre: 'EAFIT',    largo: 'Universidad EAFIT',                viento: 15 },
+];
+const DIST = { 'eci-unal': 9, 'eci-uniandes': 14, 'eci-eafit': 28, 'unal-uniandes': 11, 'unal-eafit': 24, 'uniandes-eafit': 31 };
+const dist = (a, b) => DIST[a + '-' + b] ?? DIST[b + '-' + a];
+const VIENTO_MAX = 30, BATERIA_MIN = 30, RADIO_AEROCIVIL = 30;
+const CRITERIOS = {
+  distancia: { nombre: 'Menor distancia', ayuda: 'El trayecto más corto, aunque haya que parar a cargar.', f: 1,    alc: 15, min: 2.4 },
+  duracion:  { nombre: 'Menor duración',  ayuda: 'Llega antes: usa el corredor rápido, que da un poco de vuelta.', f: 1.12, alc: 18, min: 1.8 },
+  paradas:   { nombre: 'Menos paradas de carga', ayuda: 'Menos paradas, pero el rodeo es más largo.', f: 1.25, alc: 36, min: 2.6 },
+};
+const ESTADOS = { disponible: ['Disponible', 'ok', '✔'], vuelo: ['En vuelo', '', '✈'], carga: ['En carga', 'warn', '⚡'], mant: ['Mantenimiento', 'alert', '🔧'] };
+
+const flota = [];
+const semilla = {
+  eci:      [[86,'disponible'],[64,'vuelo'],[92,'disponible'],[48,'carga']],
+  unal:     [[71,'disponible'],[55,'vuelo'],[80,'disponible'],[66,'carga']],
+  uniandes: [[90,'disponible'],[38,'vuelo'],[77,'disponible'],[59,'carga']],
+  eafit:    [[22,'carga'],[18,'carga'],[14,'mant'],[26,'mant']],
+};
+for (const s of SEDES) semilla[s.id].forEach(([b, e], i) => flota.push({ id: `${s.nombre}-D${i + 1}`, sede: s.id, bat: b, est: e, frac: 0 }));
+
+const $ = (q) => document.querySelector(q);
+const anuncia = (t) => { $('#estado').textContent = ''; setTimeout(() => $('#estado').textContent = t, 30); };
+const sede = (id) => SEDES.find((s) => s.id === id);
+const hayDrone = (id) => flota.some((d) => d.sede === id && d.est === 'disponible' && d.bat >= BATERIA_MIN);
+const climaOk = (id) => sede(id).viento <= VIENTO_MAX;
+
+/* ---------------- Tema (solo cambia data-sede) ---------------- */
+document.querySelectorAll('[data-tema]').forEach((b) => b.addEventListener('click', () => {
+  document.documentElement.dataset.sede = b.dataset.tema;
+  document.querySelectorAll('[data-tema]').forEach((x) => x.setAttribute('aria-pressed', x === b));
+  try { sessionStorage.setItem('tema', b.dataset.tema); } catch (e) {}
+  anuncia('Identidad cambiada a ' + b.textContent);
+}));
+try { const t = sessionStorage.getItem('tema'); if (t) document.querySelector(`[data-tema="${t}"]`).click(); } catch (e) {}
+
+/* ---------------- Pestañas ---------------- */
+function ir(v) {
+  $('#vista-red').classList.toggle('oculto', v !== 'red');
+  $('#vista-ruta').classList.toggle('oculto', v !== 'ruta');
+  $('#tab-red').setAttribute('aria-selected', v === 'red');
+  $('#tab-ruta').setAttribute('aria-selected', v === 'ruta');
+  if (v === 'ruta' && r.paso === 0) pintaRuta();
+}
+$('#tab-red').onclick = () => ir('red');
+$('#tab-ruta').onclick = () => ir('ruta');
+
+/* ---------------- Vista RED ---------------- */
+let seleccion = 'eci', enVivo = true, ultima = new Date();
+function pintaRed() {
+  const total = flota.length, disp = flota.filter((d) => d.est === 'disponible').length,
+    vuelo = flota.filter((d) => d.est === 'vuelo').length, baja = flota.filter((d) => d.bat < 20).length;
+  $('#kpis').innerHTML = [[total, 'Drones en la red'], [disp, 'Disponibles'], [vuelo, 'En vuelo'], [baja, 'Con batería < 20 %']]
+    .map(([n, t]) => `<div class="tarjeta kpi"><b>${n}</b><span>${t}</span></div>`).join('');
+  $('#sedes').innerHTML = SEDES.map((s) => {
+    const f = flota.filter((d) => d.sede === s.id), n = f.length;
+    const prom = Math.round(f.reduce((a, d) => a + d.bat, 0) / n);
+    const seg = ['disponible', 'vuelo', 'carga', 'mant'].map((k) => {
+      const c = f.filter((d) => d.est === k).length;
+      const col = { disponible: 'var(--color-ok)', vuelo: 'var(--color-primary)', carga: '#D97706', mant: 'var(--color-alert)' }[k];
+      return `<i style="width:${c / n * 100}%;background:${col}" title="${ESTADOS[k][0]}: ${c}"></i>`;
+    }).join('');
+    const ok = climaOk(s.id);
+    return `<button class="tarjeta sede" data-s="${s.id}" aria-pressed="${s.id === seleccion}">
+      <h3>${s.nombre} · <span class="ayuda">${s.largo}</span></h3>
+      <div class="barra" aria-hidden="true">${seg}</div>
+      <div class="ayuda">${f.filter((d) => d.est === 'disponible').length} disp. · ${f.filter((d) => d.est === 'vuelo').length} en vuelo · ${f.filter((d) => d.est === 'carga').length} en carga · ${f.filter((d) => d.est === 'mant').length} en mant.</div>
+      <p style="margin:8px 0 4px">Batería media: <b>${prom} %</b></p>
+      <span class="chip ${ok ? 'ok' : 'alert'}">${ok ? '✔ Clima apto' : '⚠ Clima no apto'} · viento ${s.viento} km/h</span></button>`;
+  }).join('');
+  document.querySelectorAll('button.sede').forEach((b) => b.onclick = () => { seleccion = b.dataset.s; pintaRed(); });
+  const s = sede(seleccion);
+  $('#detalle').innerHTML = `<h2>Drones de ${s.nombre}</h2>
+    <table><thead><tr><th>Drone</th><th>Estado</th><th>Batería</th></tr></thead><tbody>
+    ${flota.filter((d) => d.sede === seleccion).map((d) => { const [t, c, ic] = ESTADOS[d.est];
+      return `<tr><td>${d.id}</td><td><span class="chip ${c}">${ic} ${t}</span></td>
+      <td><span class="bat ${d.bat < 20 ? 'baja' : ''}"><i style="width:${d.bat}%"></i></span>${d.bat} %${d.bat < 20 ? ' <span class="chip alert">Baja</span>' : ''}</td></tr>`; }).join('')}
+    </tbody></table>
+    <div class="acciones"><button class="boton" id="irRuta">Planificar ruta desde ${s.nombre}</button></div>`;
+  $('#irRuta').onclick = () => { r = nuevo(); r.o = seleccion; ir('ruta'); pintaRuta(); };
+  $('#vivoTxt').textContent = enVivo ? `En vivo · actualizado ${ultima.toLocaleTimeString('es-CO')}` : `Pausado · última actualización ${ultima.toLocaleTimeString('es-CO')}`;
+  $('#vivo').classList.toggle('pausado', !enVivo);
+  $('#btnPausa').textContent = enVivo ? 'Pausar' : 'Reanudar';
+}
+$('#btnPausa').onclick = () => { enVivo = !enVivo; pintaRed(); anuncia(enVivo ? 'Actualización en vivo reanudada' : 'Actualización en vivo pausada'); };
+setInterval(() => {
+  if (!enVivo) return;
+  for (const d of flota) {
+    if (d.est === 'vuelo') { d.bat = Math.max(8, d.bat - (1 + Math.floor(Math.random() * 3))); if (Math.random() < .08) d.est = 'disponible'; }
+    else if (d.est === 'carga') { d.frac += d.sede === 'eafit' ? .25 : 1; if (d.frac >= 1) { d.bat = Math.min(100, d.bat + 3); d.frac = 0; } if (d.bat >= 95) d.est = 'disponible'; }
+    else if (d.est === 'disponible' && d.sede !== 'eafit' && Math.random() < .04) d.est = 'vuelo';
+  }
+  for (const s of SEDES) if (s.id !== 'unal') s.viento = Math.max(5, Math.min(24, s.viento + Math.round((Math.random() - .5) * 4)));
+  ultima = new Date(); pintaRed();
+}, 2500);
+
+/* ---------------- Vista RUTA ---------------- */
+const nuevo = () => ({ paso: 0, o: '', d: '', c: 'distancia', ruta: null, fase: 'form', err: null, etapa: 0, timers: [] });
+let r = nuevo();
+const PASOS = ['1 · Ruta', '2 · Opción de ruta', '3 · Autorización', '4 · Vuelo'];
+const limpia = () => { r.timers.forEach(clearTimeout); r.timers = []; };
+
+function calcula(o, d, c) {
+  const k = CRITERIOS[c], km = +(dist(o, d) * k.f).toFixed(1);
+  const paradas = Math.max(0, Math.ceil(km / k.alc) - 1);
+  return { o, d, c, km, paradas, min: Math.round(km * k.min + paradas * 12), tramos: paradas + 1 };
+}
+function pasosUI() {
+  $('#pasos').innerHTML = PASOS.map((t, i) => `<li class="${i < r.paso ? 'hecho' : ''}" ${i === r.paso ? 'aria-current="step"' : ''}>${i < r.paso ? '✔ ' : ''}${t}</li>`).join('');
+}
+const errorBox = (titulo, texto, acciones) => `<div class="aviso error" role="alert"><h3>⚠ ${titulo}</h3><p>${texto}</p><div class="acciones">${acciones}</div></div>`;
+
+function pintaRuta() {
+  pasosUI();
+  const p = $('#panel');
+  if (r.paso === 0) formulario(p);
+  else if (r.paso === 1) opcion(p);
+  else if (r.paso === 2) autorizacion(p);
+  else vuelo(p);
+}
+
+function formulario(p) {
+  const opts = (sel, otro) => `<option value="">Elige una sede…</option>` + SEDES.map((s) => `<option value="${s.id}" ${s.id === sel ? 'selected' : ''}>${s.nombre} · ${s.largo}</option>`).join('');
+  const igual = r.o && r.o === r.d;
+  p.innerHTML = `
+    <div class="campo"><label for="selO">Sede de origen</label><select id="selO">${opts(r.o)}</select></div>
+    <div class="campo"><label for="selD">Sede de destino</label><select id="selD" aria-describedby="msgD">${opts(r.d)}</select>
+      <span id="msgD" class="ayuda" style="${igual ? 'color:var(--color-alert);font-weight:700' : ''}">${igual ? '⚠ El destino debe ser distinta al origen.' : 'Distancia en línea recta entre sedes: ' + (r.o && r.d && !igual ? dist(r.o, r.d) + ' km' : 'elige origen y destino.')}</span></div>
+    <fieldset><legend>¿Qué prefieres priorizar?</legend>
+      ${Object.entries(CRITERIOS).map(([k, c]) => `<label class="opcion"><input type="radio" name="crit" value="${k}" ${r.c === k ? 'checked' : ''}><span><b>${c.nombre}</b><br><span class="ayuda">${c.ayuda}</span></span></label>`).join('')}
+    </fieldset>
+    ${r.err ? r.err : ''}
+    <div class="acciones"><button class="boton" id="btnPlan" ${!r.o || !r.d || igual ? 'disabled' : ''}>Planificar ruta</button>
+      <button class="boton sec" id="btnVolver">Volver a la red</button></div>
+    ${!r.o || !r.d ? '<p class="ayuda">Elige origen y destino para continuar.</p>' : ''}`;
+  $('#selO').onchange = (e) => { r.o = e.target.value; r.err = null; formulario(p); $('#selO').focus(); };
+  $('#selD').onchange = (e) => { r.d = e.target.value; r.err = null; formulario(p); $('#selD').focus(); };
+  p.querySelectorAll('[name=crit]').forEach((x) => x.onchange = () => { r.c = x.value; });
+  $('#btnVolver').onclick = () => ir('red');
+  $('#btnPlan').onclick = planifica;
+  const foco = r.err && p.querySelector('[role=alert]'); if (foco) { foco.tabIndex = -1; foco.focus(); }
+}
+
+function planifica() {
+  limpia();
+  $('#panel').innerHTML = `<h3>Planificando la ruta…</h3><div class="carga" role="progressbar" aria-label="Planificando"></div><p class="ayuda">Revisando clima, drones disponibles y alcance.</p>
+    <div class="acciones"><button class="boton sec" id="btnCancelPlan">Cancelar</button></div>`;
+  anuncia('Planificando la ruta');
+  $('#btnCancelPlan').onclick = () => { limpia(); r.err = null; pintaRuta(); };
+  r.timers.push(setTimeout(() => {
+    const o = sede(r.o), d = sede(r.d);
+    if (!climaOk(r.o)) r.err = errorBox(`Clima no apto en ${o.nombre}`, `Hay viento de ${o.viento} km/h y el máximo para volar es ${VIENTO_MAX} km/h. Prueba con otra sede de origen o vuelve a intentarlo en unos minutos.`,
+      `<button class="boton" id="reint">Volver a intentar</button><button class="boton sec" id="otro">Elegir otra sede de origen</button>`);
+    else if (!hayDrone(r.o)) r.err = errorBox(`No hay un drone listo en ${o.nombre}`, `Ningún drone está disponible con al menos ${BATERIA_MIN} % de batería (hay drones en carga o en mantenimiento). Puedes salir desde otra sede o ver el estado de la flota.`,
+      `<button class="boton" id="otro">Elegir otra sede de origen</button><button class="boton sec" id="flota">Ver drones de ${o.nombre}</button>`);
+    else { r.ruta = calcula(r.o, r.d, r.c); r.paso = 1; pintaRuta(); anuncia('Ruta calculada'); return; }
+    pintaRuta();
+    const q = (i) => document.getElementById(i);
+    if (q('reint')) q('reint').onclick = planifica;
+    if (q('otro')) q('otro').onclick = () => { r.o = ''; r.err = null; pintaRuta(); $('#selO').focus(); };
+    if (q('flota')) q('flota').onclick = () => { seleccion = r.o; ir('red'); pintaRed(); };
+  }, 800));
+}
+
+function opcion(p) {
+  const x = r.ruta, o = sede(x.o), d = sede(x.d);
+  const etapas = [];
+  for (let i = 0; i < x.tramos; i++) etapas.push(`<li><b>Tramo ${i + 1}:</b> ${i === 0 ? o.nombre : 'Estación de carga ' + i} → ${i === x.tramos - 1 ? d.nombre : 'Estación de carga ' + (i + 1)}</li>`);
+  p.innerHTML = `<h3>${o.nombre} → ${d.nombre} · ${CRITERIOS[x.c].nombre}</h3>
+    <p><span class="chip">${x.km} km</span> <span class="chip">≈ ${x.min} min</span> <span class="chip ${x.paradas ? 'warn' : 'ok'}">${x.paradas ? x.paradas + ' parada(s) de carga' : 'Ruta directa'}</span></p>
+    <ol class="tramos">${etapas.join('')}</ol>
+    <div class="aviso info"><b>Siguiente:</b> la Aerocivil debe autorizar el vuelo. Ningún vuelo entre sedes despega sin esa autorización, tampoco los urgentes.</div>
+    <fieldset><legend>¿Quieres otra prioridad?</legend><div class="acciones">
+      ${Object.entries(CRITERIOS).filter(([k]) => k !== x.c).map(([k, c]) => `<button class="boton sec" data-k="${k}">${c.nombre}</button>`).join('')}</div></fieldset>
+    <div class="acciones"><button class="boton" id="btnAut">Pedir autorización a la Aerocivil</button><button class="boton sec" id="btnAtras">Atrás (cambiar sedes)</button></div>`;
+  p.querySelectorAll('[data-k]').forEach((b) => b.onclick = () => { r.c = b.dataset.k; r.ruta = calcula(r.o, r.d, r.c); pintaRuta(); anuncia('Ruta recalculada con ' + CRITERIOS[r.c].nombre); });
+  $('#btnAtras').onclick = () => { r.paso = 0; r.err = null; pintaRuta(); };
+  $('#btnAut').onclick = () => { r.paso = 2; r.fase = 'pide'; pintaRuta(); };
+}
+
+function autorizacion(p) {
+  const x = r.ruta; limpia();
+  if (r.fase === 'pide') {
+    p.innerHTML = `<h3>Pidiendo autorización a la Aerocivil…</h3><div class="carga" role="progressbar" aria-label="Esperando a la Aerocivil"></div>
+      <p class="ayuda">Si no responde en 3 segundos, el vuelo no despega (por seguridad).</p><div class="acciones"><button class="boton sec" id="cancelAut">Cancelar</button></div>`;
+    anuncia('Esperando respuesta de la Aerocivil');
+    $('#cancelAut').onclick = () => { limpia(); r.paso = 1; pintaRuta(); };
+    const sinResp = $('#fAero').checked;
+    r.timers.push(setTimeout(() => { r.fase = sinResp ? 'timeout' : (x.km > RADIO_AEROCIVIL ? 'rechaza' : 'ok'); pintaRuta(); }, sinResp ? 3000 : 1200));
+    return;
+  }
+  if (r.fase === 'ok') {
+    p.innerHTML = `<div class="aviso ok" role="status"><h3>✔ Vuelo autorizado por la Aerocivil</h3><p>Ruta ${sede(x.o).nombre} → ${sede(x.d).nombre}, ${x.km} km (límite permitido: ${RADIO_AEROCIVIL} km).</p></div>
+      <div class="acciones"><button class="boton" id="despega">Iniciar vuelo</button><button class="boton sec" id="atras">Volver a la ruta</button></div>`;
+    $('#despega').onclick = () => { r.paso = 3; r.etapa = 0; r.fase = 'vuelo'; pintaRuta(); avanza(); };
+    $('#atras').onclick = () => { r.paso = 1; pintaRuta(); };
+    anuncia('Vuelo autorizado'); return;
+  }
+  const rech = r.fase === 'rechaza';
+  p.innerHTML = errorBox(rech ? 'La Aerocivil rechazó el vuelo' : 'La Aerocivil no respondió a tiempo',
+    rech ? `La ruta elegida mide ${x.km} km y supera el radio permitido de ${RADIO_AEROCIVIL} km. El vuelo no puede salir. ${x.c !== 'distancia' && dist(x.o, x.d) <= RADIO_AEROCIVIL ? 'Con «Menor distancia» el trayecto sí cabe en el límite.' : 'Prueba con otra sede de destino.'}`
+          : 'Pasaron 3 segundos sin respuesta. Por seguridad el vuelo no despega. No se perdió nada: puedes reintentar.',
+    (rech && x.c !== 'distancia' && dist(x.o, x.d) <= RADIO_AEROCIVIL ? '<button class="boton" id="menor">Usar «Menor distancia»</button>' : '') +
+    (!rech ? '<button class="boton" id="reint">Reintentar</button>' : '') + '<button class="boton sec" id="atras">Volver a la ruta</button><button class="boton sec" id="otro">Elegir otras sedes</button>');
+  const q = (i) => document.getElementById(i);
+  if (q('menor')) q('menor').onclick = () => { r.c = 'distancia'; r.ruta = calcula(r.o, r.d, 'distancia'); r.paso = 1; pintaRuta(); };
+  if (q('reint')) q('reint').onclick = () => { r.fase = 'pide'; pintaRuta(); };
+  q('atras').onclick = () => { r.paso = 1; pintaRuta(); };
+  q('otro').onclick = () => { r = Object.assign(nuevo(), { o: r.o }); pintaRuta(); };
+  const a = p.querySelector('[role=alert]'); a.tabIndex = -1; a.focus();
+}
+
+function vuelo(p) {
+  const x = r.ruta, fallaEn = $('#fEtapa').checked ? Math.min(2, x.tramos) - 1 : -1;
+  const lista = [];
+  for (let i = 0; i < x.tramos; i++) {
+    const cls = r.fase === 'fallo' && i === fallaEn ? 'fallo' : i < r.etapa ? 'listo' : i === r.etapa && r.fase === 'vuelo' ? 'curso' : '';
+    const est = cls === 'fallo' ? '⚠ Falló' : cls === 'listo' ? '✔ Completada' : cls === 'curso' ? '✈ En curso' : 'Pendiente';
+    lista.push(`<li class="${cls}"><b>Etapa ${i + 1} de ${x.tramos}:</b> ${i === 0 ? sede(x.o).nombre : 'Carga ' + i} → ${i === x.tramos - 1 ? sede(x.d).nombre : 'Carga ' + (i + 1)} — ${est}</li>`);
+  }
+  let cab = '';
+  if (r.fase === 'fallo') cab = errorBox(`Falló la etapa ${fallaEn + 1}: la ruta se detuvo`, 'El drone aterrizó de forma segura y se avisó al técnico. Las etapas siguientes no se ejecutaron.',
+    '<button class="boton" id="replan">Planificar de nuevo</button><button class="boton sec" id="red">Ir a la red de sedes</button>');
+  else if (r.fase === 'fin') cab = `<div class="aviso ok" role="status"><h3>✔ Entrega completada</h3><p>${x.tramos} etapa(s), ${x.km} km.</p><div class="acciones"><button class="boton" id="otra">Planificar otra ruta</button><button class="boton sec" id="red">Ir a la red de sedes</button></div></div>`;
+  else if (r.fase === 'cancelado') cab = `<div class="aviso info" role="status"><h3>Vuelo cancelado</h3><p>El drone regresa a la última sede. Puedes planificar una ruta nueva.</p><div class="acciones"><button class="boton" id="otra">Planificar otra ruta</button></div></div>`;
+  else cab = `<p class="ayuda">Vuelo en curso. Puedes cancelarlo en cualquier momento.</p><div class="acciones"><button class="boton sec" id="cancelVuelo">Cancelar vuelo</button></div>`;
+  p.innerHTML = `<h3>${sede(x.o).nombre} → ${sede(x.d).nombre}</h3><ol class="tramos">${lista.join('')}</ol>${cab}`;
+  const q = (i) => document.getElementById(i);
+  if (q('cancelVuelo')) q('cancelVuelo').onclick = () => { limpia(); r.fase = 'cancelado'; pintaRuta(); anuncia('Vuelo cancelado'); };
+  if (q('otra')) q('otra').onclick = () => { r = nuevo(); pintaRuta(); };
+  if (q('red')) q('red').onclick = () => { r = nuevo(); ir('red'); };
+  if (q('replan')) q('replan').onclick = () => { r = Object.assign(nuevo(), { o: x.o, d: x.d, c: x.c }); pintaRuta(); };
+  const a = p.querySelector('[role=alert]'); if (a) { a.tabIndex = -1; a.focus(); }
+}
+
+function avanza() {
+  const x = r.ruta, fallaEn = $('#fEtapa').checked ? Math.min(2, x.tramos) - 1 : -1;
+  r.timers.push(setTimeout(() => {
+    if (r.etapa === fallaEn) { r.fase = 'fallo'; pintaRuta(); anuncia('Falló una etapa; la ruta se detuvo'); return; }
+    r.etapa++;
+    if (r.etapa >= x.tramos) { r.fase = 'fin'; pintaRuta(); anuncia('Entrega completada'); return; }
+    pintaRuta(); anuncia(`Etapa ${r.etapa + 1} de ${x.tramos} en curso`); avanza();
+  }, 1500));
+}
+
+pintaRed();
+</script>
+</body>
+</html>
