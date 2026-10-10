@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1860" height="700" viewBox="0 0 1860 700" font-family="Segoe UI, Helvetica, Arial, DejaVu Sans, sans-serif">
+<defs><marker id="f4B5563" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4B5563"/></marker><marker id="fB45309" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B45309"/></marker></defs>
+<rect width="1860" height="700" fill="#ffffff"/>
+<text x="30" y="40" font-size="22" font-weight="700" fill="#111827">Los 3 diagramas de contexto de SkyCampus, lado a lado</text>
+<text x="30" y="64" font-size="14" fill="#4B5563">MVP (Chimchar) · v2 (Monferno) · Enterprise (Infernape) · En naranja, lo que se añade respecto al nivel anterior</text>
+<rect x="30" y="90" width="600" height="570" rx="12" fill="#F9FAFB" stroke="#D1D5DB"/>
+<text x="330.0" y="125" text-anchor="middle" font-size="20" font-weight="700" fill="#111827">Chimchar (MVP)</text>
+<rect x="255" y="160" width="150" height="400" rx="10" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+<text x="330.0" y="360.0" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">SkyCampus</text>
+<text x="330.0" y="382.0" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">MVP</text>
+<rect x="55" y="215.0" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="140" y="251.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Operador</text>
+<line x1="225" y1="245.0" x2="255" y2="245.0" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="55" y="330.0" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="140" y="366.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Solicitante</text>
+<line x1="225" y1="360.0" x2="255" y2="360.0" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="55" y="445.0" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="140" y="481.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Admin</text>
+<line x1="225" y1="475.0" x2="255" y2="475.0" stroke="#9CA3AF" stroke-width="2"/>
+<text x="520" y="360.0" text-anchor="middle" font-size="15" fill="#6B7280">sin sistemas</text>
+<text x="520" y="380.0" text-anchor="middle" font-size="15" fill="#6B7280">externos</text>
+<text x="330.0" y="610" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">3 actores · 0 sistemas externos · 6 flujos</text>
+<text x="330.0" y="636" text-anchor="middle" font-size="13" fill="#4B5563">el sistema siempre es una sola caja en el centro</text>
+<rect x="640" y="90" width="600" height="570" rx="12" fill="#F9FAFB" stroke="#D1D5DB"/>
+<text x="940.0" y="125" text-anchor="middle" font-size="20" font-weight="700" fill="#111827">Monferno (v2)</text>
+<rect x="865" y="160" width="150" height="400" rx="10" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+<text x="940.0" y="360.0" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">SkyCampus</text>
+<text x="940.0" y="382.0" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">v2</text>
+<rect x="665" y="192.0" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="750" y="228.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Operador</text>
+<line x1="835" y1="222.0" x2="865" y2="222.0" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="665" y="284.0" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="750" y="320.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Solicitante</text>
+<line x1="835" y1="314.0" x2="865" y2="314.0" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="665" y="376.0" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="750" y="412.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Admin</text>
+<line x1="835" y1="406.0" x2="865" y2="406.0" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="665" y="468.0" width="170" height="60" rx="8" fill="#08427B" stroke="#B45309" stroke-width="4"/>
+<text x="750" y="504.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Técnico</text>
+<line x1="835" y1="498.0" x2="865" y2="498.0" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1045" y="215.0" width="170" height="60" rx="8" fill="#6B7280" stroke="#B45309" stroke-width="4"/>
+<text x="1130" y="251.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">API Clima</text>
+<line x1="1015" y1="245.0" x2="1045" y2="245.0" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1045" y="330.0" width="170" height="60" rx="8" fill="#6B7280" stroke="#B45309" stroke-width="4"/>
+<text x="1130" y="366.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Control Aéreo</text>
+<line x1="1015" y1="360.0" x2="1045" y2="360.0" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1045" y="445.0" width="170" height="60" rx="8" fill="#6B7280" stroke="#B45309" stroke-width="4"/>
+<text x="1130" y="481.0" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Sist. Alertas</text>
+<line x1="1015" y1="475.0" x2="1045" y2="475.0" stroke="#9CA3AF" stroke-width="2"/>
+<text x="940.0" y="610" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">4 actores · 3 sistemas externos · 12 flujos</text>
+<text x="940.0" y="636" text-anchor="middle" font-size="13" fill="#4B5563">el sistema siempre es una sola caja en el centro</text>
+<rect x="1250" y="90" width="600" height="570" rx="12" fill="#F9FAFB" stroke="#D1D5DB"/>
+<text x="1550.0" y="125" text-anchor="middle" font-size="20" font-weight="700" fill="#111827">Infernape (Enterprise)</text>
+<rect x="1475" y="160" width="150" height="400" rx="10" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+<text x="1550.0" y="360.0" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">SkyCampus</text>
+<text x="1550.0" y="382.0" text-anchor="middle" font-size="16" font-weight="700" fill="#ffffff">Enterprise</text>
+<rect x="1275" y="165.71428571428572" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="1360" y="201.71428571428572" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Operador</text>
+<line x1="1445" y1="195.71428571428572" x2="1475" y2="195.71428571428572" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1275" y="231.42857142857142" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="1360" y="267.42857142857144" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Solicitante</text>
+<line x1="1445" y1="261.42857142857144" x2="1475" y2="261.42857142857144" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1275" y="297.1428571428571" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="1360" y="333.1428571428571" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Admin</text>
+<line x1="1445" y1="327.1428571428571" x2="1475" y2="327.1428571428571" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1275" y="362.8571428571429" width="170" height="60" rx="8" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="1360" y="398.8571428571429" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Técnico</text>
+<line x1="1445" y1="392.8571428571429" x2="1475" y2="392.8571428571429" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1275" y="428.57142857142856" width="170" height="60" rx="8" fill="#08427B" stroke="#B45309" stroke-width="4"/>
+<text x="1360" y="464.57142857142856" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Superadmin</text>
+<line x1="1445" y1="458.57142857142856" x2="1475" y2="458.57142857142856" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1275" y="494.2857142857143" width="170" height="60" rx="8" fill="#08427B" stroke="#B45309" stroke-width="4"/>
+<text x="1360" y="530.2857142857142" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Coord. de sede</text>
+<line x1="1445" y1="524.2857142857142" x2="1475" y2="524.2857142857142" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1655" y="165.71428571428572" width="170" height="60" rx="8" fill="#6B7280" stroke="#052E56" stroke-width="2"/>
+<text x="1740" y="201.71428571428572" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">API Clima</text>
+<line x1="1625" y1="195.71428571428572" x2="1655" y2="195.71428571428572" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1655" y="231.42857142857142" width="170" height="60" rx="8" fill="#6B7280" stroke="#052E56" stroke-width="2"/>
+<text x="1740" y="267.42857142857144" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Control Aéreo</text>
+<line x1="1625" y1="261.42857142857144" x2="1655" y2="261.42857142857144" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1655" y="297.1428571428571" width="170" height="60" rx="8" fill="#6B7280" stroke="#052E56" stroke-width="2"/>
+<text x="1740" y="333.1428571428571" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Sist. Alertas</text>
+<line x1="1625" y1="327.1428571428571" x2="1655" y2="327.1428571428571" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1655" y="362.8571428571429" width="170" height="60" rx="8" fill="#6B7280" stroke="#B45309" stroke-width="4"/>
+<text x="1740" y="398.8571428571429" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Aerocivil</text>
+<line x1="1625" y1="392.8571428571429" x2="1655" y2="392.8571428571429" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1655" y="428.57142857142856" width="170" height="60" rx="8" fill="#6B7280" stroke="#B45309" stroke-width="4"/>
+<text x="1740" y="464.57142857142856" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">ERP univ.</text>
+<line x1="1625" y1="458.57142857142856" x2="1655" y2="458.57142857142856" stroke="#9CA3AF" stroke-width="2"/>
+<rect x="1655" y="494.2857142857143" width="170" height="60" rx="8" fill="#6B7280" stroke="#B45309" stroke-width="4"/>
+<text x="1740" y="530.2857142857142" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff">Analytics</text>
+<line x1="1625" y1="524.2857142857142" x2="1655" y2="524.2857142857142" stroke="#9CA3AF" stroke-width="2"/>
+<text x="1550.0" y="610" text-anchor="middle" font-size="15" font-weight="700" fill="#111827">6 actores · 6 sistemas externos · 21 flujos</text>
+<text x="1550.0" y="636" text-anchor="middle" font-size="13" fill="#4B5563">el sistema siempre es una sola caja en el centro</text>
+</svg>
