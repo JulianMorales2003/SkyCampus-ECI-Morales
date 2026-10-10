@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="880" viewBox="0 0 1240 880" font-family="Segoe UI, Helvetica, Arial, DejaVu Sans, sans-serif">
+<defs><marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4B5563"/></marker></defs>
+<rect width="1240" height="880" fill="#ffffff"/>
+<text x="30" y="40" font-size="22" font-weight="700" fill="#111827">Diagrama de contexto (C4, nivel 1) — SkyCampus MVP</text>
+<text x="30" y="64" font-size="14" fill="#4B5563">Escuela Colombiana de Ingeniería · DOSW 2026-2 · Cada flecha indica qué datos fluyen y en qué dirección</text>
+<rect x="860" y="28" width="16" height="16" rx="3" fill="#08427B"/><text x="882" y="41" font-size="13" fill="#111827">Persona</text>
+<rect x="960" y="28" width="16" height="16" rx="3" fill="#1168BD"/><text x="982" y="41" font-size="13" fill="#111827">Sistema de software</text>
+<rect x="860" y="100" width="330" height="650" rx="10" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+<text x="1025.0" y="375.0" text-anchor="middle" font-size="26" font-weight="700" fill="#ffffff">SkyCampus MVP</text>
+<text x="1025.0" y="403.0" text-anchor="middle" font-size="14" fill="#DBEAFE">[Sistema de software]</text>
+<text x="1025.0" y="437.0" text-anchor="middle" font-size="15" fill="#ffffff">Gestiona la flota de drones de</text>
+<text x="1025.0" y="457.0" text-anchor="middle" font-size="15" fill="#ffffff">reparto, las misiones y su entrega</text>
+<text x="1025.0" y="477.0" text-anchor="middle" font-size="15" fill="#ffffff">dentro del campus de la ECI</text>
+<rect x="30" y="130" width="240" height="110" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="150.0" y="164" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Operador de drones</text>
+<text x="150.0" y="184" text-anchor="middle" font-size="13" fill="#BFDBFE">[Persona]</text>
+<text x="150.0" y="208" text-anchor="middle" font-size="14" fill="#ffffff">Asigna misiones y monitorea</text>
+<text x="150.0" y="225" text-anchor="middle" font-size="14" fill="#ffffff">la flota</text>
+<line x1="270" y1="162" x2="860" y2="162" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
+<line x1="860" y1="208" x2="270" y2="208" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
+<text x="565.0" y="137" text-anchor="middle" font-size="14" fill="#111827">1. Registra la misión: código de la solicitud + id del drone</text>
+<text x="565.0" y="154" text-anchor="middle" font-size="14" fill="#111827">elegido; confirma la entrega con el código de la misión</text>
+<text x="565.0" y="228" text-anchor="middle" font-size="14" fill="#111827">2. Solicitudes pendientes (código, origen, destino, tipo de</text>
+<text x="565.0" y="245" text-anchor="middle" font-size="14" fill="#111827">carga); drones disponibles con batería y ubicación; misiones con</text>
+<text x="565.0" y="262" text-anchor="middle" font-size="14" fill="#111827">su estado</text>
+<rect x="30" y="360" width="240" height="110" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="150.0" y="394" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Solicitante</text>
+<text x="150.0" y="414" text-anchor="middle" font-size="13" fill="#BFDBFE">[Persona]</text>
+<text x="150.0" y="438" text-anchor="middle" font-size="14" fill="#ffffff">Quien pide el reparto de un</text>
+<text x="150.0" y="455" text-anchor="middle" font-size="14" fill="#ffffff">documento</text>
+<line x1="270" y1="392" x2="860" y2="392" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
+<line x1="860" y1="438" x2="270" y2="438" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
+<text x="565.0" y="367" text-anchor="middle" font-size="14" fill="#111827">3. Registra la solicitud de reparto: origen, destino y tipo de</text>
+<text x="565.0" y="384" text-anchor="middle" font-size="14" fill="#111827">carga (SOBRE, CARPETA, LIBRO)</text>
+<text x="565.0" y="458" text-anchor="middle" font-size="14" fill="#111827">4. Código de seguimiento de la solicitud y su estado (pendiente,</text>
+<text x="565.0" y="475" text-anchor="middle" font-size="14" fill="#111827">rechazada con su motivo, cancelada, o el estado de la misión)</text>
+<rect x="30" y="590" width="240" height="110" rx="10" fill="#08427B" stroke="#052E56" stroke-width="2"/>
+<text x="150.0" y="624" text-anchor="middle" font-size="18" font-weight="700" fill="#ffffff">Admin</text>
+<text x="150.0" y="644" text-anchor="middle" font-size="13" fill="#BFDBFE">[Persona]</text>
+<text x="150.0" y="668" text-anchor="middle" font-size="14" fill="#ffffff">Configura destinos y flota</text>
+<line x1="270" y1="622" x2="860" y2="622" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
+<line x1="860" y1="668" x2="270" y2="668" stroke="#4B5563" stroke-width="2" marker-end="url(#flecha)"/>
+<text x="565.0" y="597" text-anchor="middle" font-size="14" fill="#111827">5. Configura los destinos válidos (Bloque A-D, Biblioteca) y la</text>
+<text x="565.0" y="614" text-anchor="middle" font-size="14" fill="#111827">flota de drones (id, modelo)</text>
+<text x="565.0" y="688" text-anchor="middle" font-size="14" fill="#111827">6. Confirmación de la configuración y listado vigente de</text>
+<text x="565.0" y="705" text-anchor="middle" font-size="14" fill="#111827">destinos y drones</text>
+<rect x="30" y="780" width="1180" height="72" rx="8" fill="#F9FAFB" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="48" y="810" font-size="15" fill="#111827">Sistemas externos: ninguno. Los drones se controlan directamente, sin API ni integración de red en el MVP. Esto cambia en Monferno</text>
+<text x="48" y="831" font-size="15" fill="#111827">(monitoreo remoto) e Infernape (control autónomo multi-sede).</text>
+</svg>
