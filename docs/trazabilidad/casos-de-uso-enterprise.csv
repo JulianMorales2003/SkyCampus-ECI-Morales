@@ -1,0 +1,8 @@
+codigo;nombre;actor
+SC-08;Configurar el radio máximo de vuelo de una sede;Coordinador de sede
+SC-09;Definir el techo de radio de la red;Superadmin
+SC-10;Planificar una ruta entre sedes;Operador de drones
+SC-11;Asignar drone de la sede de origen a una misión;Sistema (lo dispara una solicitud)
+SC-12;Autorizar un vuelo entre sedes;Sistema (lo dispara una misión)
+SC-13;Consultar la eficiencia de la red o de una sede;Superadmin y Coordinador de sede
+SC-14;Seguir las etapas de una ruta;Operador de drones
