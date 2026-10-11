@@ -236,11 +236,14 @@ class CrearMisionTest {
     @Test
     @DisplayName("el comando y el constructor exigen sus datos")
     void validaciones() {
+        EstrategiaMayorBateria estrategia = new EstrategiaMayorBateria();
+        AutorizadorVuelo autorizador = new AutorizadorVuelo(politica, aerocivil);
+
         assertThrows(NullPointerException.class, () -> caso.crear(null));
-        assertThrows(NullPointerException.class, () -> new CrearMision(null, repo, clima,
-                new EstrategiaMayorBateria(), notificador, new AutorizadorVuelo(politica, aerocivil), () -> "x"));
-        assertThrows(NullPointerException.class, () -> new CrearMision(sedes, repo, clima,
-                new EstrategiaMayorBateria(), notificador, new AutorizadorVuelo(politica, aerocivil), null));
+        assertThrows(NullPointerException.class,
+                () -> new CrearMision(null, repo, clima, estrategia, notificador, autorizador, () -> "x"));
+        assertThrows(NullPointerException.class,
+                () -> new CrearMision(sedes, repo, clima, estrategia, notificador, autorizador, null));
         assertThrows(IllegalArgumentException.class, () -> new ComandoMision(null, "UNAL", 100, null));
         assertThrows(IllegalArgumentException.class, () -> new ComandoMision(" ", "UNAL", 100, null));
         assertThrows(IllegalArgumentException.class, () -> new ComandoMision("ECI", null, 100, null));

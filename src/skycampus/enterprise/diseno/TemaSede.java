@@ -10,7 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Los cuatro design tokens que cambian entre sedes. Es todo lo que un equipo define para añadir una
+ * Los cuatro design tokens que cambian entre sedes. Es lo único que un equipo define para añadir una
  * universidad: los componentes, la estructura HTML y el resto de variables no se tocan.
  *
  * @param sede identificador en minúsculas, el mismo de {@code data-sede} y del nombre del archivo del tema
@@ -39,7 +39,7 @@ public record TemaSede(String sede, String colorPrimario, String colorAlerta, St
     private static final Pattern SEDE_VALIDA = Pattern.compile("[a-z]{2,20}");
     private static final Pattern RADIO_VALIDO = Pattern.compile("\\d{1,2}px");
     private static final Pattern BLOQUE = Pattern.compile("\\[data-sede=\"([^\"]*)\"]\\s*\\{([^}]*)}");
-    private static final Pattern DECLARACION = Pattern.compile("(--[a-z-]+)\\s*:\\s*([^;]+);");
+    private static final Pattern DECLARACION = Pattern.compile("(--[a-z-]+)\\s*:([^;]+);");
     private static final Pattern COMENTARIO = Pattern.compile("/\\*.*?\\*/", Pattern.DOTALL);
 
     public TemaSede {

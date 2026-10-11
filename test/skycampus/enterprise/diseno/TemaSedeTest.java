@@ -41,8 +41,14 @@ class TemaSedeTest {
     @Test
     @DisplayName("el orden de los tokens y los saltos de línea no importan")
     void desdeCss_otroOrdenYSaltos_mismoResultado() {
-        String css = "[data-sede=\"eci\"] {\n  --border-radius: 10px;\n  --font-ui: \"Space Grotesk\", system-ui, "
-                + "sans-serif;\n  --color-alert: #E63946;\n  --color-primary: #00457C;\n}\n";
+        String css = """
+                [data-sede="eci"] {
+                  --border-radius: 10px;
+                  --font-ui: "Space Grotesk", system-ui, sans-serif;
+                  --color-alert: #E63946;
+                  --color-primary: #00457C;
+                }
+                """;
 
         assertEquals(SEDE, TemaSede.desdeCss(css).sede());
         assertEquals(PRIMARIO, TemaSede.desdeCss(css).colorPrimario());

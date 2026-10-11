@@ -101,7 +101,8 @@ public final class MisionesApi {
         Map<String, String> campos = new HashMap<>();
         Matcher m = CAMPO.matcher(texto);
         while (m.find()) {
-            campos.put(m.group(1), m.group(2) != null ? m.group(2) : m.group(3));
+            int grupoDelValor = m.group(2) != null ? 2 : 3;
+            campos.put(m.group(1), m.group(grupoDelValor));
         }
         String peso = campos.get("pesoPaquete");
         if (peso == null) {

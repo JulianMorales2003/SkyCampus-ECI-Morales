@@ -8,12 +8,12 @@ import util.Validaciones;
 /**
  * Compuesto del Composite: una secuencia de rutas (simples u otras compuestas) que forma un solo viaje.
  * Cada etapa debe empezar donde termina la anterior.
+ *
+ * @param etapas rutas que se recorren en orden; se copia la lista y no se puede modificar desde afuera
  */
-public final class RutaCompuesta implements Ruta {
+public record RutaCompuesta(List<Ruta> etapas) implements Ruta {
 
-    private final List<Ruta> etapas;
-
-    public RutaCompuesta(List<Ruta> etapas) {
+    public RutaCompuesta {
         Validaciones.exigirPresente(etapas, "etapas");
         if (etapas.isEmpty()) {
             throw new IllegalArgumentException("Una ruta compuesta necesita al menos una etapa.");
@@ -26,11 +26,7 @@ public final class RutaCompuesta implements Ruta {
                 throw new IllegalArgumentException("La etapa " + (i + 1) + " no empieza donde termina la anterior.");
             }
         }
-        this.etapas = List.copyOf(etapas);
-    }
-
-    public List<Ruta> etapas() {
-        return etapas;
+        etapas = List.copyOf(etapas);
     }
 
     @Override

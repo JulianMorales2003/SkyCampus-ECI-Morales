@@ -47,13 +47,15 @@ class DesignTokensTest {
     private static final String INICIO_PANEL = "<section class=\"panel-mision\"";
     private static final String FIN_PANEL = "</section>";
     private static final Pattern COLOR_LITERAL = Pattern.compile("#[0-9A-Fa-f]{3,8}\\b|\\b(?:rgb|rgba|hsl|hsla)\\(");
-    private static final Pattern DECLARACION = Pattern.compile("([a-z-]+)\\s*:\\s*([^;{}]+);");
+    private static final Pattern DECLARACION = Pattern.compile("([a-z-]{1,60})\\s{0,20}:([^;{}]{1,500});");
     private static final Pattern COLOR_CON_NOMBRE = Pattern.compile(
             "\\b(?:white|black|red|blue|green|gray|grey|yellow|orange|purple|navy|maroon)\\b");
-    private static final Pattern ETIQUETA = Pattern.compile("<(/?)([a-z0-9]+)([^>]*)>");
+    private static final Pattern ETIQUETA = Pattern.compile("<(/?)([a-z0-9]++)([^>]*+)>");
     private static final Pattern CLASE = Pattern.compile("class=\"([^\"]*)\"");
     private static final Pattern DATA_SEDE = Pattern.compile("data-sede=\"([^\"]*)\"");
     private static final Pattern ESTILO_EN_LINEA = Pattern.compile("style=\"([^\"]*)\"");
+    private static final Pattern ESTILO_NIVEL = Pattern.compile("--nivel: \\d{1,3}%");
+    private static final Pattern ATRIBUTO_SEDE = Pattern.compile("data-sede=\"[a-z]+\"");
     private static final Pattern ENLACE_LOCAL = Pattern.compile("<link rel=\"stylesheet\" href=\"(?!https?:)([^\"]+)\"");
 
     private static String leer(Path archivo) {
@@ -148,9 +150,14 @@ class DesignTokensTest {
         for (Path tema : archivosDeTema().toList()) {
             Files.copy(tema, carpeta.resolve(tema.getFileName()));
         }
-        Files.writeString(carpeta.resolve("nueva.css"), "[data-sede=\"nueva\"] {\n"
-                + "  --color-primary: #5B2C83;\n  --color-alert: #E63946;\n"
-                + "  --font-ui: \"Roboto\", system-ui, sans-serif;\n  --border-radius: 6px;\n}\n");
+        Files.writeString(carpeta.resolve("nueva.css"), """
+                [data-sede="nueva"] {
+                  --color-primary: #5B2C83;
+                  --color-alert: #E63946;
+                  --font-ui: "Roboto", system-ui, sans-serif;
+                  --border-radius: 6px;
+                }
+                """);
 
         List<TemaSede> temas = temasDe(carpeta);
 
@@ -236,7 +243,7 @@ class DesignTokensTest {
         assertFalse(html.contains("<style"));
         assertFalse(COLOR_LITERAL.matcher(html).find());
         for (String estilo : valoresDe(ESTILO_EN_LINEA, html)) {
-            assertTrue(estilo.matches("--nivel: \\d{1,3}%"), "estilo en línea no permitido: " + estilo);
+            assertTrue(ESTILO_NIVEL.matcher(estilo).matches(), "estilo en línea no permitido: " + estilo);
         }
     }
 
@@ -294,7 +301,7 @@ class DesignTokensTest {
         List<String> contenedores = new ArrayList<>();
         Matcher m = Pattern.compile("<div class=\"demo-columna sede-lienzo\" data-sede=\"[a-z]+\">").matcher(html);
         while (m.find()) {
-            contenedores.add(m.group().replaceAll("data-sede=\"[a-z]+\"", ""));
+            contenedores.add(ATRIBUTO_SEDE.matcher(m.group()).replaceAll(""));
         }
 
         assertEquals(3, contenedores.size());

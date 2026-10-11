@@ -35,6 +35,9 @@ class RequisitosEnterpriseTest {
 
         for (EstrategiaOptimizacionRuta criterio : criterios) {
             PlanificadorRutas planificador = new PlanificadorRutas(criterio, ALCANCE_KM);
+            // Calentamiento sin cronómetro: la primera llamada de la JVM carga clases y lambdas,
+            // y eso no es lo que mide el RNF-08 (el tiempo de planificar con 20 estaciones).
+            assertTrue(planificador.planificar(ORIGEN, DESTINO, estaciones).isPresent());
             Optional<Ruta> ruta = assertTimeout(Duration.ofMillis(500),
                     () -> planificador.planificar(ORIGEN, DESTINO, estaciones));
             assertTrue(ruta.isPresent());

@@ -24,6 +24,7 @@ class EspecificacionTokensTest {
     private static final Path DOCUMENTO = Path.of("docs/INFERNAPE08-DESIGN-TOKENS.md");
     private static final Path DISENO = Path.of("docs/diseno");
     private static final Pattern VARIABLE = Pattern.compile("(--[a-z0-9-]+)\\s*:");
+    private static final Pattern SUFIJO_NUMERICO = Pattern.compile("-\\d$");
     private static final Pattern IMAGEN = Pattern.compile("!\\[[^\\]]*]\\(([^)]+)\\)");
 
     private static String leer(Path archivo) {
@@ -69,7 +70,7 @@ class EspecificacionTokensTest {
 
         while (variable.find()) {
             total++;
-            String nombre = variable.group(1).replaceAll("-\\d$", "");
+            String nombre = SUFIJO_NUMERICO.matcher(variable.group(1)).replaceAll("");
             assertTrue(documento.contains(nombre), "falta en el documento: " + nombre);
         }
         assertEquals(17, total);
