@@ -3,3 +3,10 @@ out/
 .idea/
 *.iml
 target/
+# Artefactos generados por las herramientas
+jacoco.exec
+*.exec
+.scannerwork/
+.vscode/
+.DS_Store
+*.log
