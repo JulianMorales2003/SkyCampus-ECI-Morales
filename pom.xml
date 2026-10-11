@@ -96,6 +96,17 @@
                                         </limit>
                                     </limits>
                                 </rule>
+                                <!-- Complejidad ciclomática: el build falla si algún método supera 10 -->
+                                <rule>
+                                    <element>METHOD</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>COMPLEXITY</counter>
+                                            <value>TOTALCOUNT</value>
+                                            <maximum>10</maximum>
+                                        </limit>
+                                    </limits>
+                                </rule>
                             </rules>
                         </configuration>
                     </execution>
